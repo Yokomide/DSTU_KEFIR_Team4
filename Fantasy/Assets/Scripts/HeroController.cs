@@ -30,13 +30,11 @@ public class HeroController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            player.transform.position -= player.transform.right * speed * Time.deltaTime;
-                                                        
+            player.transform.position -= player.transform.right * speed * Time.deltaTime;                           
         }
         if (Input.GetKey(KeyCode.Space))
         {
             player.transform.position += player.transform.up * speed * Time.deltaTime;
-
         }
         
     }
