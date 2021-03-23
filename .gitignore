@@ -2,3 +2,4 @@
 [Ll]ogs/
 
 Fantasy/Packages/packages-lock.json
+*.csproj
