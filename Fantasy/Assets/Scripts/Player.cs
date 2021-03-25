@@ -1,12 +1,22 @@
 using UnityEngine;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
+
     public float speed = 2f; // скорость нашего персонажа
     public float shiftSpeed = 3.5f; // скорость при нажатии Shift
     public float sensetivity = 5f; //скорость поворота камеры при вращении мышки
+
+    private float _temp;
+
+    private void Start()
+    {
+        _temp = speed;
+    }
     private void FixedUpdate()
     {
+        bool IsDashed = true;
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
         Vector3 direction = new Vector3(h, 0, v);
@@ -19,6 +29,11 @@ public class Player : MonoBehaviour
         else
         {
             transform.GetComponent<Rigidbody>().MovePosition(transform.GetComponent<Rigidbody>().position + direction * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.Space) && IsDashed)
+        {
+            IsDashed = false;
         }
 
         //реализация поворота персонажа к мышке 
