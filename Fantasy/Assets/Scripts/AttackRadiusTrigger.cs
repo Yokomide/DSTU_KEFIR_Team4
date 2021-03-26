@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class AttackRadiusTrigger : MonoBehaviour
 {
-    public bool isTriggered = false;
+    private bool _isTriggered = false;
     private float _attackCoolDown = 0f;
+
+    public float coolDownTimer = 2f;
 
     private void Update()
     {
@@ -13,8 +15,8 @@ public class AttackRadiusTrigger : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        isTriggered = true;
-        if (isTriggered && Input.GetKey(KeyCode.Mouse0) && !other.CompareTag("Player") && _attackCoolDown > 2f)
+        _isTriggered = true;
+        if (_isTriggered && Input.GetKey(KeyCode.Mouse0) && !other.CompareTag("Player") && _attackCoolDown > coolDownTimer && other.CompareTag("Enemy"))
         {
             _attackCoolDown = 0f;
             other.GetComponent<EnemyStats>().hp -= Random.Range(10, 20);
@@ -28,6 +30,6 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        isTriggered = false;
+        _isTriggered = false;
     }
 }
