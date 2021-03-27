@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     public float speed = 2f; // скорость нашего персонажа
     public float shiftSpeed = 3.5f; // скорость при нажатии Shift
     public float sensetivity = 5f; //скорость поворота камеры при вращении мышки
@@ -37,6 +36,9 @@ public class Player : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime * sensetivity);
         }
+
+
+
     }
 
 }
