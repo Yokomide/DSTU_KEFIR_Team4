@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    GameObject It;
-    void OnTriggerStay(Collider other)
-    {
-        if (Input.GetKeyDown(KeyCode.E)) 
-        {
-            It.GetComponent<Inventory>();
-            Inventory inv = GetComponent<Inventory>();
-            Debug.Log("Да ты че...");
-            Destroy(gameObject);
-        }
-    } 
     public string nameItem;
     public int id;
     public int countItem;
@@ -22,12 +11,30 @@ public class Items : MonoBehaviour
     [Multiline(5)]
     public string descriptionItem;
 
+
     public string pathIcon;
     public string pathPrefab;
+
+    GameObject inventoryObject;
+    Inventory inventory;
+
+    public string mytag = "Player";
+    public GameObject Inventory;
+
     void Start()
     {
-
-        It = GameObject.Find("Inventory");//ссылка на другой скрипт
+        inventoryObject = GameObject.FindGameObjectWithTag("InventoryTag");
+        inventory = inventoryObject.GetComponent<Inventory>();
     }
-    
+
+    void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKeyDown(KeyCode.E)) 
+        {
+            if (other.tag == (mytag))
+            {
+                inventory.AddItem( gameObject.GetComponent<Items>());
+            }
+        }
+    } 
 }

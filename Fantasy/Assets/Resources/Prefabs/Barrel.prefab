@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: -5435238704713737218}
   m_Layer: 0
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,7 +255,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6127566437674159722}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -276,7 +276,9 @@ MonoBehaviour:
   nameItem: Barrel
   id: 1
   countItem: 0
-  isStackable: 0
+  isStackable: 1
   descriptionItem: Just barrel
   pathIcon: Icons/barrel
   pathPrefab: Prefabs/Barrel
+  mytag: Player
+  Inventory: {fileID: 0}
