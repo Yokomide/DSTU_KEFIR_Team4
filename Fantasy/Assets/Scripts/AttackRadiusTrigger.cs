@@ -16,6 +16,7 @@ public class AttackRadiusTrigger : MonoBehaviour
     private void Update()
     {
         _attackCoolDown += Time.deltaTime;
+
     }
 
     private void OnTriggerStay(Collider other)
@@ -23,10 +24,8 @@ public class AttackRadiusTrigger : MonoBehaviour
         NavMeshAgent agent = other.GetComponent<NavMeshAgent>();
         _deathAnim = other.GetComponent<Animator>();
         _isTriggered = true;
-        
         if (_isTriggered && Input.GetKey(KeyCode.Mouse0) && !other.CompareTag("Player") && _attackCoolDown > coolDownTimer && other.CompareTag("Enemy"))
         {
-            
             _attackCoolDown = 0f;
 
             other.GetComponent<EnemyStats>().hp -= Random.Range(10, 20);
