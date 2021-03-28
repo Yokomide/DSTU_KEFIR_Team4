@@ -8,7 +8,6 @@ public class MobMoving : MonoBehaviour
 
     private AttackRadiusTrigger art;
 
-    public AnimDeath AD;
     public Transform goal;
 
 

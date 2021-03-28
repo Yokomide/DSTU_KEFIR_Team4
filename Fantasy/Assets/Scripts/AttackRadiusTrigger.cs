@@ -8,14 +8,36 @@ public class AttackRadiusTrigger : MonoBehaviour
 { 
 
     private bool _isTriggered = false;
-    private float _attackCoolDown = 0f;
+    [HideInInspector]
+    public bool isAttacked = false;
+    [HideInInspector]
+    public float attackCoolDown = 0f;
 
     public float coolDownTimer = 2f;
     public Animator _deathAnim;
+    public float attackRadius = 2f;
+    public GameObject player;
 
+
+    private void Start()
+    {
+        gameObject.GetComponent<SphereCollider>().radius = attackRadius;
+    }
     private void Update()
     {
-        _attackCoolDown += Time.deltaTime;
+        attackCoolDown += Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.Mouse0) && attackCoolDown > coolDownTimer)
+        {
+            isAttacked = true;
+            attackCoolDown = 0f;
+        }
+        else
+        {
+            isAttacked = false;
+        }
+        
+        
     }
 
     private void OnTriggerStay(Collider other)
@@ -24,10 +46,10 @@ public class AttackRadiusTrigger : MonoBehaviour
         _deathAnim = other.GetComponent<Animator>();
         _isTriggered = true;
         
-        if (_isTriggered && Input.GetKey(KeyCode.Mouse0) && !other.CompareTag("Player") && _attackCoolDown > coolDownTimer && other.CompareTag("Enemy"))
+        if (_isTriggered && Input.GetKey(KeyCode.Mouse0) && !other.CompareTag("Player") && attackCoolDown > coolDownTimer && other.CompareTag("Enemy"))
         {
             
-            _attackCoolDown = 0f;
+            attackCoolDown = 0f;
 
             other.GetComponent<EnemyStats>().hp -= Random.Range(10, 20);
             Debug.Log(other.GetComponent<EnemyStats>().hp);
