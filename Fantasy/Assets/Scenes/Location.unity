@@ -4526,6 +4526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10221a9db0538ed45833fff6b39ff708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTriggered: 0
+  player: {fileID: 1883823154}
   coolDownTimer: 1
   _deathAnim: {fileID: 0}
 --- !u!135 &246506849
@@ -5349,7 +5351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c56fef71fa89ac4cbcda1edbe00e2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AD: {fileID: 0}
   goal: {fileID: 1788722210}
 --- !u!4 &274910665 stripped
 Transform:
@@ -23395,7 +23396,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1327146849335566754, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
   m_PrefabInstance: {fileID: 779758593}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1883823154}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2861aeac2275fe449a342f15b897b65, type: 3}
@@ -26647,7 +26648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c56fef71fa89ac4cbcda1edbe00e2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AD: {fileID: 0}
   goal: {fileID: 1065266022}
 --- !u!4 &1465366127 stripped
 Transform:
@@ -31012,7 +31012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c56fef71fa89ac4cbcda1edbe00e2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AD: {fileID: 0}
   goal: {fileID: 571815809}
 --- !u!4 &1753278774 stripped
 Transform:
@@ -33060,6 +33059,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4072542193287820, guid: a4e41b0c9a53a264baaf84a6ad9be458, type: 3}
   m_PrefabInstance: {fileID: 1859833280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1883823154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1170732337855516, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+  m_PrefabInstance: {fileID: 779758593}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1885302562 stripped
 Transform:
@@ -36836,7 +36840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c56fef71fa89ac4cbcda1edbe00e2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AD: {fileID: 0}
   goal: {fileID: 791603803}
 --- !u!4 &2122475191 stripped
 Transform:

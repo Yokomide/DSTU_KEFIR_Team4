@@ -8,19 +8,10 @@ public class Trail : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         weaponTrail = GetComponent<TrailRenderer>();
-        if (Input.GetMouseButtonDown(0))
-        {
-            weaponTrail.enabled = true;
-            StartCoroutine(TrailOff());
-        }
+        weaponTrail.enabled = true;
     }
+
     IEnumerator TrailOff()
     {
         yield return new WaitForSeconds(2f);
