@@ -35,22 +35,6 @@ public class Inventory : MonoBehaviour
 	void Update()
 	{   
 		
-
-
-		if (Input.GetKeyDown(KeyCode.E))
-		{
-			
-		}
-
-		
-		/*if (Physics.Raycast(ray, out hit))
-		{
-			if (hit.collider.GetComponent<Items>())
-			{
-				hit.collider.GetComponent<Items>().AddComponent(typeof(Light));
-			}
-		}*/
-       
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		Debug.DrawRay(transform.position, ray.direction );
 		RaycastHit hit;

@@ -11,14 +11,13 @@ public class Items : MonoBehaviour
     [Multiline(5)]
     public string descriptionItem;
 
-
     public string pathIcon;
     public string pathPrefab;
 
     GameObject inventoryObject;
     Inventory inventory;
 
-    public string mytag = "Player";
+    public string playerTag = "Player";
     public GameObject Inventory;
 
     void Start()
@@ -27,14 +26,24 @@ public class Items : MonoBehaviour
         inventory = inventoryObject.GetComponent<Inventory>();
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Вы можете подобрать предмет!");
+    }
+    
     void OnTriggerStay(Collider other)
     {
         if (Input.GetKeyDown(KeyCode.E)) 
         {
-            if (other.tag == (mytag))
+            if (other.tag == playerTag)
             {
-                inventory.AddItem( gameObject.GetComponent<Items>());
+                inventory.AddItem(gameObject.GetComponent<Items>());
             }
         }
-    } 
+    }
+    
+    void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Вы потеряли предмет из виду предмет!");
+    }
 }
