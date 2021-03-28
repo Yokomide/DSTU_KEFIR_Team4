@@ -65,7 +65,6 @@ public class AttackRadiusTrigger : MonoBehaviour
 
 
                     Destroy(other.GetComponent<EnemyStats>());
-                    Destroy(other.GetComponent<BoxCollider>());
                     Destroy(other.GetComponent<NavMove>());
                     Destroy(other.GetComponent<Rigidbody>());
                     Destroy(other.GetComponent<MobMoving>());

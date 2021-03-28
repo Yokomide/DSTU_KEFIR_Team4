@@ -7,7 +7,7 @@ public class AnimMoveset : MonoBehaviour
     // Start is called before the first frame update
     
     public Animator anim;
-    
+    public TrailRenderer weaponTrail;
     void Start()
     {
     }
@@ -24,8 +24,17 @@ public class AnimMoveset : MonoBehaviour
         if (Input.GetMouseButtonDown(0)){
    
                 anim.Play("Attack");
-            }
+                weaponTrail.enabled = true;
+                StartCoroutine(TrailOff());
         }
-       
     }
+    IEnumerator TrailOff()
+    {
+        yield return new WaitForSeconds(2f);
+
+        weaponTrail.enabled = false;
+    }
+}
+       
+    
 
