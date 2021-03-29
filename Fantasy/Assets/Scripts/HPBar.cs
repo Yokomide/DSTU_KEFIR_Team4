@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class HPBar : MonoBehaviour
 {
 
-    public Image HPBar;
+    public Image bar;
     public float fill;
+    public GameObject player;
     
-    
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         fill = 1f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        HPBar.fillAmount = fill;
+        bar.fillAmount = player.GetComponent<MainHeroHp>().HeroHp/100;
     }
 }
