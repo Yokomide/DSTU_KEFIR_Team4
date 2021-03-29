@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - Dead
+  - InventoryTag
+  - Item
   layers:
   - Default
   - TransparentFX
