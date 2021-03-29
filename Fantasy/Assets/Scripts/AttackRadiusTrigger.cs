@@ -53,9 +53,6 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                     _deathAnim.SetTrigger("Active");
 
-                    //Присваивание нового тэга
-
-                    other.transform.gameObject.tag = "Dead";
 
                     //Остановка следования к точке
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimMoveset : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+
     public Animator anim;
     public TrailRenderer weaponTrail;
     void Start()
@@ -16,7 +16,6 @@ public class AnimMoveset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         anim.SetFloat("Ver", Input.GetAxis("Vertical"));
 
         anim.SetFloat("Hor", Input.GetAxis("Horizontal"));
@@ -26,6 +25,10 @@ public class AnimMoveset : MonoBehaviour
                 anim.Play("Attack");
                 weaponTrail.enabled = true;
                 StartCoroutine(TrailOff());
+        }
+        if (GetComponent<MainHeroHp>().HeroHp <= 0f)
+        {
+            anim.SetTrigger("Death");
         }
     }
     IEnumerator TrailOff()

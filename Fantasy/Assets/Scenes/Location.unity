@@ -18455,6 +18455,10 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1327146849335566754, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+      propertyPath: art
+      value: 
+      objectReference: {fileID: 246506848}
     - target: {fileID: 5532825546096526368, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -42927,6 +42931,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeroHp: 250
+--- !u!114 &1883823160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883823154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2db0d3a8f14044089e354f15c39a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1277601252}
 --- !u!4 &1885302562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4139199580613414, guid: 085524390fafd6b4e9fed9d924db437b, type: 3}

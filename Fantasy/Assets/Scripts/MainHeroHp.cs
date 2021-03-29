@@ -12,5 +12,6 @@ public class MainHeroHp : MonoBehaviour
         {
             HeroHp -= 0.1f;
         }
+        
     }
 }
