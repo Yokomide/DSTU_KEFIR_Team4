@@ -9,7 +9,6 @@ public class Inventory : MonoBehaviour
 	public GameObject player;
 
 	public float rayDistance;
-	public Light light;
 	[HideInInspector]
 	public List<Items> items;
 

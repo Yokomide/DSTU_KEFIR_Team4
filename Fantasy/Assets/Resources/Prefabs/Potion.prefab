@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4046321805926871637}
   - component: {fileID: 4077933611659242853}
   - component: {fileID: 5100430506761599043}
-  - component: {fileID: 2606124436905567055}
   - component: {fileID: 1297295607918042200}
   m_Layer: 0
   m_Name: Potion
@@ -120,20 +119,6 @@ MonoBehaviour:
   pathPrefab: Prefabs/Potion
   playerTag: Player
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
---- !u!64 &2606124436905567055
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4067518590868374785}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 7160553cdba5f6848a0bc602e3d507d6, type: 3}
 --- !u!65 &1297295607918042200
 BoxCollider:
   m_ObjectHideFlags: 0

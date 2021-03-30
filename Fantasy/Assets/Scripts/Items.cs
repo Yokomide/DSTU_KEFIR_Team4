@@ -26,10 +26,6 @@ public class Items : MonoBehaviour
         inventory = inventoryObject.GetComponent<Inventory>();
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Вы можете подобрать предмет!");
-    }
     
     void OnTriggerStay(Collider other)
     {
@@ -40,10 +36,5 @@ public class Items : MonoBehaviour
                 inventory.AddItem(gameObject.GetComponent<Items>());
             }
         }
-    }
-    
-    void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Вы потеряли предмет из виду предмет!");
     }
 }
