@@ -25,16 +25,16 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        img.sprite = activeCell;
+        img.GetComponent<Image>().sprite = activeCell;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        img.sprite = defaultCell;
+        img.GetComponent<Image>().sprite = defaultCell;
     }
 
     void OnDisable()
     {
-        img.sprite = defaultCell;
+        img.GetComponent<Image>().sprite = defaultCell;
     }
 }
