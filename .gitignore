@@ -1,5 +1,11 @@
 [Ll]ibrary/
 [Ll]ogs/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
 
 Fantasy/Packages/packages-lock.json
 *.csproj
