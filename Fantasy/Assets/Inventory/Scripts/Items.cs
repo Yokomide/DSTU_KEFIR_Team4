@@ -17,7 +17,6 @@ public class Items : MonoBehaviour
     GameObject inventoryObject;
     Inventory inventory;
 
-    public string playerTag = "Player";
     public GameObject Inventory;
 
     void Start()
@@ -31,7 +30,7 @@ public class Items : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)) 
         {
-            if (other.tag == playerTag)
+            if (other.CompareTag("Player"))
             {
                 inventory.AddItem(gameObject.GetComponent<Items>());
             }

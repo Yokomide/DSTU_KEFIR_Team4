@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,16 +13,46 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     private float _NavMeshSpeedTemp = 3f;
     private float _attackCoolDown = 0f;
+    private List<string> _enemies;
+
+    private  string _enemyTemp;
+
+
+    private void Start()
+    {
+        _attackCoolDown = coolDownTimer;
+    }
 
     private void Update()
     {
         _attackCoolDown += Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer)
+        if (Input.GetKey(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer )
         {
+            player.GetComponent<Rigidbody>().isKinematic = true;
             StartCoroutine(StopOnAttack());
         }
 
+        if (Input.GetKey(KeyCode.L))
+        {
+            Debug.Log(_enemies);
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //if (other.CompareTag("Enemy"))
+        //{
+        //}
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        //if (other.CompareTag("Enemy"))
+        //{
+            _enemies.Remove(other.GetComponent<Rigidbody>().name);
+        //}
+        isTriggered = false;
     }
 
     private void OnTriggerStay(Collider other)
@@ -35,7 +66,6 @@ public class AttackRadiusTrigger : MonoBehaviour
             if (Input.GetKey(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer)
             {
                 
-
                     isTriggered = true;
                     _attackCoolDown = 0f;
 
@@ -68,10 +98,6 @@ public class AttackRadiusTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        isTriggered = false;
-    }
 
     IEnumerator HitAnimDelay(Collider other)
     {
@@ -80,13 +106,12 @@ public class AttackRadiusTrigger : MonoBehaviour
             //Задержка анимации получения урона
             yield return new WaitForSeconds(0.4f);
             DeathAnim.Play("Hit");
-            other.GetComponent<NavMeshAgent>().speed = 0f;
+            other.GetComponent<NavMeshAgent>().speed = _NavMeshSpeedTemp;
 
     }
 
     IEnumerator StopOnAttack()
     {
-        player.GetComponent<Rigidbody>().isKinematic = true;
         yield return new WaitForSeconds(1f);
         player.GetComponent<Rigidbody>().isKinematic = false;
     }
