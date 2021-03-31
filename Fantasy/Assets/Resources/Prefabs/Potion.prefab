@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameItem: Potion
-  id: 5
+  id: 3
   countItem: 0
   isStackable: 0
   descriptionItem: 

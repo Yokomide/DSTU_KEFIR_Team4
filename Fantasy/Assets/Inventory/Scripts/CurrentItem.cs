@@ -30,7 +30,7 @@ public class CurrentItem : MonoBehaviour,IPointerClickHandler
             {
                 GameObject droppedObject = Instantiate(Resources.Load<GameObject>(inventory.items[index].pathPrefab));
                 playerObject = GameObject.FindGameObjectWithTag("Player");
-                droppedObject.transform.position = playerObject.transform.position+new Vector3(0, +1, 0);
+                droppedObject.transform.position = playerObject.transform.position+new Vector3(-1, +1, 0);
                 if (inventory.items[index].countItem > 1)
                 {
                     inventory.items[index].countItem--;

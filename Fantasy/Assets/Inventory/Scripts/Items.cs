@@ -8,6 +8,7 @@ public class Items : MonoBehaviour
     public int id;
     public int countItem;
     public bool isStackable;
+    public int maxStackSize;
     [Multiline(5)]
     public string descriptionItem;
 
@@ -17,7 +18,6 @@ public class Items : MonoBehaviour
     GameObject inventoryObject;
     Inventory inventory;
 
-    public string playerTag = "Player";
     public GameObject Inventory;
 
     void Start()
@@ -31,7 +31,7 @@ public class Items : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)) 
         {
-            if (other.tag == playerTag)
+            if (other.tag == "Player")
             {
                 inventory.AddItem(gameObject.GetComponent<Items>());
             }

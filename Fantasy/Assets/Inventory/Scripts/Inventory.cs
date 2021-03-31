@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-	private Canvas canvas;
-	public GameObject player;
-
 	public float rayDistance;
 	[HideInInspector]
 	public List<Items> items;
@@ -18,7 +15,6 @@ public class Inventory : MonoBehaviour
 	void Start()
 	{
 		cellContainer.SetActive(false);
-		canvas = GetComponent<Canvas>();
 		items = new List<Items>();
         for (int i = 0;i<cellContainer.transform.childCount;i++)
         {
@@ -27,7 +23,7 @@ public class Inventory : MonoBehaviour
 		for (int i = 0; i < cellContainer.transform.childCount; i++)
         {
 			cellContainer.transform.GetChild(i).GetComponent<CurrentItem>().index = i;
-        }
+		}
 	}
 	
 
@@ -69,10 +65,13 @@ public class Inventory : MonoBehaviour
         {
             if (items[i].id == item.id)
             {
-				items[i].countItem++;
-				DisplayItem();
-				Destroy(item.gameObject);
-				return;
+				if (items[i].countItem < item.maxStackSize)
+                {
+					items[i].countItem++;
+					DisplayItem();
+					Destroy(item.gameObject);
+					return;
+				}
 			}
         }
 		AddUnstackableItem(item);

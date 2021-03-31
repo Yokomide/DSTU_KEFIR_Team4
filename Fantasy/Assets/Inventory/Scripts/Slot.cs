@@ -7,20 +7,12 @@ using UnityEngine.EventSystems;
 public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Sprite activeCell;
-
     public Sprite defaultCell;
     Image img;
-
-    
 
     void Start()
     {
         img = GetComponent<Image>();
-    }
-
-    void Update()
-    {
-        
     }
 
     public void OnPointerEnter(PointerEventData eventData)
