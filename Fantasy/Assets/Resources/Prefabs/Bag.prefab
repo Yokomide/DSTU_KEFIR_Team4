@@ -105,8 +105,9 @@ MonoBehaviour:
   descriptionItem: 
   pathIcon: Icons/bag
   pathPrefab: Prefabs/Bag
-  playerTag: Player
+  pathItems: Prefabs/Mushroom
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
+  itemsOnTrigger: []
 --- !u!65 &2181053303098479023
 BoxCollider:
   m_ObjectHideFlags: 0

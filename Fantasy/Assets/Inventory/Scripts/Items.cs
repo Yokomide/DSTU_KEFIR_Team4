@@ -21,6 +21,7 @@ public class Items : MonoBehaviour
 
     public GameObject Inventory;
 
+    [HideInInspector]
     public List<Items> itemsOnTrigger;
 
     void Start()

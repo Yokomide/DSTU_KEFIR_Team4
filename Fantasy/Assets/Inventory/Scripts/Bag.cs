@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
-
-public class CurrentItem : MonoBehaviour, IPointerClickHandler
+public class Bag : MonoBehaviour, IPointerClickHandler
 {
     [HideInInspector]
     public int index;
@@ -14,18 +12,18 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
     GameObject inventoryObject;
     Inventory inventory;
 
+    public string pathItems;
+
     void Start()
     {
         inventoryObject = GameObject.FindGameObjectWithTag("InventoryTag");
         inventory = inventoryObject.GetComponent<Inventory>();
     }
-
-
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right) // нопки мыши : Left Right Middle
+        if (eventData.button == PointerEventData.InputButton.Left) // нопки мыши : Left Right Middle
         {
-            if (inventory.items[index].id != 0)
+            if (inventory.items[index].id == 5)
             {
                 GameObject droppedObject = Instantiate(Resources.Load<GameObject>(inventory.items[index].pathPrefab));
                 playerObject = GameObject.FindGameObjectWithTag("Player");
