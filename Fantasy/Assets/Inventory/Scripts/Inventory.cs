@@ -29,7 +29,6 @@ public class Inventory : MonoBehaviour
 
 	void Update()
 	{   
-		
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		Debug.DrawRay(transform.position, ray.direction );
 		RaycastHit hit;

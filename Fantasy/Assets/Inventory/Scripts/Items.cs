@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Items : MonoBehaviour
 {
@@ -20,21 +21,36 @@ public class Items : MonoBehaviour
 
     public GameObject Inventory;
 
+    public List<Items> itemsOnTrigger;
+
     void Start()
     {
+        itemsOnTrigger = new List<Items>();
         inventoryObject = GameObject.FindGameObjectWithTag("InventoryTag");
         inventory = inventoryObject.GetComponent<Inventory>();
     }
-
-    
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E)) 
+        if (other.tag == "Player") 
+        { 
+            itemsOnTrigger.Add(gameObject.GetComponent<Items>());
+        }
+    }
+    void Update()
+    {
+        if (itemsOnTrigger.Count != 0)
         {
-            if (other.tag == "Player")
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                inventory.AddItem(gameObject.GetComponent<Items>());
+                 inventory.AddItem(itemsOnTrigger[0]);
             }
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            itemsOnTrigger.Remove(gameObject.GetComponent<Items>());
         }
     }
 }
