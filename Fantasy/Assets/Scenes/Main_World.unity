@@ -20546,6 +20546,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 963434368}
     m_Modifications:
+    - target: {fileID: 2757563527260995288, guid: 750ef314a62eecb4283313cdf986616f, type: 3}
+      propertyPath: bag_Items.Array.data[0].name
+      value: Mushroom
+      objectReference: {fileID: 0}
     - target: {fileID: 8729937438668911971, guid: 750ef314a62eecb4283313cdf986616f, type: 3}
       propertyPath: m_RootOrder
       value: 7

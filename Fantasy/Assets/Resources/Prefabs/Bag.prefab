@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2181053303098479023}
   - component: {fileID: 8249634384742841803}
   - component: {fileID: 1066549099937079646}
+  - component: {fileID: 2757563527260995288}
   m_Layer: 0
   m_Name: Bag
   m_TagString: Untagged
@@ -105,7 +106,6 @@ MonoBehaviour:
   descriptionItem: 
   pathIcon: Icons/bag
   pathPrefab: Prefabs/Bag
-  pathItems: Prefabs/Mushroom
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
   itemsOnTrigger: []
 --- !u!65 &2181053303098479023
@@ -151,3 +151,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2757563527260995288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8732605197071047313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d4f5d7616e14b4480a57ca8a8cdc04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bag_Items:
+  - name: Mushroom
+    item: {fileID: 7950164936467085716, guid: 56f45d120fcf11d448c9569594639ca3, type: 3}
+    count_Items: 4
+    drop_Rarity: 100
+    pathItem: Prefabs/Mushroom
+    pathIcon: Icons/mushroom
+  - name: Bones
+    item: {fileID: 1993093291295802865, guid: 5c3b4a6e188bb594fa10d383ee8edd5b, type: 3}
+    count_Items: 3
+    drop_Rarity: 80
+    pathItem: Prefabs/Bones
+    pathIcon: Icons/bones
+  - name: Skull
+    item: {fileID: 8484020605651004218, guid: d8bb481b26fa88749af7decfb08e8319, type: 3}
+    count_Items: 2
+    drop_Rarity: 78
+    pathItem: Prefabs/Skull
+    pathIcon: Icons/skull
+  index: 0
