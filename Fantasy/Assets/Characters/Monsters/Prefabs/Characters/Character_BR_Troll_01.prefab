@@ -1308,9 +1308,10 @@ GameObject:
   - component: {fileID: 4373196678005266}
   - component: {fileID: 95998111322576624}
   - component: {fileID: 2795705089797190436}
-  - component: {fileID: 8087463426176851247}
   - component: {fileID: 5673105888922660439}
   - component: {fileID: 3516340140086223575}
+  - component: {fileID: 4433011550819461435}
+  - component: {fileID: 6291684767469521041}
   m_Layer: 0
   m_Name: Character_BR_Troll_01
   m_TagString: Enemy
@@ -1385,18 +1386,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 5
   m_ObstacleAvoidanceType: 4
---- !u!114 &8087463426176851247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473157611212552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92ce3e5ac7954974d9fe75048bf67335, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5673105888922660439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,6 +1412,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.413795, z: 1}
   m_Center: {x: 0, y: 0.7068975, z: 0}
+--- !u!114 &4433011550819461435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473157611212552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ce3e5ac7954974d9fe75048bf67335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &6291684767469521041
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473157611212552}
+  serializedVersion: 2
+  m_Mass: 19
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &1510030167273396
 GameObject:
   m_ObjectHideFlags: 0

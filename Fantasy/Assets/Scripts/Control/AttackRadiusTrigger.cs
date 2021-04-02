@@ -8,14 +8,17 @@ public class AttackRadiusTrigger : MonoBehaviour
     public GameObject player;
     public Animator DeathAnim;
 
+    public GameObject bloodSplat;
+    public Transform bloodPos;
+
     public bool isTriggered = false;
     public float coolDownTimer = 2f;
 
     private float _NavMeshSpeedTemp = 3f;
     private float _attackCoolDown = 0f;
-    private List<GameObject> _enemies;
+    private List<GameObject> _enemies = new List<GameObject>();
 
-    private  string _enemyTemp;
+    private string _enemyTemp;
 
 
     private void Start()
@@ -27,53 +30,26 @@ public class AttackRadiusTrigger : MonoBehaviour
     {
         _attackCoolDown += Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer )
+        if (Input.GetKey(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer)
         {
             _attackCoolDown = 0f;
             player.GetComponent<Rigidbody>().isKinematic = true;
             StartCoroutine(StopOnAttack());
-        }
-
-        if (Input.GetKey(KeyCode.L))
-        {
-            Debug.Log(_enemies);
-        }
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            GameObject temp = other.gameObject;
-            _enemies.Add(temp);
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        isTriggered = false;
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        switch (other.tag)
-        {
-            case "Enemy":
-                NavMeshAgent agent = other.GetComponent<NavMeshAgent>();
-                DeathAnim = other.GetComponent<Animator>();
-                isTriggered = true;
-
-                if (Input.GetKey(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer)
+            if (_enemies.Count != 0)
+            {
+                for (int i = 0; i < _enemies.Count; i++)
                 {
+                    NavMeshAgent agent = _enemies[i].GetComponent<NavMeshAgent>();
+                    DeathAnim = _enemies[i].GetComponent<Animator>();
 
-                    other.GetComponent<EnemyStats>().hp -= Random.Range(10, 20);
-                    Debug.Log(other.GetComponent<EnemyStats>().hp);
+                    _enemies[i].GetComponent<EnemyStats>().hp -= Random.Range(10, 20);
+                    Debug.Log(_enemies[i].GetComponent<EnemyStats>().hp);
 
                     //Запуск анимации получения урона с задержкой
 
-                    StartCoroutine(HitAnimDelay(other));
+                    StartCoroutine(HitAnimDelay(_enemies[i].GetComponent<Collider>()));
 
-                    if (other.GetComponent<EnemyStats>().hp < 0)
+                    if (_enemies[i].GetComponent<EnemyStats>().hp < 0)
                     {
                         //Активация триггера для начала анимации смерти.
                         DeathAnim.SetTrigger("Active");
@@ -83,28 +59,75 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                         //Смерть. Убирает компоненты, благодаря которым с объектом можно взаимодействовать.
 
-                        Destroy(other.GetComponent<EnemyStats>());
-                        Destroy(other.GetComponent<NavMove>());
-                        Destroy(other.GetComponent<Rigidbody>());
-                        Destroy(other.GetComponent<MobMoving>());
-                        Destroy(other.GetComponent<BoxCollider>());
-
+                        Destroy(_enemies[i].GetComponent<EnemyStats>());
+                        Destroy(_enemies[i].GetComponent<NavMove>());
+                        Destroy(_enemies[i].GetComponent<Rigidbody>());
+                        Destroy(_enemies[i].GetComponent<MobMoving>());
+                        Destroy(_enemies[i].GetComponent<BoxCollider>());
+                        _enemies.RemoveAt(i);
 
                     }
+
                 }
-                break;
+            }
+            else
+            {
+
+            }
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        isTriggered = true;
+        if (other.CompareTag("Enemy"))
+        {
+            bool _isHere = false;
+            GameObject temp = other.gameObject;
+            for (int i = 0; i < _enemies.Count; i++)
+            {
+                if (_enemies[i] == temp)
+                {
+                    _isHere = true;
+                    break;
+                }
+
+            }
+            if (!_isHere) _enemies.Add(temp);
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            GameObject temp = other.gameObject;
+            for (int i = 0; i < _enemies.Count; i++)
+            {
+                if (_enemies[i] == temp)
+                {
+                    _enemies.RemoveAt(i);
+                    break;
+                }
+
+            }
+        }
+        isTriggered = false;
+    }
+
+
 
 
     IEnumerator HitAnimDelay(Collider other)
     {
-        
-            other.GetComponent<NavMeshAgent>().speed = 0f;
-            //Задержка анимации получения урона
-            yield return new WaitForSeconds(0.4f);
-            DeathAnim.Play("Hit");
-            other.GetComponent<NavMeshAgent>().speed = _NavMeshSpeedTemp;
+
+        other.GetComponent<NavMeshAgent>().speed = 0f;
+        //Задержка анимации получения урона
+        yield return new WaitForSeconds(0.4f);
+        DeathAnim.Play("Hit");
+        bloodPos = other.GetComponent<Transform>();
+        Instantiate(bloodSplat, bloodPos);
+        other.GetComponent<NavMeshAgent>().speed = _NavMeshSpeedTemp;
 
     }
 
