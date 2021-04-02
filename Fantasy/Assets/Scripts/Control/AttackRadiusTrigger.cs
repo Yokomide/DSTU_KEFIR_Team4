@@ -13,7 +13,7 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     private float _NavMeshSpeedTemp = 3f;
     private float _attackCoolDown = 0f;
-    private List<string> _enemies;
+    private List<GameObject> _enemies;
 
     private  string _enemyTemp;
 
@@ -29,6 +29,7 @@ public class AttackRadiusTrigger : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer )
         {
+            _attackCoolDown = 0f;
             player.GetComponent<Rigidbody>().isKinematic = true;
             StartCoroutine(StopOnAttack());
         }
@@ -42,40 +43,36 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.CompareTag("Enemy"))
-        //{
-        //}
+        if (other.CompareTag("Enemy"))
+        {
+            GameObject temp = other.gameObject;
+            _enemies.Add(temp);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        //if (other.CompareTag("Enemy"))
-        //{
-            _enemies.Remove(other.GetComponent<Rigidbody>().name);
-        //}
         isTriggered = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (!other.CompareTag("Player") && other.CompareTag("Enemy"))
+        switch (other.tag)
         {
-            NavMeshAgent agent = other.GetComponent<NavMeshAgent>();
-            DeathAnim = other.GetComponent<Animator>();
-            isTriggered = true;
+            case "Enemy":
+                NavMeshAgent agent = other.GetComponent<NavMeshAgent>();
+                DeathAnim = other.GetComponent<Animator>();
+                isTriggered = true;
 
-            if (Input.GetKey(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer)
-            {
-                
-                    isTriggered = true;
-                    _attackCoolDown = 0f;
+                if (Input.GetKey(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer)
+                {
 
                     other.GetComponent<EnemyStats>().hp -= Random.Range(10, 20);
                     Debug.Log(other.GetComponent<EnemyStats>().hp);
 
                     //Запуск анимации получения урона с задержкой
 
-                        StartCoroutine(HitAnimDelay(other));
-                    
+                    StartCoroutine(HitAnimDelay(other));
+
                     if (other.GetComponent<EnemyStats>().hp < 0)
                     {
                         //Активация триггера для начала анимации смерти.
@@ -92,9 +89,10 @@ public class AttackRadiusTrigger : MonoBehaviour
                         Destroy(other.GetComponent<MobMoving>());
                         Destroy(other.GetComponent<BoxCollider>());
 
-                    
+
+                    }
                 }
-            }
+                break;
         }
     }
 
