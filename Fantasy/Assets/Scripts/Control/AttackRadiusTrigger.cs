@@ -6,7 +6,8 @@ public class AttackRadiusTrigger : MonoBehaviour
 {
     public GameObject player;
     public Animator DeathAnim;
-
+    public GameObject BloodSplat;
+    public Transform pos;
     public bool isTriggered = false;
     public float coolDownTimer = 2f;
 
@@ -38,18 +39,19 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                     isTriggered = true;
                     _attackCoolDown = 0f;
-
-                    other.GetComponent<EnemyStats>().hp -= Random.Range(10, 20);
+               
+                other.GetComponent<EnemyStats>().hp -= Random.Range(10, 20);
                     Debug.Log(other.GetComponent<EnemyStats>().hp);
 
                     //Запуск анимации получения урона с задержкой
 
                         StartCoroutine(HitAnimDelay(other));
-                    
-                    if (other.GetComponent<EnemyStats>().hp < 0)
+
+                if (other.GetComponent<EnemyStats>().hp < 0)
                     {
+                    
                         //Активация триггера для начала анимации смерти.
-                        DeathAnim.SetTrigger("Active");
+                         DeathAnim.SetTrigger("Active");
 
                         //Остановка следования к точке
                         agent.isStopped = true;
@@ -80,7 +82,9 @@ public class AttackRadiusTrigger : MonoBehaviour
             //Задержка анимации получения урона
             yield return new WaitForSeconds(0.4f);
             DeathAnim.Play("Hit");
-            other.GetComponent<NavMeshAgent>().speed = 0f;
+        pos = other.GetComponent<Transform>();
+        Instantiate(BloodSplat, pos);
+        other.GetComponent<NavMeshAgent>().speed = _NavMeshSpeedTemp;
 
     }
 
