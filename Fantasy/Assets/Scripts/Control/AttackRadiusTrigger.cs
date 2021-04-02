@@ -8,8 +8,8 @@ public class AttackRadiusTrigger : MonoBehaviour
     public GameObject player;
     public Animator DeathAnim;
 
-    public GameObject bloodSplat;
-    public Transform bloodPos;
+   // public GameObject bloodSplat;
+    //public Transform bloodPos;
 
     public bool isTriggered = false;
     public float coolDownTimer = 2f;
@@ -42,7 +42,7 @@ public class AttackRadiusTrigger : MonoBehaviour
                     NavMeshAgent agent = _enemies[i].GetComponent<NavMeshAgent>();
                     DeathAnim = _enemies[i].GetComponent<Animator>();
 
-                    _enemies[i].GetComponent<EnemyStats>().hp -= Random.Range(10, 20);
+                    _enemies[i].GetComponent<EnemyStats>().Attacked();
                     Debug.Log(_enemies[i].GetComponent<EnemyStats>().hp);
 
                     //Запуск анимации получения урона с задержкой
@@ -125,8 +125,8 @@ public class AttackRadiusTrigger : MonoBehaviour
         //Задержка анимации получения урона
         yield return new WaitForSeconds(0.4f);
         DeathAnim.Play("Hit");
-        bloodPos = other.GetComponent<Transform>();
-        Instantiate(bloodSplat, bloodPos);
+       // bloodPos = other.GetComponent<Transform>();
+        //Instantiate(bloodSplat, bloodPos);
         other.GetComponent<NavMeshAgent>().speed = _NavMeshSpeedTemp;
 
     }

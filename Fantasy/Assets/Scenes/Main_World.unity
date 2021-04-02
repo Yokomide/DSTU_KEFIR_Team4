@@ -5892,8 +5892,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1883823154}
   DeathAnim: {fileID: 0}
-  bloodSplat: {fileID: 0}
-  bloodPos: {fileID: 0}
   isTriggered: 0
   coolDownTimer: 1.3
 --- !u!135 &246506849
@@ -24377,6 +24375,7 @@ GameObject:
   - component: {fileID: 1010070339}
   - component: {fileID: 1010070338}
   - component: {fileID: 1010070337}
+  - component: {fileID: 1010070341}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -24461,6 +24460,19 @@ Transform:
   m_Father: {fileID: 510021276}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1010070341
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010070336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1013722294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31526,6 +31538,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 3364013660960400015, guid: d4d17342014c96842ae633419b8f07a5, type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
     - target: {fileID: 7905822341010466420, guid: d4d17342014c96842ae633419b8f07a5, type: 3}
       propertyPath: goal
       value: 
@@ -35176,6 +35192,10 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 1788722210}
+    - target: {fileID: 3932504323228234975, guid: aea27ca7a35042c419065833e8daf224, type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aea27ca7a35042c419065833e8daf224, type: 3}
 --- !u!4 &1462700215 stripped
@@ -41061,6 +41081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
+  hpBar: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
 --- !u!65 &1753278780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48481,6 +48502,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 4443178809859371412, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
     - target: {fileID: 9182416887772258338, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
       propertyPath: goal
       value: 
