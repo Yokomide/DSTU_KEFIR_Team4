@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 229048472421947663}
   - component: {fileID: 240336598955575747}
   - component: {fileID: 249461841725544615}
-  - component: {fileID: 270724467966497267}
   - component: {fileID: 9194797771911823772}
   - component: {fileID: 4508186942232220923}
   - component: {fileID: 6063741320196624611}
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &270724467966497267
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226469970775394615}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43963264061506290, guid: b59d2faeff134c04ab794c62a029dac3, type: 2}
 --- !u!114 &9194797771911823772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +104,6 @@ MonoBehaviour:
   descriptionItem: 
   pathIcon: Icons/necklace_Flat
   pathPrefab: Prefabs/Necklace_Flat
-  playerTag: Player
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!65 &4508186942232220923
 BoxCollider:

@@ -3809,9 +3809,9 @@ GameObject:
   - component: {fileID: 3757240776067301617}
   - component: {fileID: 999503369344325186}
   - component: {fileID: 4193067751696539003}
-  - component: {fileID: 734578878054214042}
   - component: {fileID: 6728789915298191110}
   - component: {fileID: 3932504323228234975}
+  - component: {fileID: 4670961142108841109}
   m_Layer: 0
   m_Name: Character_Male_Wizard_01
   m_TagString: Enemy
@@ -3916,19 +3916,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.4583404, z: 0.3705611}
   m_Center: {x: 0, y: 0.7291703, z: 0.04857649}
---- !u!114 &734578878054214042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c56fef71fa89ac4cbcda1edbe00e2e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goal: {fileID: 0}
 --- !u!114 &6728789915298191110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3954,6 +3941,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
+  hpBar: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
+--- !u!114 &4670961142108841109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c56fef71fa89ac4cbcda1edbe00e2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: {fileID: 0}
 --- !u!1 &193772
 GameObject:
   m_ObjectHideFlags: 0

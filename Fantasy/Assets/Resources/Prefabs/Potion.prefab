@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4063834589257162275}
   - component: {fileID: 4035799158483107665}
   - component: {fileID: 4046321805926871637}
-  - component: {fileID: 4077933611659242853}
   - component: {fileID: 5100430506761599043}
   - component: {fileID: 1297295607918042200}
   - component: {fileID: 1930655595508662267}
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4077933611659242853
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4067518590868374785}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43553423116758710, guid: 15589ff131d6ce044b68f53171a6e474, type: 2}
 --- !u!114 &5100430506761599043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,10 +100,10 @@ MonoBehaviour:
   id: 3
   countItem: 0
   isStackable: 0
+  maxStackSize: 0
   descriptionItem: 
   pathIcon: Icons/potion
   pathPrefab: Prefabs/Potion
-  playerTag: Player
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!65 &1297295607918042200
 BoxCollider:

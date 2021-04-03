@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8746748466791950021}
   - component: {fileID: 9051411177396367336}
   - component: {fileID: 2181053303098479023}
-  - component: {fileID: 8249634384742841803}
   - component: {fileID: 1066549099937079646}
   - component: {fileID: 2757563527260995288}
   m_Layer: 0
@@ -107,7 +106,6 @@ MonoBehaviour:
   pathIcon: Icons/bag
   pathPrefab: Prefabs/Bag
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
-  itemsOnTrigger: []
 --- !u!65 &2181053303098479023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -121,20 +119,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.3, z: 0.6}
   m_Center: {x: 0.0023409948, y: 0.025, z: 0.0005144961}
---- !u!64 &8249634384742841803
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8732605197071047313}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: be60a5fbba052de45bf1a057bd267c5d, type: 3}
 --- !u!54 &1066549099937079646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -182,4 +166,3 @@ MonoBehaviour:
     drop_Rarity: 78
     pathItem: Prefabs/Skull
     pathIcon: Icons/skull
-  index: 0
