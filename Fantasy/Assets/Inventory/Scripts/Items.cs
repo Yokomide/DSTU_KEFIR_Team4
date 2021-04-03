@@ -21,7 +21,7 @@ public class Items : MonoBehaviour
 
     public GameObject Inventory;
 
-
+    private bool Isss = true;
     void Start()
     {
         
@@ -33,9 +33,14 @@ public class Items : MonoBehaviour
     {
         if (inventory.itemsOnTrigger.Count != 0)
         {
-            if (Input.GetKeyDown(KeyCode.E) )
+            if (Input.GetKeyDown(KeyCode.E) && Isss)
             {
+                Isss = false;
                 inventory.AddItem(inventory.itemsOnTrigger[0]);
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                Isss = true;
             }
         }
     }
