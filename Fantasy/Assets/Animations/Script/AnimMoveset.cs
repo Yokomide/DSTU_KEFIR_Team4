@@ -1,29 +1,29 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimMoveset : MonoBehaviour
 {
-
+    public GameObject player;
     public Animator MainCharacter_Animation;
     public TrailRenderer WeaponTrail;
 
 
     void Update()
     {
-       MainCharacter_Animation.SetFloat("Ver", Input.GetAxis("Vertical"));
+        MainCharacter_Animation.SetFloat("Ver", Input.GetAxis("Vertical"));
 
-       MainCharacter_Animation.SetFloat("Hor", Input.GetAxis("Horizontal"));
+        MainCharacter_Animation.SetFloat("Hor", Input.GetAxis("Horizontal"));
 
-        if (Input.GetMouseButtonDown(0)){
-   
-               MainCharacter_Animation.Play("Attack");
-                WeaponTrail.enabled = true;
-                StartCoroutine(TrailOff());
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            MainCharacter_Animation.Play("Attack");
+            WeaponTrail.enabled = true;
+            StartCoroutine(TrailOff());
         }
         if (GetComponent<MainHeroHp>().HeroHp <= 0f)
         {
-           MainCharacter_Animation.SetTrigger("Death");
+            MainCharacter_Animation.SetTrigger("Death");
         }
     }
     IEnumerator TrailOff()
@@ -33,6 +33,6 @@ public class AnimMoveset : MonoBehaviour
         WeaponTrail.enabled = false;
     }
 }
-       
-    
+
+
 
