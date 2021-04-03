@@ -279,6 +279,7 @@ MonoBehaviour:
   id: 1
   countItem: 0
   isStackable: 1
+  maxStackSize: 5
   descriptionItem: Just barrel
   pathIcon: Icons/barrel
   pathPrefab: Prefabs/Barrel

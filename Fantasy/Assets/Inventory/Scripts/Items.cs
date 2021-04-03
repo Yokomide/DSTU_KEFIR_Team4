@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Items : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Items : MonoBehaviour
     public int id;
     public int countItem;
     public bool isStackable;
+    public int maxStackSize;
     [Multiline(5)]
     public string descriptionItem;
 
@@ -19,21 +21,37 @@ public class Items : MonoBehaviour
 
     public GameObject Inventory;
 
+
     void Start()
     {
+        
         inventoryObject = GameObject.FindGameObjectWithTag("InventoryTag");
         inventory = inventoryObject.GetComponent<Inventory>();
     }
-
     
-    void OnTriggerStay(Collider other)
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) 
+        if (inventory.itemsOnTrigger.Count != 0)
         {
-            if (other.CompareTag("Player"))
+            if (Input.GetKeyDown(KeyCode.E) )
             {
-                inventory.AddItem(gameObject.GetComponent<Items>());
+                inventory.AddItem(inventory.itemsOnTrigger[0]);
             }
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player") 
+        { 
+            inventory.itemsOnTrigger.Add(gameObject.GetComponent<Items>());
+        }
+    }
+    
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inventory.itemsOnTrigger.Remove(gameObject.GetComponent<Items>());
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 
 
-public class CurrentItem : MonoBehaviour,IPointerClickHandler
+public class CurrentItem : MonoBehaviour, IPointerClickHandler
 {
     [HideInInspector]
     public int index;
@@ -13,13 +13,13 @@ public class CurrentItem : MonoBehaviour,IPointerClickHandler
     GameObject playerObject;
     GameObject inventoryObject;
     Inventory inventory;
+    Bag bag;
 
     void Start()
     {
         inventoryObject = GameObject.FindGameObjectWithTag("InventoryTag");
         inventory = inventoryObject.GetComponent<Inventory>();
     }
-
 
 
     public void OnPointerClick(PointerEventData eventData)
@@ -30,7 +30,7 @@ public class CurrentItem : MonoBehaviour,IPointerClickHandler
             {
                 GameObject droppedObject = Instantiate(Resources.Load<GameObject>(inventory.items[index].pathPrefab));
                 playerObject = GameObject.FindGameObjectWithTag("Player");
-                droppedObject.transform.position = playerObject.transform.position+new Vector3(0, +1, 0);
+                droppedObject.transform.position = playerObject.transform.position + new Vector3(-1, +1, 0);
                 if (inventory.items[index].countItem > 1)
                 {
                     inventory.items[index].countItem--;
@@ -42,5 +42,6 @@ public class CurrentItem : MonoBehaviour,IPointerClickHandler
                 inventory.DisplayItem();
             }
         }
+
     }
 }

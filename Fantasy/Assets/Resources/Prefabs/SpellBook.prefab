@@ -125,9 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameItem: SpellBook
-  id: 3
+  id: 2
   countItem: 0
   isStackable: 1
+  maxStackSize: 2
   descriptionItem: 
   pathIcon: Icons/spellBook
   pathPrefab: Prefabs/SpellBook
