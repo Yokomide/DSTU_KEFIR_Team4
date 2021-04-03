@@ -13,6 +13,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
     GameObject playerObject;
     GameObject inventoryObject;
     Inventory inventory;
+    Bag bag;
 
     void Start()
     {
@@ -41,5 +42,6 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                 inventory.DisplayItem();
             }
         }
+
     }
 }

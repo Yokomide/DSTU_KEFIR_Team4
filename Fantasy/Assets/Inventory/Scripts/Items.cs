@@ -21,37 +21,37 @@ public class Items : MonoBehaviour
 
     public GameObject Inventory;
 
-    [HideInInspector]
-    public List<Items> itemsOnTrigger;
 
     void Start()
     {
-        itemsOnTrigger = new List<Items>();
+        
         inventoryObject = GameObject.FindGameObjectWithTag("InventoryTag");
         inventory = inventoryObject.GetComponent<Inventory>();
+    }
+    
+    void Update()
+    {
+        if (inventory.itemsOnTrigger.Count != 0)
+        {
+            if (Input.GetKeyDown(KeyCode.E) )
+            {
+                inventory.AddItem(inventory.itemsOnTrigger[0]);
+            }
+        }
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") 
         { 
-            itemsOnTrigger.Add(gameObject.GetComponent<Items>());
+            inventory.itemsOnTrigger.Add(gameObject.GetComponent<Items>());
         }
     }
-    void Update()
-    {
-        if (itemsOnTrigger.Count != 0)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                 inventory.AddItem(itemsOnTrigger[0]);
-            }
-        }
-    }
+    
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-            itemsOnTrigger.Remove(gameObject.GetComponent<Items>());
+            inventory.itemsOnTrigger.Remove(gameObject.GetComponent<Items>());
         }
     }
 }
