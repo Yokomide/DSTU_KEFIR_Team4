@@ -52,6 +52,7 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                     if (!_enemies[i].GetComponent<EnemyStats>().isAlive)
                     {
+                        player.GetComponent<MainHeroHp>().Lvl += 1;
                         //Активация триггера для начала анимации смерти.
                         DeathAnim.SetTrigger("Active");
 

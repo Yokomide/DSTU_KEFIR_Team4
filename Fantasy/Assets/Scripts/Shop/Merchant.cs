@@ -33,10 +33,7 @@ public class Merchant : MonoBehaviour
     }
     private void Update()
     {
-        if (inventory.isActiveAndEnabled && Input.GetMouseButtonDown(1))
-        {
-
-        }
+        ToggleShopMenu();
 
     }
     private void OnTriggerEnter(Collider other)
