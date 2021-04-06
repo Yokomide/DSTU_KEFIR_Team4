@@ -9,7 +9,6 @@ public class HPBar : MonoBehaviour
     public Image bar;
     public float fill;
     public GameObject player;
-    
 
     void Start()
     {
