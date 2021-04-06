@@ -8,7 +8,7 @@ public class MainHeroHp : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Minus))
         {
             HeroHp -= 0.1f;
         }

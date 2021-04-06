@@ -18,6 +18,6 @@ public class HPBar : MonoBehaviour
 
     void Update()
     {
-        bar.fillAmount = player.GetComponent<MainHeroHp>().HeroHp/100;
+        bar.fillAmount = player.GetComponent<MainHeroHp>().HeroHp/250;
     }
 }

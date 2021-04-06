@@ -8,6 +8,8 @@ public class Merchant : MonoBehaviour
     private bool _isHere = false;
     private bool _showShop = false;
 
+    public Inventory inventory;
+
 
     private Canvas _canvas;
     private List<Items> _merchantsItems;
@@ -31,8 +33,11 @@ public class Merchant : MonoBehaviour
     }
     private void Update()
     {
-        ToggleShopMenu();
-        
+        if (inventory.isActiveAndEnabled && Input.GetMouseButtonDown(1))
+        {
+
+        }
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -41,20 +46,15 @@ public class Merchant : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player")) _isHere = false;
-        cellContainer.SetActive(false);
+        cellContainer.SetActive(_isHere);
     }
 
     private void ToggleShopMenu()
     {
         if (_isHere && Input.GetKeyDown(KeyCode.T))
         {
-            cellContainer.SetActive(true);
-            _showShop = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.T) && _showShop)
-        {
-            cellContainer.SetActive(false);
-            _showShop = false;
+            _showShop = !_showShop;
+            cellContainer.SetActive(_showShop);
         }
     }
 }
