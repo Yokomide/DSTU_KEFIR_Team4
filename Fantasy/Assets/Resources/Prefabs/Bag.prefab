@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2181053303098479023}
   - component: {fileID: 1066549099937079646}
   - component: {fileID: 2757563527260995288}
+  - component: {fileID: 8662662596847373571}
   m_Layer: 0
   m_Name: Bag
   m_TagString: Untagged
@@ -166,3 +167,17 @@ MonoBehaviour:
     drop_Rarity: 78
     pathItem: Prefabs/Skull
     pathIcon: Icons/skull
+--- !u!64 &8662662596847373571
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8732605197071047313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: be60a5fbba052de45bf1a057bd267c5d, type: 3}

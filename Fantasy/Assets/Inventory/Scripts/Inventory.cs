@@ -70,6 +70,7 @@ public class Inventory : MonoBehaviour
                     items[i].countItem++;
                     DisplayItem();
                     Destroy(item.gameObject);
+                    itemsOnTrigger.Remove(item);
                     return;
                 }
             }
@@ -88,6 +89,7 @@ public class Inventory : MonoBehaviour
 
                 DisplayItem();
                 Destroy(item.gameObject);
+                itemsOnTrigger.Remove(item);
                 break;
             }
         }
