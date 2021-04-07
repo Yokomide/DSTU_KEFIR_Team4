@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Items : MonoBehaviour
 {
+    public int cost;
     public string nameItem;
     public int id;
     public int countItem;

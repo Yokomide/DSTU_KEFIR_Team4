@@ -11,8 +11,8 @@ public class Merchant : MonoBehaviour
     public Inventory inventory;
 
     private Canvas _canvas;
-    private List<Items> _merchantsItems;
-    private List<Items> itemsOnTrigger;
+    public List<Items> _merchantsItems;
+    public List<Items> itemsOnTrigger;
 
     public GameObject cellContainer;
 
@@ -99,6 +99,22 @@ public class Merchant : MonoBehaviour
                 Destroy(item.gameObject);
                 itemsOnTrigger.Remove(item);
                 break;
+            }
+        }
+    }
+
+    void ToggleInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (cellContainer.activeSelf)
+            {
+                cellContainer.SetActive(false);
+            }
+            else
+            {
+                cellContainer.SetActive(true);
+
             }
         }
     }

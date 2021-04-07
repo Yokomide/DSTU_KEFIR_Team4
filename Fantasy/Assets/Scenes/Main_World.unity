@@ -13155,6 +13155,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -19523,6 +19527,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -21931,6 +21939,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -22398,6 +22410,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -27752,6 +27768,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -29338,6 +29358,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -29930,6 +29954,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 770205866388476455}
+  _merchantsItems: []
+  itemsOnTrigger: []
   cellContainer: {fileID: 841922333}
 --- !u!4 &1004479350 stripped
 Transform:
@@ -30022,6 +30048,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -36355,6 +36385,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -37446,6 +37480,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -39152,6 +39190,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -41141,6 +41183,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -46964,6 +47010,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -50390,6 +50440,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 
@@ -53447,6 +53501,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 841922334}
     m_Modifications:
+    - target: {fileID: -3558547196700492104, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 841922333}
     - target: {fileID: 1164035209866061405, guid: ddbc59db72fcd6c42823e4b97455037e, type: 3}
       propertyPath: defaultCell
       value: 

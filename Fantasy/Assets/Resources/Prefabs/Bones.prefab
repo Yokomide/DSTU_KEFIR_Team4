@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65678c1785ee5d349be14219946ec2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 2
   nameItem: Bones
   id: 7
   countItem: 0
