@@ -6,6 +6,8 @@ TagManager:
   tags:
   - InventoryTag
   - Item
+  - Enemy
+  - waypoint
   layers:
   - Default
   - TransparentFX
