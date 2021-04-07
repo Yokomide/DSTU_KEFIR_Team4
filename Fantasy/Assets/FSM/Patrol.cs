@@ -10,7 +10,7 @@ public class Patrol : NPCBase_FSM
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.OnStateEnter(animator, stateInfo, layerIndex); 
+        base.OnStateEnter(animator, stateInfo, layerIndex);
 
     }
 
@@ -20,6 +20,7 @@ public class Patrol : NPCBase_FSM
 
             if (NPC_Move.GetComponent<NavMeshAgent>() != null)
             {
+                NPC_Move.speed = 3f;
                 NPC_Move.SetDestination(direction.position);
             }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class MobAI : MonoBehaviour
 {
     Animator animAi;
+    NPCBase_FSM NPC_base;
+    public Transform direction;
     public GameObject player;
 
     public GameObject GetPlayer()
@@ -20,9 +22,12 @@ public class MobAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        direction = this.GetComponent<MobMoving>().GetGoal();
+
         if (this.CompareTag("Enemy"))
         {
             animAi.SetFloat("distance", Vector3.Distance(transform.position, player.transform.position));
         }
+         
     }
 }
