@@ -12,12 +12,14 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
     GameObject playerObject;
     GameObject inventoryObject;
     Inventory inventory;
+    Merchant merchant;
     Bag bag;
 
     void Start()
     {
         inventoryObject = GameObject.FindGameObjectWithTag("InventoryTag");
         inventory = inventoryObject.GetComponent<Inventory>();
+        merchant = inventoryObject.GetComponent<Merchant>();
     }
 
 
@@ -35,7 +37,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                 }
                 else
                 {
-                    shop.GetComponent<Merchant>().AddItem(inventory.items[index].GetComponent<Items>());
+                    merchant.AddItem(inventory.items[index]);
                 }
                 if (inventory.items[index].countItem > 1)
                 {
@@ -45,6 +47,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                 {
                     inventory.items[index] = new Items();
                 }
+                merchant.DisplayItem();
                 inventory.DisplayItem();
             }
         }

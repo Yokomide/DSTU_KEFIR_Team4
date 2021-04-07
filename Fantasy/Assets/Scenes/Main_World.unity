@@ -24040,7 +24040,7 @@ PrefabInstance:
     - target: {fileID: 8947278975237475603, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1277601252}
+      objectReference: {fileID: 1883823154}
     - target: {fileID: 8947278975237475603, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: WeaponTrail
       value: 
@@ -29941,22 +29941,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1248874732774416, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
   m_PrefabInstance: {fileID: 1966224954}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1004479349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004479348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df37d2ee344be5846aed7593ffb49fb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 770205866388476455}
-  _merchantsItems: []
-  itemsOnTrigger: []
-  cellContainer: {fileID: 841922333}
 --- !u!4 &1004479350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4155741821396558, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
@@ -50933,8 +50917,10 @@ MonoBehaviour:
   HeroHp: 250
   maxHeroHp: 250
   Lvl: 0
+  money: 0
   lvlBar: {fileID: 227233973}
   level: {fileID: 547965737}
+  moneyText: {fileID: 30852722}
   _ExpNum: 0
 --- !u!114 &1883823160
 MonoBehaviour:
@@ -53003,6 +52989,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 12.726
       objectReference: {fileID: 0}
+    - target: {fileID: 4231030397342984, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9948547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231030397342984, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.07865374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231030397342984, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.03820028
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231030397342984, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.05117164
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231030397342984, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 8.777
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231030397342984, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 4.879
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231030397342984, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 6.264
+      objectReference: {fileID: 0}
     - target: {fileID: 4509934612791630, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.924252
@@ -53339,6 +53353,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7332271441458957414, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1883823154}
+    - target: {fileID: 7332271441458957414, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 770205866388476455}
+    - target: {fileID: 7332271441458957414, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: cellContainer
+      value: 
+      objectReference: {fileID: 841922333}
+    - target: {fileID: 7332271441458957414, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
+      propertyPath: shopContainer
+      value: 
+      objectReference: {fileID: 841922333}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
 --- !u!1001 &1971017606
@@ -57543,7 +57573,6 @@ MonoBehaviour:
   items: []
   itemsOnTrigger: []
   cellContainer: {fileID: 770205866682171812}
-  shopContainer: {fileID: 841922333}
 --- !u!1 &770205866388476474
 GameObject:
   m_ObjectHideFlags: 0
@@ -57557,6 +57586,7 @@ GameObject:
   - component: {fileID: 770205866388476475}
   - component: {fileID: 770205866388476455}
   - component: {fileID: 770205866388476452}
+  - component: {fileID: 770205866388476476}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: InventoryTag
@@ -57581,6 +57611,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &770205866388476476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770205866388476474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df37d2ee344be5846aed7593ffb49fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 770205866388476455}
+  _merchantsItems: []
+  itemsOnTrigger: []
+  shopContainer: {fileID: 841922333}
+  player: {fileID: 1883823154}
 --- !u!114 &770205866682171808
 MonoBehaviour:
   m_ObjectHideFlags: 0

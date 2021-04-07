@@ -14,22 +14,24 @@ public class Merchant : MonoBehaviour
     public List<Items> _merchantsItems;
     public List<Items> itemsOnTrigger;
 
-    public GameObject cellContainer;
+    public GameObject shopContainer;
+    public GameObject player;
+
 
 
     private void Start()
     {
-        cellContainer.SetActive(false);
+        shopContainer.SetActive(false);
         _canvas = GetComponent<Canvas>();
         itemsOnTrigger = new List<Items>();
         _merchantsItems = new List<Items>();
-        for (int i = 0; i < cellContainer.transform.childCount; i++)
+        for (int i = 0; i < shopContainer.transform.childCount; i++)
         {
             _merchantsItems.Add(new Items());
         }
-        for (int i = 0; i < cellContainer.transform.childCount; i++)
+        for (int i = 0; i < shopContainer.transform.childCount; i++)
         {
-            cellContainer.transform.GetChild(i).GetComponent<CurrentItem>().index = i;
+            shopContainer.transform.GetChild(i).GetComponent<CurrentItem>().index = i;
         }
     }
     private void Update()
@@ -44,7 +46,7 @@ public class Merchant : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player")) _isHere = false;
-        cellContainer.SetActive(_isHere);
+        shopContainer.SetActive(_isHere);
     }
 
     private void ToggleShopMenu()
@@ -52,11 +54,12 @@ public class Merchant : MonoBehaviour
         if (_isHere && Input.GetKeyDown(KeyCode.T))
         {
             _showShop = !_showShop;
-            cellContainer.SetActive(_showShop);
+            shopContainer.SetActive(_showShop);
         }
     }
     public void AddItem(Items item)
     {
+        player.GetComponent<MainHeroHp>().money += item.cost;
         if (item.isStackable)
         {
             AddStackableItem(item);
@@ -77,8 +80,6 @@ public class Merchant : MonoBehaviour
                 {
                     _merchantsItems[i].countItem++;
                     DisplayItem();
-                    Destroy(item.gameObject);
-                    itemsOnTrigger.Remove(item);
                     return;
                 }
             }
@@ -96,34 +97,17 @@ public class Merchant : MonoBehaviour
                 _merchantsItems[i].countItem = 1;
 
                 DisplayItem();
-                Destroy(item.gameObject);
-                itemsOnTrigger.Remove(item);
                 break;
             }
         }
     }
 
-    void ToggleInventory()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (cellContainer.activeSelf)
-            {
-                cellContainer.SetActive(false);
-            }
-            else
-            {
-                cellContainer.SetActive(true);
-
-            }
-        }
-    }
 
     public void DisplayItem()
     {
         for (int i = 0; i < _merchantsItems.Count; i++)
         {
-            Transform cell = cellContainer.transform.GetChild(i);
+            Transform cell = shopContainer.transform.GetChild(i);
             Transform icon = cell.GetChild(0);
             Transform count = icon.GetChild(0);
             Text txt = count.GetComponent<Text>();

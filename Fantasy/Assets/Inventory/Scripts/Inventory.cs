@@ -11,7 +11,6 @@ public class Inventory : MonoBehaviour
     public List<Items> itemsOnTrigger;
 
     public GameObject cellContainer;
-    public GameObject shopContainer;
 
 
     void Start()

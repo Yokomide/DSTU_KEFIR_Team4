@@ -6,9 +6,11 @@ public class MainHeroHp : MonoBehaviour
     public float HeroHp = 250f;
     public float maxHeroHp = 250f;
     public float Lvl = 0;
+    public float money = 0;
 
     public Image lvlBar;
     public Text level;
+    public Text moneyText;
 
     public float _ExpNum = 0;
 
@@ -24,6 +26,7 @@ public class MainHeroHp : MonoBehaviour
         }
 
         level.text = "LEVEL: " + Lvl;
+        moneyText.text = "$" + money;
         lvlBar.fillAmount = _ExpNum / 100;
         if (_ExpNum >= 100 + Lvl * 10)
         {
