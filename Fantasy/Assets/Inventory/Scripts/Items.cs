@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Items : MonoBehaviour
 {
+    public int cost;
     public string nameItem;
     public int id;
     public int countItem;
@@ -21,7 +22,6 @@ public class Items : MonoBehaviour
 
     public GameObject Inventory;
 
-
     void Start()
     {
         
@@ -33,7 +33,7 @@ public class Items : MonoBehaviour
     {
         if (inventory.itemsOnTrigger.Count != 0)
         {
-            if (Input.GetKeyDown(KeyCode.E) )
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 inventory.AddItem(inventory.itemsOnTrigger[0]);
             }

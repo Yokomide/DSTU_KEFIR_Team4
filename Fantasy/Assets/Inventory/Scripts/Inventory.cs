@@ -30,20 +30,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(transform.position, ray.direction);
-        RaycastHit hit;
         ToggleInventory();
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider.GetComponent<Items>())
-                {
-                    AddItem(hit.collider.GetComponent<Items>());
-                }
-            }
-        }
     }
 
 
@@ -70,6 +57,7 @@ public class Inventory : MonoBehaviour
                     items[i].countItem++;
                     DisplayItem();
                     Destroy(item.gameObject);
+                    itemsOnTrigger.Remove(item);
                     return;
                 }
             }
@@ -88,6 +76,7 @@ public class Inventory : MonoBehaviour
 
                 DisplayItem();
                 Destroy(item.gameObject);
+                itemsOnTrigger.Remove(item);
                 break;
             }
         }

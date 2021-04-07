@@ -9,7 +9,6 @@ public class HPBar : MonoBehaviour
     public Image bar;
     public float fill;
     public GameObject player;
-    
 
     void Start()
     {
@@ -18,6 +17,6 @@ public class HPBar : MonoBehaviour
 
     void Update()
     {
-        bar.fillAmount = player.GetComponent<MainHeroHp>().HeroHp/100;
+        bar.fillAmount = player.GetComponent<MainHeroHp>().HeroHp/250;
     }
 }

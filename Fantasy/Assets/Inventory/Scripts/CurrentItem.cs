@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,16 +7,19 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
 {
     [HideInInspector]
     public int index;
+    public GameObject shop;
 
     GameObject playerObject;
     GameObject inventoryObject;
     Inventory inventory;
+    Merchant merchant;
     Bag bag;
 
     void Start()
     {
         inventoryObject = GameObject.FindGameObjectWithTag("InventoryTag");
         inventory = inventoryObject.GetComponent<Inventory>();
+        merchant = inventoryObject.GetComponent<Merchant>();
     }
 
 
@@ -28,9 +29,16 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
         {
             if (inventory.items[index].id != 0)
             {
-                GameObject droppedObject = Instantiate(Resources.Load<GameObject>(inventory.items[index].pathPrefab));
-                playerObject = GameObject.FindGameObjectWithTag("Player");
-                droppedObject.transform.position = playerObject.transform.position + new Vector3(-1, +1, 0);
+                if (!shop.activeSelf)
+                {
+                    GameObject droppedObject = Instantiate(Resources.Load<GameObject>(inventory.items[index].pathPrefab));
+                    playerObject = GameObject.FindGameObjectWithTag("Player");
+                    droppedObject.transform.position = playerObject.transform.position + new Vector3(-1, +1, 0);
+                }
+                else
+                {
+                    merchant.AddItem(inventory.items[index]);
+                }
                 if (inventory.items[index].countItem > 1)
                 {
                     inventory.items[index].countItem--;
@@ -39,6 +47,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                 {
                     inventory.items[index] = new Items();
                 }
+                merchant.DisplayItem();
                 inventory.DisplayItem();
             }
         }

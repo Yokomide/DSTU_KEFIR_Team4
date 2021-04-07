@@ -50,8 +50,9 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                     StartCoroutine(HitAnimDelay(_enemies[i].GetComponent<Collider>()));
 
-                    if (_enemies[i].GetComponent<EnemyStats>().hp < 0)
+                    if (!_enemies[i].GetComponent<EnemyStats>().isAlive)
                     {
+                        player.GetComponent<MainHeroHp>()._ExpNum += Random.Range(50,70);
                         //Активация триггера для начала анимации смерти.
                         DeathAnim.SetTrigger("Active");
 
@@ -64,7 +65,6 @@ public class AttackRadiusTrigger : MonoBehaviour
                         Destroy(_enemies[i].GetComponent<NavMove>());
                         Destroy(_enemies[i].GetComponent<Rigidbody>());
                         Destroy(_enemies[i].GetComponent<MobMoving>());
-                        Destroy(_enemies[i].GetComponent<BoxCollider>());
                         _enemies.RemoveAt(i);
 
                     }
@@ -82,7 +82,7 @@ public class AttackRadiusTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         isTriggered = true;
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && other.GetComponent<EnemyStats>().isAlive)
         {
             bool _isHere = false;
             GameObject temp = other.gameObject;
@@ -100,7 +100,7 @@ public class AttackRadiusTrigger : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && other.GetComponent<EnemyStats>().isAlive)
         {
             GameObject temp = other.gameObject;
             for (int i = 0; i < _enemies.Count; i++)
