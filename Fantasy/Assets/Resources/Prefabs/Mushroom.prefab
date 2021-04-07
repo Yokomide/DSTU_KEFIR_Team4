@@ -116,6 +116,7 @@ MonoBehaviour:
   countItem: 0
   isStackable: 1
   maxStackSize: 4
+  lootType: middle
   descriptionItem: 
   pathIcon: Icons/mushroom
   pathPrefab: Prefabs/Mushroom

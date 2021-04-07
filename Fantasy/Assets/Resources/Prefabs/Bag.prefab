@@ -104,6 +104,7 @@ MonoBehaviour:
   countItem: 0
   isStackable: 0
   maxStackSize: 1
+  lootType: middle
   descriptionItem: 
   pathIcon: Icons/bag
   pathPrefab: Prefabs/Bag

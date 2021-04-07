@@ -116,6 +116,7 @@ MonoBehaviour:
   countItem: 0
   isStackable: 1
   maxStackSize: 2
+  lootType: high
   descriptionItem: 
   pathIcon: Icons/spellBook
   pathPrefab: Prefabs/SpellBook

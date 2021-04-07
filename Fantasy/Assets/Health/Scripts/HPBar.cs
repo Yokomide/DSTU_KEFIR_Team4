@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +15,6 @@ public class HPBar : MonoBehaviour
 
     void Update()
     {
-        bar.fillAmount = player.GetComponent<MainHeroHp>().HeroHp/250;
+        bar.fillAmount = player.GetComponent<MainHeroHp>().HeroHp / 250;
     }
 }

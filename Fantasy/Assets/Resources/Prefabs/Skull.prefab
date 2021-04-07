@@ -103,6 +103,7 @@ MonoBehaviour:
   countItem: 0
   isStackable: 1
   maxStackSize: 2
+  lootType: low
   descriptionItem: 
   pathIcon: Icons/skull
   pathPrefab: Prefabs/Skull

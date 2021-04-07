@@ -103,6 +103,7 @@ MonoBehaviour:
   countItem: 0
   isStackable: 0
   maxStackSize: 0
+  lootType: middle
   descriptionItem: 
   pathIcon: Icons/potion
   pathPrefab: Prefabs/Potion

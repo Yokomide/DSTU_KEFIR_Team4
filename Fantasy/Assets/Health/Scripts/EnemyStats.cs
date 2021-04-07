@@ -29,7 +29,8 @@ public class EnemyStats : MonoBehaviour
         _hpLine.GetComponent<MeshRenderer>().enabled = true;
         hp -= Random.Range(10, 20);
         _hpLine.GetComponent<Transform>().localScale = new Vector3(2 * hp / _maxHp, 0.25f, 0.01f);
-        if (hp < 0) {
+        if (hp < 0)
+        {
             Destroy(_hpLine);
             isAlive = false;
         }

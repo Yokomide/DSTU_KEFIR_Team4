@@ -103,6 +103,7 @@ MonoBehaviour:
   countItem: 0
   isStackable: 0
   maxStackSize: 1
+  lootType: high
   descriptionItem: 
   pathIcon: Icons/necklace_Flat
   pathPrefab: Prefabs/Necklace_Flat

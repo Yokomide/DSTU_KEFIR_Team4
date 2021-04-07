@@ -103,6 +103,7 @@ MonoBehaviour:
   countItem: 0
   isStackable: 1
   maxStackSize: 3
+  lootType: low
   descriptionItem: 
   pathIcon: Icons/bones
   pathPrefab: Prefabs/Bones
