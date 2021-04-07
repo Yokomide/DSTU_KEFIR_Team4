@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
     public List<Items> itemsOnTrigger;
 
     public GameObject cellContainer;
+    public GameObject shopContainer;
 
 
     void Start()
@@ -30,20 +31,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(transform.position, ray.direction);
-        RaycastHit hit;
         ToggleInventory();
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider.GetComponent<Items>())
-                {
-                    AddItem(hit.collider.GetComponent<Items>());
-                }
-            }
-        }
     }
 
 

@@ -27,6 +27,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
         {
             if (inventory.items[index].id != 0 && shop.activeSelf)
             {
+                shop.GetComponent<Merchant>().AddItem(inventory.items[index]);
                 if (inventory.items[index].countItem > 1)
                 {
                     inventory.items[index].countItem--;
@@ -35,7 +36,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                 {
                     inventory.items[index] = new Items();
                 }
-                inventory.DisplayItem();
+                shop.GetComponent<Merchant>().DisplayItem();
             }
             else if (inventory.items[index].id != 0)
             {

@@ -10,9 +10,9 @@ public class Merchant : MonoBehaviour
 
     public Inventory inventory;
 
-
     private Canvas _canvas;
     private List<Items> _merchantsItems;
+    private List<Items> itemsOnTrigger;
 
     public GameObject cellContainer;
 
@@ -21,6 +21,7 @@ public class Merchant : MonoBehaviour
     {
         cellContainer.SetActive(false);
         _canvas = GetComponent<Canvas>();
+        itemsOnTrigger = new List<Items>();
         _merchantsItems = new List<Items>();
         for (int i = 0; i < cellContainer.transform.childCount; i++)
         {
@@ -52,6 +53,86 @@ public class Merchant : MonoBehaviour
         {
             _showShop = !_showShop;
             cellContainer.SetActive(_showShop);
+        }
+    }
+    public void AddItem(Items item)
+    {
+        if (item.isStackable)
+        {
+            AddStackableItem(item);
+        }
+        else
+        {
+            AddUnstackableItem(item);
+        }
+    }
+
+    void AddStackableItem(Items item)
+    {
+        for (int i = 0; i < _merchantsItems.Count; i++)
+        {
+            if (_merchantsItems[i].id == item.id)
+            {
+                if (_merchantsItems[i].countItem < item.maxStackSize)
+                {
+                    _merchantsItems[i].countItem++;
+                    DisplayItem();
+                    Destroy(item.gameObject);
+                    itemsOnTrigger.Remove(item);
+                    return;
+                }
+            }
+        }
+        AddUnstackableItem(item);
+    }
+
+    void AddUnstackableItem(Items item)
+    {
+        for (int i = 0; i < _merchantsItems.Count; i++)
+        {
+            if (_merchantsItems[i].id == 0)
+            {
+                _merchantsItems[i] = item;
+                _merchantsItems[i].countItem = 1;
+
+                DisplayItem();
+                Destroy(item.gameObject);
+                itemsOnTrigger.Remove(item);
+                break;
+            }
+        }
+    }
+
+    public void DisplayItem()
+    {
+        for (int i = 0; i < _merchantsItems.Count; i++)
+        {
+            Transform cell = cellContainer.transform.GetChild(i);
+            Transform icon = cell.GetChild(0);
+            Transform count = icon.GetChild(0);
+            Text txt = count.GetComponent<Text>();
+
+            Image img = icon.GetComponent<Image>();
+            if (_merchantsItems[i].id != 0)
+            {
+                img.enabled = true;
+                img.sprite = Resources.Load<Sprite>(_merchantsItems[i].pathIcon);
+                if (_merchantsItems[i].countItem > 1)
+                {
+                    txt.text = _merchantsItems[i].countItem.ToString();
+                }
+                else
+                {
+                    txt.text = null;
+                }
+            }
+            else
+            {
+                img.enabled = false;
+                img.sprite = null;
+                txt.text = null;
+
+            }
         }
     }
 }
