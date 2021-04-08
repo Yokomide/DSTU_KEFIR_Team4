@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    private float _maxHp = 100;
+    public float maxHp = 100;
     public float hp;
     private AttackRadiusTrigger _beingAttacked;
 
     public GameObject hpBar;
-    public Transform linePos;
+    Transform linePos;
     private GameObject _hpLine;
 
     [HideInInspector]
@@ -25,7 +25,7 @@ public class EnemyStats : MonoBehaviour
         if (isAlive)
         {
             _hpLine.GetComponent<Transform>().position = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z);
-            _hpLine.GetComponent<Transform>().localScale = new Vector3( hp / _maxHp, 0.1f,0.01f);
+            _hpLine.GetComponent<Transform>().localScale = new Vector3( hp / maxHp, 0.1f,0.01f);
             _hpLine.GetComponent<Transform>().rotation = Quaternion.identity;
         }
     }
@@ -39,7 +39,7 @@ public class EnemyStats : MonoBehaviour
         StartCoroutine(AttackedDelay(heroDamage));
         //_hpLineRed.GetComponent<MeshRenderer>().material.color = Color.red;
 
-        _hpLine.GetComponent<Transform>().localScale = new Vector3(hp / _maxHp, 0.25f, 0.01f);
+        _hpLine.GetComponent<Transform>().localScale = new Vector3(hp / maxHp, 0.25f, 0.01f);
         if (hp<=0)
         {
             Destroy(_hpLine);

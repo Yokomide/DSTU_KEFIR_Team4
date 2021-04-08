@@ -4924,8 +4924,7 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 571815809}
-    m_RemovedComponents:
-    - {fileID: 1339619485096014425, guid: 534b7b0f42c1d304299f3f3762536fb4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 534b7b0f42c1d304299f3f3762536fb4, type: 3}
 --- !u!1001 &190354477
 PrefabInstance:
@@ -7390,22 +7389,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &274910669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274910663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5dcf4f2e088ab64a808061080005108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {fileID: 0}
-  player: {fileID: 1883823154}
-  maxHP: 0
-  HP: 0
 --- !u!1001 &275544759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29976,6 +29959,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3320785, y: 2.7876668, z: 3.764314}
   m_Center: {x: 0.05478725, y: 0.89383304, z: 0.4052049}
+--- !u!114 &1004479353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004479348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0843d6272eeb9fb428c263ae1e1e6027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 10000000
+  hp: 0
+  hpBar: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
+  isAlive: 1
 --- !u!4 &1005006858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4139199580613414, guid: 085524390fafd6b4e9fed9d924db437b, type: 3}
@@ -41865,7 +41864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 193682, guid: aea27ca7a35042c419065833e8daf224, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Citizen
       objectReference: {fileID: 0}
     - target: {fileID: 455556, guid: aea27ca7a35042c419065833e8daf224, type: 3}
       propertyPath: m_RootOrder
@@ -41919,8 +41918,11 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 1788722210}
-    m_RemovedComponents:
-    - {fileID: 6728789915298191110, guid: aea27ca7a35042c419065833e8daf224, type: 3}
+    - target: {fileID: 5451047032851744706, guid: aea27ca7a35042c419065833e8daf224, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1883823154}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aea27ca7a35042c419065833e8daf224, type: 3}
 --- !u!4 &1462700215 stripped
 Transform:
