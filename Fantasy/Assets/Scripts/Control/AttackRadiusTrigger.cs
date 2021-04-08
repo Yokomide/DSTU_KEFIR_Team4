@@ -47,14 +47,23 @@ public class AttackRadiusTrigger : MonoBehaviour
                     enemies[i].GetComponent<EnemyStats>().Attacked(player.GetComponent<MainHeroHp>().damage);
 
                     //Запуск анимации получения урона с задержкой
-
-                    StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
+                    if (enemies[i].GetComponent<EnemyStats>().isAlive)
+                    {
+                        StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
+                    }
 
                     if (!enemies[i].GetComponent<EnemyStats>().isAlive)
                     {
                         player.GetComponent<MainHeroHp>()._ExpNum += Random.Range(50, 70);
                         //Активация триггера для начала анимации смерти.
                         DeathAnim.SetTrigger("Active");
+
+                        for (int k = 0; k < enemies[i].GetComponent<EnemyLootDrop>().countItemsToDrop; k++)
+                        {
+                            Debug.Log(k);
+                            Instantiate(enemies[i].GetComponent<EnemyLootDrop>().itemsToDrop[k].gameObject, enemies[i].GetComponent<Transform>());
+
+                        }
 
                         //Остановка следования к точке
                         agent.isStopped = true;

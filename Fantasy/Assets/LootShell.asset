@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a308b4242bf37545b7217a025b7d532, type: 3}
+  m_Name: LootShell
+  m_EditorClassIdentifier: 
+  CommonItems:
+  - {fileID: 8484020605651004218, guid: d8bb481b26fa88749af7decfb08e8319, type: 3}
+  - {fileID: 1993093291295802865, guid: 5c3b4a6e188bb594fa10d383ee8edd5b, type: 3}
+  RareItems:
+  - {fileID: 8732605197071047313, guid: 750ef314a62eecb4283313cdf986616f, type: 3}
+  - {fileID: 4067518590868374785, guid: 62bfcead9eb9b9048a533a87f3cd205d, type: 3}
+  - {fileID: 7950164936467085716, guid: 56f45d120fcf11d448c9569594639ca3, type: 3}
+  EpicItems:
+  - {fileID: 226469970775394615, guid: d5bafe3aa4cc2e04b9836635b2244f1b, type: 3}
+  - {fileID: 1207253950499025878, guid: acc42f275fc545849bdf3795dd095077, type: 3}
