@@ -48,7 +48,8 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                     //Запуск анимации получения урона с задержкой
 
-                    StartCoroutine(HitAnimDelay(_enemies[i].GetComponent<Collider>()));
+
+                        StartCoroutine(HitAnimDelay(_enemies[i].GetComponent<Collider>()));
 
                     if (!_enemies[i].GetComponent<EnemyStats>().isAlive)
                     {
@@ -61,6 +62,8 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                         //Смерть. Убирает компоненты, благодаря которым с объектом можно взаимодействовать.
 
+
+                        Destroy(_enemies[i].GetComponent<Collider>());
                         Destroy(_enemies[i].GetComponent<EnemyStats>());
                         Destroy(_enemies[i].GetComponent<NavMove>());
                         Destroy(_enemies[i].GetComponent<Rigidbody>());
@@ -81,39 +84,45 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isTriggered = true;
-        if (other.CompareTag("Enemy") && other.GetComponent<EnemyStats>().isAlive)
+        if (other.GetComponent<Collider>() != null)
         {
-            bool _isHere = false;
-            GameObject temp = other.gameObject;
-            for (int i = 0; i < _enemies.Count; i++)
+            isTriggered = true;
+            if (other.CompareTag("Enemy") && other.GetComponent<EnemyStats>().isAlive)
             {
-                if (_enemies[i] == temp)
+                bool _isHere = false;
+                GameObject temp = other.gameObject;
+                for (int i = 0; i < _enemies.Count; i++)
                 {
-                    _isHere = true;
-                    break;
-                }
+                    if (_enemies[i] == temp)
+                    {
+                        _isHere = true;
+                        break;
+                    }
 
+                }
+                if (!_isHere) _enemies.Add(temp);
             }
-            if (!_isHere) _enemies.Add(temp);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy") && other.GetComponent<EnemyStats>().isAlive)
+        if (other.GetComponent<Collider>() != null)
         {
-            GameObject temp = other.gameObject;
-            for (int i = 0; i < _enemies.Count; i++)
+            if (other.CompareTag("Enemy") && other.GetComponent<EnemyStats>().isAlive)
             {
-                if (_enemies[i] == temp)
+                GameObject temp = other.gameObject;
+                for (int i = 0; i < _enemies.Count; i++)
                 {
-                    _enemies.RemoveAt(i);
-                    break;
-                }
+                    if (_enemies[i] == temp)
+                    {
+                        _enemies.RemoveAt(i);
+                        break;
+                    }
 
+                }
             }
+            isTriggered = false;
         }
-        isTriggered = false;
     }
 
 
@@ -121,15 +130,16 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     IEnumerator HitAnimDelay(Collider other)
     {
-
-        other.GetComponent<NavMeshAgent>().speed = 0f;
-        //Задержка анимации получения урона
-        yield return new WaitForSeconds(0.4f);
-        DeathAnim.Play("Hit");
-        bloodPos = other.GetComponent<Transform>();
-        Instantiate(bloodSplat, bloodPos);
-        other.GetComponent<NavMeshAgent>().speed = _NavMeshSpeedTemp;
-
+        if (other.GetComponent<Collider>() != null)
+        {
+            other.GetComponent<NavMeshAgent>().speed = 0f;
+            //Задержка анимации получения урона
+            yield return new WaitForSeconds(0.4f);
+            DeathAnim.Play("Hit");
+            bloodPos = other.GetComponent<Transform>();
+            Instantiate(bloodSplat, bloodPos);
+            other.GetComponent<NavMeshAgent>().speed = _NavMeshSpeedTemp;
+        }
     }
 
     IEnumerator StopOnAttack()

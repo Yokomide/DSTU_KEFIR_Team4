@@ -22,12 +22,14 @@ public class MobAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = this.GetComponent<MobMoving>().GetGoal();
-
-        if (this.CompareTag("Enemy"))
+        if (this.GetComponent<MobMoving>() != null)
         {
-            animAi.SetFloat("distance", Vector3.Distance(transform.position, player.transform.position));
+            direction = this.GetComponent<MobMoving>().GetGoal();
+
+            if (this.CompareTag("Enemy"))
+            {
+                animAi.SetFloat("distance", Vector3.Distance(transform.position, player.transform.position));
+            }
         }
-         
     }
 }
