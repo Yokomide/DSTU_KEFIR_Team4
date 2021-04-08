@@ -8,7 +8,8 @@ public class MobAI : MonoBehaviour
     NPCBase_FSM NPC_base;
     public Transform direction;
     public GameObject player;
-
+    public float maxHP;
+    public float HP;
     public GameObject GetPlayer()
     {
         return player;
@@ -17,11 +18,19 @@ public class MobAI : MonoBehaviour
     void Start()
     {
         animAi = GetComponent<Animator>();
+        maxHP = this.GetComponent<EnemyStats>().maxHp;
+        HP = this.GetComponent<EnemyStats>().hp;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (this.CompareTag("Citizen") && maxHP > HP)
+        {
+            maxHP = HP;
+            animAi.SetBool("escape", true);
+            
+        }
         if (this.GetComponent<MobMoving>() != null)
         {
             direction = this.GetComponent<MobMoving>().GetGoal();

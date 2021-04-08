@@ -46,7 +46,7 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                     _enemies[i].GetComponent<EnemyStats>().Attacked();
 
-                    //Запуск анимации получения урона с задержкой
+                    //Р—Р°РїСѓСЃРє Р°РЅРёРјР°С†РёРё РїРѕР»СѓС‡РµРЅРёСЏ СѓСЂРѕРЅР° СЃ Р·Р°РґРµСЂР¶РєРѕР№
 
 
                         StartCoroutine(HitAnimDelay(_enemies[i].GetComponent<Collider>()));
@@ -54,13 +54,13 @@ public class AttackRadiusTrigger : MonoBehaviour
                     if (!_enemies[i].GetComponent<EnemyStats>().isAlive)
                     {
                         player.GetComponent<MainHeroHp>()._ExpNum += Random.Range(50,70);
-                        //Активация триггера для начала анимации смерти.
+                        //РђРєС‚РёРІР°С†РёСЏ С‚СЂРёРіРіРµСЂР° РґР»СЏ РЅР°С‡Р°Р»Р° Р°РЅРёРјР°С†РёРё СЃРјРµСЂС‚Рё.
                         DeathAnim.SetTrigger("Active");
 
-                        //Остановка следования к точке
+                        //РћСЃС‚Р°РЅРѕРІРєР° СЃР»РµРґРѕРІР°РЅРёСЏ Рє С‚РѕС‡РєРµ
                         agent.isStopped = true;
 
-                        //Смерть. Убирает компоненты, благодаря которым с объектом можно взаимодействовать.
+                        //РЎРјРµСЂС‚СЊ. РЈР±РёСЂР°РµС‚ РєРѕРјРїРѕРЅРµРЅС‚С‹, Р±Р»Р°РіРѕРґР°СЂСЏ РєРѕС‚РѕСЂС‹Рј СЃ РѕР±СЉРµРєС‚РѕРј РјРѕР¶РЅРѕ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРѕРІР°С‚СЊ.
 
 
                         Destroy(_enemies[i].GetComponent<Collider>());
@@ -133,7 +133,7 @@ public class AttackRadiusTrigger : MonoBehaviour
         if (other.GetComponent<Collider>() != null)
         {
             other.GetComponent<NavMeshAgent>().speed = 0f;
-            //Задержка анимации получения урона
+            //Р—Р°РґРµСЂР¶РєР° Р°РЅРёРјР°С†РёРё РїРѕР»СѓС‡РµРЅРёСЏ СѓСЂРѕРЅР°
             yield return new WaitForSeconds(0.4f);
             DeathAnim.Play("Hit");
             bloodPos = other.GetComponent<Transform>();

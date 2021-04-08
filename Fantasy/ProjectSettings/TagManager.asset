@@ -8,6 +8,7 @@ TagManager:
   - Item
   - Enemy
   - waypoint
+  - Citizen
   layers:
   - Default
   - TransparentFX

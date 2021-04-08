@@ -7399,6 +7399,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {fileID: 0}
   player: {fileID: 1883823154}
+  maxHP: 0
+  HP: 0
 --- !u!1001 &275544759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41992,6 +41994,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {fileID: 0}
   player: {fileID: 1883823154}
+  maxHP: 0
+  HP: 0
 --- !u!1001 &1465789860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54832,6 +54836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {fileID: 0}
   player: {fileID: 1883823154}
+  maxHP: 0
+  HP: 0
 --- !u!4 &2042903655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4614316209816462, guid: b0039c0b258967342bdb96afc637b6cb, type: 3}
@@ -56725,7 +56731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 136616, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Citizen
       objectReference: {fileID: 0}
     - target: {fileID: 482130, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
       propertyPath: m_RootOrder
@@ -56851,6 +56857,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {fileID: 0}
   player: {fileID: 1883823154}
+  maxHP: 0
+  HP: 0
 --- !u!4 &2122475191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 482130, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
