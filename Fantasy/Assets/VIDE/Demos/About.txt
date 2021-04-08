@@ -1,0 +1,13 @@
+Demos:
+
+Player Interaction: The main and biggest scene in 3rd person view demonstrating various types of dialogues and interactions.
+
+Template: A demo using the Template_UIManager script, the script that will get you started.
+
+Localization: A simple UI Manager showing a natively-localized dialogue in action. 
+
+MultiInstance:A demo showing what you can do with the VD2 class to have multiple instances of dialogues running at the same time.
+
+Narration: A simple demo working with the Navigation system. 
+
+VeryBasic: The simplest demo using the GUI class.

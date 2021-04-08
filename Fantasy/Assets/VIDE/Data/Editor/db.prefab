@@ -1,0 +1,951 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &146666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 499132}
+  - component: {fileID: 11416270}
+  m_Layer: 0
+  m_Name: db
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &499132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11416270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268dc70b105993846a123be43345df63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileIndex: 0
+  skinIndex: 0
+  loadTag: 
+  startID: 1
+  curFocusID: 1
+  currentID: 79710
+  autosave: 1
+  previewPanning: 0
+  currentDiag: 0
+  locEdit: 0
+  pNodeID: 18
+  aNodeID: 2
+  S_playerDiags:
+  - commentCount: 2
+    s_comment:
+    - text: Chill out, man!
+      extraData: 
+      inputSetIndex: 0
+      outputNodeIndex: 12
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: What? What is this place?
+      extraData: 
+      inputSetIndex: 0
+      outputNodeIndex: 13
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 81
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 5
+    rect:
+      serializedVersion: 2
+      x: 1240
+      y: -60
+      width: 349
+      height: 189
+    pTag: 
+    expand: 1
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 3
+    s_comment:
+    - text: "You shouldn't be here either\t"
+      extraData: 
+      inputSetIndex: 1
+      outputNodeIndex: 13
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: I spawned here!
+      extraData: 
+      inputSetIndex: 1
+      outputNodeIndex: 10
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 81
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Yes I should.
+      extraData: 
+      inputSetIndex: 1
+      outputNodeIndex: 9
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 103
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 6
+    rect:
+      serializedVersion: 2
+      x: 1280
+      y: 220
+      width: 349
+      height: 211
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: d54f1dfd3256b57488f3b348dca8b2bf, type: 3}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 2
+    s_comment:
+    - text: (Ha- right....)
+      extraData: 
+      inputSetIndex: 2
+      outputNodeIndex: 11
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: '[Leave]'
+      extraData: 
+      inputSetIndex: 2
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 10
+    rect:
+      serializedVersion: 2
+      x: 2190
+      y: 390
+      width: 349
+      height: 143
+    pTag: 
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 2
+    s_comment:
+    - text: 'Chiiiill.... '
+      extraData: 
+      inputSetIndex: 3
+      outputNodeIndex: 15
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Ugh... bye.
+      extraData: 
+      inputSetIndex: 3
+      outputNodeIndex: 8
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 81
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 13
+    rect:
+      serializedVersion: 2
+      x: 2190
+      y: 20
+      width: 349
+      height: 189
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: d54f1dfd3256b57488f3b348dca8b2bf, type: 3}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 3
+    s_comment:
+    - text: Woah WOAH
+      extraData: 
+      inputSetIndex: 4
+      outputNodeIndex: 5
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: N-no.. wait!
+      extraData: 
+      inputSetIndex: 4
+      outputNodeIndex: 6
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 81
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: ...
+      extraData: 
+      inputSetIndex: 4
+      outputNodeIndex: 7
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 103
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 0
+    rect:
+      serializedVersion: 2
+      x: 200
+      y: -120
+      width: 349
+      height: 165
+    pTag: 
+    expand: 0
+    sprite: {fileID: 21300000, guid: d54f1dfd3256b57488f3b348dca8b2bf, type: 3}
+    vars:
+    - 
+    varKeys:
+    - Key1
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: You're not getting out of here alive!
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: 0
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    rect:
+      serializedVersion: 2
+      x: 760
+      y: -230
+      width: 349
+      height: 129
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 0}
+    vars:
+    - SomeString
+    - 12354
+    - false
+    - 1.52
+    varKeys:
+    - Key1
+    - Key2
+    - Key3
+    - Key4
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: No, what? You shouldn't be here.
+      extraData: ExtraData
+      inputSetIndex: 6
+      outputNodeIndex: 1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 3
+    rect:
+      serializedVersion: 2
+      x: 780
+      y: -60
+      width: 349
+      height: 121
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: That's it! Keep your intrusive mouth shut!
+      extraData: ExtraData
+      inputSetIndex: 7
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 4
+    rect:
+      serializedVersion: 2
+      x: 770
+      y: 110
+      width: 349
+      height: 129
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 21300000, guid: 9e5eefef3b3fdff40a66f9c9db42ac9e, type: 3}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 3
+    s_comment:
+    - text: You do that!
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: I'm sick of these caps spawning wherever they please.
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Begone!
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 7
+    rect:
+      serializedVersion: 2
+      x: 2670
+      y: 160
+      width: 349
+      height: 173
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: No, you don't. That's but a filthy lie. Go away, kid.
+      extraData: ExtraData
+      inputSetIndex: 9
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 8
+    rect:
+      serializedVersion: 2
+      x: 1770
+      y: 520
+      width: 349
+      height: 129
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: I did as well! But I didn't go around bothering caps!
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: 2
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 9
+    rect:
+      serializedVersion: 2
+      x: 1770
+      y: 340
+      width: 349
+      height: 129
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 5
+    s_comment:
+    - text: ...excuse me?
+      extraData: ExtraData
+      inputSetIndex: 11
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Did I just hear a whisper?
+      extraData: ExtraData
+      inputSetIndex: 11
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Look, kid...
+      extraData: ExtraData
+      inputSetIndex: 11
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: GO
+      extraData: fs,18
+      inputSetIndex: 11
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: AWAY.
+      extraData: fs,40
+      inputSetIndex: 11
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 11
+    rect:
+      serializedVersion: 2
+      x: 2670
+      y: 400
+      width: 349
+      height: 263
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 0}
+    vars:
+    - 
+    - 
+    - 
+    - 
+    varKeys:
+    - Key1
+    - Key2
+    - Key3
+    - Key4
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Did you just-
+      extraData: ExtraData
+      inputSetIndex: 12
+      outputNodeIndex: 3
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 12
+    rect:
+      serializedVersion: 2
+      x: 1770
+      y: -80
+      width: 349
+      height: 121
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: Huh?
+      extraData: ExtraData
+      inputSetIndex: 13
+      outputNodeIndex: 3
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: I OWN this place.
+      extraData: ExtraData
+      inputSetIndex: 13
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 14
+    rect:
+      serializedVersion: 2
+      x: 1770
+      y: 120
+      width: 349
+      height: 143
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Waddayawant?
+      extraData: fs,32
+      inputSetIndex: 14
+      outputNodeIndex: 4
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 1
+    rect:
+      serializedVersion: 2
+      x: -300
+      y: 20
+      width: 349
+      height: 194
+    pTag: Charlie
+    expand: 1
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: chill...?
+      extraData: ExtraData
+      inputSetIndex: 15
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: CHIIILL?!?!?!?!??!?!?
+      extraData: fs,28
+      inputSetIndex: 15
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 15
+    rect:
+      serializedVersion: 2
+      x: 2670
+      y: -110
+      width: 349
+      height: 216
+    pTag: Charlie
+    expand: 1
+    sprite: {fileID: 21300000, guid: 9e5eefef3b3fdff40a66f9c9db42ac9e, type: 3}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 3
+    s_comment:
+    - text: What now-
+      extraData: ExtraData
+      inputSetIndex: 16
+      outputNodeIndex: -1
+      outActionIndex: 0
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: What do you think you are doing with that [WEAPON]?!
+      extraData: ExtraData
+      inputSetIndex: 16
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Get that thing away from me!
+      extraData: ExtraData
+      inputSetIndex: 16
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 16
+    rect:
+      serializedVersion: 2
+      x: -80
+      y: 290
+      width: 349
+      height: 173
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 0}
+    vars:
+    - nameLookUp
+    varKeys:
+    - nameLookUp
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: GO AWAY!
+      extraData: ExtraData
+      inputSetIndex: 17
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 18
+    rect:
+      serializedVersion: 2
+      x: -190
+      y: -180
+      width: 349
+      height: 121
+    pTag: Charlie
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Comment...
+      extraData: ExtraData
+      inputSetIndex: 18
+      outputNodeIndex: 1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 19
+    rect:
+      serializedVersion: 2
+      x: 470
+      y: 350
+      width: 349
+      height: 121
+    pTag: 
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: QuestChart
+    methodName: SetCharlieQuestComplete
+    nameIndex: 1
+    methodIndex: 2
+    paramIndex: 0
+    opts:
+    - '[No method]'
+    - CallQuestChart
+    - SetCharlieQuestComplete
+    - GetAssigned
+    - AssignNew
+    - SaveState
+    - LoadState
+    nameOpts:
+    - '[No object]'
+    - QuestChart
+    - NPC_CrazyCap
+    - NPC_Witch
+    - NPC_Couple2
+    - NPC_Couple1
+    - MrCube
+    - Spinned Cube
+    - ConditionGuy
+    - Big Cube
+    - UIManager
+    - CylinderGuy
+    - NPC_Charlie
+    - NPC_Laura
+    - Cube
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 110
+      width: 200
+      height: 158
+    ID: 17
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 0
+    ovrStartNode: 18
+    renameDialogue: 
+  S_selNodes: []

@@ -1,0 +1,1 @@
+This example covers player movement, interaction with NPCs, starting up conversation, checking for and modifying Extra Variables to do special actions, NPC tags, modifying the conversation’s start point, using sprites, using action nodes and their predefined actions, and updating the in-game dialogue interface using Unity’s new UI system.

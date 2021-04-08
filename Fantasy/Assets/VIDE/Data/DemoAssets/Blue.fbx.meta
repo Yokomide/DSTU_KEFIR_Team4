@@ -1,0 +1,550 @@
+fileFormatVersion: 2
+guid: d7421de41d8295f458907417e8b03adc
+timeCreated: 1495370699
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Body
+    100004: curve2
+    100006: curve4
+    100008: curve5
+    100010: curve6
+    100012: FootL
+    100014: FootL1
+    100016: HandL
+    100018: HandL1
+    100020: joint1
+    100022: joint10
+    100024: joint11
+    100026: joint12
+    100028: joint13
+    100030: joint2
+    100032: joint3
+    100034: joint39
+    100036: joint39 1
+    100038: joint4
+    100040: joint40
+    100042: joint40 1
+    100044: joint41
+    100046: joint41 1
+    100048: joint42
+    100050: joint42 1
+    100052: joint45
+    100054: joint45 1
+    100056: joint46
+    100058: joint46 1
+    100060: joint47
+    100062: joint47 1
+    100064: joint48
+    100066: joint48 1
+    100068: joint49
+    100070: joint49 1
+    100072: joint5
+    100074: joint50
+    100076: joint50 1
+    100078: joint51
+    100080: joint51 1
+    100082: joint52
+    100084: joint52 1
+    100086: joint53
+    100088: joint53 1
+    100090: joint54
+    100092: joint54 1
+    100094: joint55
+    100096: joint56
+    100098: joint57
+    100100: joint58
+    100102: joint59
+    100104: joint6
+    100106: joint60
+    100108: joint61
+    100110: joint62
+    100112: joint63
+    100114: joint64
+    100116: joint7
+    100118: joint8
+    100120: joint9
+    100122: Mesh
+    100124: nurbsCircle1
+    100126: Root
+    100128: Stuff
+    100130: transform5
+    100132: transform7
+    100134: transform7 1
+    100136: Blue
+    400000: //RootNode
+    400002: Body
+    400004: curve2
+    400006: curve4
+    400008: curve5
+    400010: curve6
+    400012: FootL
+    400014: FootL1
+    400016: HandL
+    400018: HandL1
+    400020: joint1
+    400022: joint10
+    400024: joint11
+    400026: joint12
+    400028: joint13
+    400030: joint2
+    400032: joint3
+    400034: joint39
+    400036: joint39 1
+    400038: joint4
+    400040: joint40
+    400042: joint40 1
+    400044: joint41
+    400046: joint41 1
+    400048: joint42
+    400050: joint42 1
+    400052: joint45
+    400054: joint45 1
+    400056: joint46
+    400058: joint46 1
+    400060: joint47
+    400062: joint47 1
+    400064: joint48
+    400066: joint48 1
+    400068: joint49
+    400070: joint49 1
+    400072: joint5
+    400074: joint50
+    400076: joint50 1
+    400078: joint51
+    400080: joint51 1
+    400082: joint52
+    400084: joint52 1
+    400086: joint53
+    400088: joint53 1
+    400090: joint54
+    400092: joint54 1
+    400094: joint55
+    400096: joint56
+    400098: joint57
+    400100: joint58
+    400102: joint59
+    400104: joint6
+    400106: joint60
+    400108: joint61
+    400110: joint62
+    400112: joint63
+    400114: joint64
+    400116: joint7
+    400118: joint8
+    400120: joint9
+    400122: Mesh
+    400124: nurbsCircle1
+    400126: Root
+    400128: Stuff
+    400130: transform5
+    400132: transform7
+    400134: transform7 1
+    400136: Blue
+    4300000: FootL
+    4300002: HandL
+    4300004: HandL1
+    4300006: FootL1
+    4300008: Body
+    7400000: Idle
+    7400002: Run
+    9500000: //RootNode
+    13700000: Body
+    13700002: FootL
+    13700004: FootL1
+    13700006: HandL
+    13700008: HandL1
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Blue
+        weight: 1
+      - path: Blue/Mesh
+        weight: 1
+      - path: Blue/Mesh/Body
+        weight: 1
+      - path: Blue/Mesh/FootL
+        weight: 1
+      - path: Blue/Mesh/FootL1
+        weight: 1
+      - path: Blue/Mesh/HandL
+        weight: 1
+      - path: Blue/Mesh/HandL1
+        weight: 1
+      - path: Blue/nurbsCircle1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve2
+        weight: 1
+      - path: Blue/nurbsCircle1/curve2/joint39
+        weight: 1
+      - path: Blue/nurbsCircle1/curve2/joint39/joint40
+        weight: 1
+      - path: Blue/nurbsCircle1/curve2/joint39/joint40/joint41
+        weight: 1
+      - path: Blue/nurbsCircle1/curve2/joint39/joint40/joint41/joint42
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint46
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint46/joint47
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint46/joint47/joint48
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint49
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint49/joint50
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint49/joint50/joint51
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint52
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint52/joint53
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint52/joint53/joint54
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint46 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint46 1/joint47 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint46 1/joint47 1/joint48
+          1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint49 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint49 1/joint50 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint49 1/joint50 1/joint51
+          1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint52 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint52 1/joint53 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint52 1/joint53 1/joint54
+          1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve6
+        weight: 1
+      - path: Blue/nurbsCircle1/curve6/joint39 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve6/joint39 1/joint40 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve6/joint39 1/joint40 1/joint41 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve6/joint39 1/joint40 1/joint41 1/joint42 1
+        weight: 1
+      - path: Blue/nurbsCircle1/Root
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint4
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint55
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint55/joint56
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint55/joint56/joint57
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint55/joint56/joint57/joint58
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint55/joint56/joint57/joint58/joint59
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint60
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint60/joint61
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint60/joint61/joint62
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint60/joint61/joint62/joint63
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint60/joint61/joint62/joint63/joint64
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8/joint9
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8/joint9/joint10/joint11
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8/joint9/joint10/joint11/joint12
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8/joint9/joint10/joint11/joint12/joint13
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 245
+      lastFrame: 305
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Blue
+        weight: 1
+      - path: Blue/Mesh
+        weight: 1
+      - path: Blue/Mesh/Body
+        weight: 1
+      - path: Blue/Mesh/FootL
+        weight: 1
+      - path: Blue/Mesh/FootL1
+        weight: 1
+      - path: Blue/Mesh/HandL
+        weight: 1
+      - path: Blue/Mesh/HandL1
+        weight: 1
+      - path: Blue/nurbsCircle1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve2
+        weight: 1
+      - path: Blue/nurbsCircle1/curve2/joint39
+        weight: 1
+      - path: Blue/nurbsCircle1/curve2/joint39/joint40
+        weight: 1
+      - path: Blue/nurbsCircle1/curve2/joint39/joint40/joint41
+        weight: 1
+      - path: Blue/nurbsCircle1/curve2/joint39/joint40/joint41/joint42
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint46
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint46/joint47
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint46/joint47/joint48
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint49
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint49/joint50
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint49/joint50/joint51
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint52
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint52/joint53
+        weight: 1
+      - path: Blue/nurbsCircle1/curve4/transform7/joint45/joint52/joint53/joint54
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint46 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint46 1/joint47 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint46 1/joint47 1/joint48
+          1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint49 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint49 1/joint50 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint49 1/joint50 1/joint51
+          1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint52 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint52 1/joint53 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve5/transform7 1/joint45 1/joint52 1/joint53 1/joint54
+          1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve6
+        weight: 1
+      - path: Blue/nurbsCircle1/curve6/joint39 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve6/joint39 1/joint40 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve6/joint39 1/joint40 1/joint41 1
+        weight: 1
+      - path: Blue/nurbsCircle1/curve6/joint39 1/joint40 1/joint41 1/joint42 1
+        weight: 1
+      - path: Blue/nurbsCircle1/Root
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint4
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint55
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint55/joint56
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint55/joint56/joint57
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint55/joint56/joint57/joint58
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint55/joint56/joint57/joint58/joint59
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint60
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint60/joint61
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint60/joint61/joint62
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint60/joint61/joint62/joint63
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint2/joint3/joint60/joint61/joint62/joint63/joint64
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8/joint9
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8/joint9/joint10/joint11
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8/joint9/joint10/joint11/joint12
+        weight: 1
+      - path: Blue/nurbsCircle1/Root/Stuff/transform5/joint1/joint6/joint7/joint8/joint9/joint10/joint11/joint12/joint13
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

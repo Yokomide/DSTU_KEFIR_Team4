@@ -30,7 +30,7 @@ public class Merchant : MonoBehaviour
         }
         for (int i = 0; i < shopContainer.transform.childCount; i++)
         {
-            shopContainer.transform.GetChild(i).GetComponent<CurrentItem>().index = i;
+            //shopContainer.transform.GetChild(i).GetComponent<CurrentItem>().index = i;
         }
     }
     private void Update()
