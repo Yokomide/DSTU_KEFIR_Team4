@@ -7,6 +7,7 @@ public class MainHeroHp : MonoBehaviour
     public float maxHeroHp = 250f;
     public float Lvl = 0;
     public float money = 0;
+    public float damage = 50f;
 
     public Image lvlBar;
     public Text level;

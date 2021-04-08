@@ -14,7 +14,7 @@ public class AttackRadiusTrigger : MonoBehaviour
     public Transform bloodPos;
 
     public bool isTriggered = false;
-    public float coolDownTimer = 2f;
+    public float coolDownTimer = 1.5f;
 
     private float _NavMeshSpeedTemp = 3f;
     private float _attackCoolDown = 0f;
@@ -44,7 +44,7 @@ public class AttackRadiusTrigger : MonoBehaviour
                     NavMeshAgent agent = _enemies[i].GetComponent<NavMeshAgent>();
                     DeathAnim = _enemies[i].GetComponent<Animator>();
 
-                    _enemies[i].GetComponent<EnemyStats>().Attacked();
+                    _enemies[i].GetComponent<EnemyStats>().Attacked(player.GetComponent<MainHeroHp>().damage);
 
                     //Запуск анимации получения урона с задержкой
 
@@ -58,13 +58,6 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                         //Остановка следования к точке
                         agent.isStopped = true;
-
-                        //Смерть. Убирает компоненты, благодаря которым с объектом можно взаимодействовать.
-
-                        Destroy(_enemies[i].GetComponent<EnemyStats>());
-                        Destroy(_enemies[i].GetComponent<NavMove>());
-                        Destroy(_enemies[i].GetComponent<Rigidbody>());
-                        Destroy(_enemies[i].GetComponent<MobMoving>());
                         _enemies.RemoveAt(i);
 
                     }

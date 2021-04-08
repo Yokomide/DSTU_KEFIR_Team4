@@ -19,12 +19,15 @@ public class NavMove : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (agent.GetComponent<EnemyStats>().isAlive)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(_mainCamera.ScreenPointToRay(Input.mousePosition), out hit))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                agent.SetDestination(hit.point);
+                RaycastHit hit;
+                if (Physics.Raycast(_mainCamera.ScreenPointToRay(Input.mousePosition), out hit))
+                {
+                    agent.SetDestination(hit.point);
+                }
             }
         }
     }
