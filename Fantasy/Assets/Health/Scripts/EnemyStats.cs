@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public float maxHp = 100;
+    public float damage = 15;
     public float hp;
     private AttackRadiusTrigger _beingAttacked;
 
@@ -53,6 +54,5 @@ public class EnemyStats : MonoBehaviour
         hp -= (Random.Range(10, 20)+heroDamage);
         yield return new WaitForSeconds(2f);
         //Destroy(redLine);
-
     }
 }
