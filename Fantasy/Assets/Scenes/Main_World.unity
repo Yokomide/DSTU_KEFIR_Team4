@@ -49716,7 +49716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a308b4242bf37545b7217a025b7d532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allItems: []
 --- !u!4 &1751038852
 Transform:
   m_ObjectHideFlags: 0
@@ -52534,7 +52533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1689c04db1b37cd498993a9f8fc9dc15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeroHp: 500
+  HeroHp: 250
   maxHeroHp: 250
   Lvl: 0
   money: 0
@@ -58316,7 +58315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 482130, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 482130, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
       propertyPath: m_LocalPosition.z
