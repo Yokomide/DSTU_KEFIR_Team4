@@ -21,21 +21,29 @@ public class MainHeroHp : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Minus))
+        if (HeroHp >= 0)
         {
-            HeroHp -= 0.1f;
-        }
+            if (Input.GetKey(KeyCode.Minus))
+            {
+                HeroHp -= 0.1f;
+            }
 
-        level.text = "LEVEL: " + Lvl;
-        moneyText.text = "$" + money;
-        lvlBar.fillAmount = _ExpNum / 100;
-        if (_ExpNum >= 100 + Lvl * 10)
+            level.text = "LEVEL: " + Lvl;
+            moneyText.text = "$" + money;
+            lvlBar.fillAmount = _ExpNum / 100;
+            if (_ExpNum >= 100 + Lvl * 10)
+            {
+                Lvl++;
+                _ExpNum = 0;
+                HeroHp = maxHeroHp;
+            }
+            lvlBar.fillAmount = _ExpNum / (100 + Lvl * 10);
+        }
+        else
         {
-            Lvl++;
-            _ExpNum = 0;
-            HeroHp = maxHeroHp;
-        }
-        lvlBar.fillAmount = _ExpNum / (100 + Lvl * 10);
+            //gameObject.GetComponent<Player>().GetComponent<AttackRadiusTrigger>().enemies.Clear();
+            //Destroy(gameObject.GetComponent<AttackRadiusTrigger>().GetComponent<SphereCollider>());
 
+        }
     }
 }

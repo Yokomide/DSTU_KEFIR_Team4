@@ -18,7 +18,7 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     private float _NavMeshSpeedTemp = 3f;
     private float _attackCoolDown = 0f;
-    private List<GameObject> _enemies = new List<GameObject>();
+    public List<GameObject> enemies = new List<GameObject>();
 
     private string _enemyTemp;
 
@@ -37,20 +37,20 @@ public class AttackRadiusTrigger : MonoBehaviour
             _attackCoolDown = 0f;
             player.GetComponent<Rigidbody>().isKinematic = true;
             StartCoroutine(StopOnAttack());
-            if (_enemies.Count != 0)
+            if (enemies.Count != 0)
             {
-                for (int i = 0; i < _enemies.Count; i++)
+                for (int i = 0; i < enemies.Count; i++)
                 {
-                    NavMeshAgent agent = _enemies[i].GetComponent<NavMeshAgent>();
-                    DeathAnim = _enemies[i].GetComponent<Animator>();
+                    NavMeshAgent agent = enemies[i].GetComponent<NavMeshAgent>();
+                    DeathAnim = enemies[i].GetComponent<Animator>();
 
-                    _enemies[i].GetComponent<EnemyStats>().Attacked(player.GetComponent<MainHeroHp>().damage);
+                    enemies[i].GetComponent<EnemyStats>().Attacked(player.GetComponent<MainHeroHp>().damage);
 
                     //Запуск анимации получения урона с задержкой
 
-                    StartCoroutine(HitAnimDelay(_enemies[i].GetComponent<Collider>()));
+                    StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
 
-                    if (!_enemies[i].GetComponent<EnemyStats>().isAlive)
+                    if (!enemies[i].GetComponent<EnemyStats>().isAlive)
                     {
                         player.GetComponent<MainHeroHp>()._ExpNum += Random.Range(50, 70);
                         //Активация триггера для начала анимации смерти.
@@ -58,7 +58,7 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                         //Остановка следования к точке
                         agent.isStopped = true;
-                        _enemies.RemoveAt(i);
+                        enemies.RemoveAt(i);
 
                     }
 
@@ -75,16 +75,16 @@ public class AttackRadiusTrigger : MonoBehaviour
         {
             bool _isHere = false;
             GameObject temp = other.gameObject;
-            for (int i = 0; i < _enemies.Count; i++)
+            for (int i = 0; i < enemies.Count; i++)
             {
-                if (_enemies[i] == temp)
+                if (enemies[i] == temp)
                 {
                     _isHere = true;
                     break;
                 }
 
             }
-            if (!_isHere) _enemies.Add(temp);
+            if (!_isHere) enemies.Add(temp);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -92,11 +92,11 @@ public class AttackRadiusTrigger : MonoBehaviour
         if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && other.GetComponent<EnemyStats>().isAlive)
         {
             GameObject temp = other.gameObject;
-            for (int i = 0; i < _enemies.Count; i++)
+            for (int i = 0; i < enemies.Count; i++)
             {
-                if (_enemies[i] == temp)
+                if (enemies[i] == temp)
                 {
-                    _enemies.RemoveAt(i);
+                    enemies.RemoveAt(i);
                     break;
                 }
 
