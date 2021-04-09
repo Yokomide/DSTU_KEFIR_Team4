@@ -24710,18 +24710,6 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4526463827110206, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.5000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4526463827110206, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4526463827110206, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.5000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4526463827110206, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31
       objectReference: {fileID: 0}
@@ -24749,38 +24737,30 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 95902137545226380, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-      propertyPath: m_UpdateMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 95902137545226380, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-      propertyPath: m_CullingMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 95902137545226380, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1327146849335566754, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: art
       value: 
       objectReference: {fileID: 246506848}
     - target: {fileID: 1327146849335566754, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+      propertyPath: shiftSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327146849335566754, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: AttackRadiusT
       value: 
       objectReference: {fileID: 246506848}
-    - target: {fileID: 5532825546096526368, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7815609080150652906, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 8947278975237475603, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-      propertyPath: player
+    - target: {fileID: 8662217600288171116, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+      propertyPath: level
       value: 
-      objectReference: {fileID: 1883823154}
+      objectReference: {fileID: 547965737}
+    - target: {fileID: 8662217600288171116, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+      propertyPath: lvlBar
+      value: 
+      objectReference: {fileID: 227233973}
+    - target: {fileID: 8662217600288171116, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+      propertyPath: moneyText
+      value: 
+      objectReference: {fileID: 30852722}
     - target: {fileID: 8947278975237475603, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: WeaponTrail
       value: 
@@ -24789,10 +24769,6 @@ PrefabInstance:
       propertyPath: weaponTrail
       value: 
       objectReference: {fileID: 569950257}
-    - target: {fileID: 8947278975237475603, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-      propertyPath: MainCharacter_Animation
-      value: 
-      objectReference: {fileID: 1883823158}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
 --- !u!1001 &780242723
@@ -43123,10 +43099,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9545102, guid: aea27ca7a35042c419065833e8daf224, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a9e4a868ee4498c4bb46bacd280e553a, type: 2}
     - target: {fileID: 4670961142108841109, guid: aea27ca7a35042c419065833e8daf224, type: 3}
       propertyPath: goal
       value: 
@@ -52567,16 +52539,10 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1170732337855516, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
   m_PrefabInstance: {fileID: 779758593}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1883823158 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95902137545226380, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
-  m_PrefabInstance: {fileID: 779758593}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1883823159
+--- !u!114 &1883823159 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8662217600288171116, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+  m_PrefabInstance: {fileID: 779758593}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883823154}
   m_Enabled: 1
@@ -52584,28 +52550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1689c04db1b37cd498993a9f8fc9dc15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeroHp: 250
-  maxHeroHp: 250
-  Lvl: 0
-  money: 0
-  damage: 20
-  lvlBar: {fileID: 227233973}
-  level: {fileID: 547965737}
-  moneyText: {fileID: 30852722}
-  _ExpNum: 0
---- !u!114 &1883823160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883823154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f2db0d3a8f14044089e354f15c39a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1277601252}
 --- !u!4 &1885302562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4139199580613414, guid: 085524390fafd6b4e9fed9d924db437b, type: 3}

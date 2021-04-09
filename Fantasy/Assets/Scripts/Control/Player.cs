@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     public AttackRadiusTrigger AttackRadiusT;
     public float speed = 2f; // скорость нашего персонажа
-    public float shiftSpeed = 3.5f; // скорость при нажатии Shift
+    public float shiftSpeedMultiplier = 1.6f; // скорость при нажатии Shift
     public float sensetivity = 5f; //скорость поворота камеры при вращении мышки
 
 
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         //бег при нажатии клавиши Shift
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.GetComponent<Rigidbody>().MovePosition(transform.GetComponent<Rigidbody>().position + direction * shiftSpeed * Time.deltaTime);
+            transform.GetComponent<Rigidbody>().MovePosition(transform.GetComponent<Rigidbody>().position + direction * speed * shiftSpeedMultiplier * Time.deltaTime);
         }
         else
         {

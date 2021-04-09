@@ -3856,7 +3856,7 @@ Animator:
   m_GameObject: {fileID: 193682}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
-  m_Controller: {fileID: 9100000, guid: 90535445aede62e4ca4f44b749b3e290, type: 2}
+  m_Controller: {fileID: 9100000, guid: a9e4a868ee4498c4bb46bacd280e553a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3929,6 +3929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
+  damage: 15
   hp: 0
   hpBar: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
   isAlive: 1
