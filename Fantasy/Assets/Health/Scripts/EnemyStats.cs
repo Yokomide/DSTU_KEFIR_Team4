@@ -12,6 +12,7 @@ public class EnemyStats : MonoBehaviour
     Transform linePos;
     private GameObject _hpLine;
     private GameObject _hpLineRed;
+    private bool _isRedHpLineDestroyed = false;
 
     [HideInInspector]
     public bool isAlive = true;
@@ -41,22 +42,37 @@ public class EnemyStats : MonoBehaviour
 
     public void Attacked(float heroDamage)
     {
-        _hpLineRed.GetComponent<MeshRenderer>().enabled = true;
-        _hpLine.GetComponent<MeshRenderer>().enabled = true;
-        StartCoroutine(AttackedDelay(heroDamage));
-        _hpLine.GetComponent<Transform>().localScale = new Vector3(hp / maxHp, 0.25f, 0.01f);
-        if (hp <= 0)
+        if (hp > 0)
         {
-            Destroy(_hpLine);
-            Destroy(_hpLineRed);
-            isAlive = false;
+            _hpLineRed.GetComponent<MeshRenderer>().enabled = true;
+            _hpLine.GetComponent<MeshRenderer>().enabled = true;
+            StartCoroutine(AttackedDelay(heroDamage));
+            _hpLine.GetComponent<Transform>().localScale = new Vector3(hp / maxHp, 0.25f, 0.01f);
         }
+        else StartCoroutine(DeathOnCommand());
     }
 
     IEnumerator AttackedDelay(float heroDamage)
     {
         hp -= (Random.Range(10, 20) + heroDamage);
+        if (hp <= 0)
+        {
+            StartCoroutine(DeathOnCommand());
+            yield break;
+            }
         yield return new WaitForSeconds(2f);
-        _hpLineRed.GetComponent<Transform>().localScale = _hpLine.GetComponent<Transform>().localScale;
+        if (!_isRedHpLineDestroyed)
+        {
+            _hpLineRed.GetComponent<Transform>().localScale = _hpLine.GetComponent<Transform>().localScale;
+        }
+    }
+
+    IEnumerator DeathOnCommand()
+    {
+        Destroy(_hpLine);
+        Destroy(_hpLineRed);
+        _isRedHpLineDestroyed = true;
+        isAlive = false;
+        yield return new WaitForEndOfFrame();
     }
 }

@@ -58,13 +58,6 @@ public class AttackRadiusTrigger : MonoBehaviour
                         //Активация триггера для начала анимации смерти.
                         DeathAnim.SetTrigger("Active");
 
-                        for (int k = 0; k < enemies[i].GetComponent<EnemyLootDrop>().countItemsToDrop; k++)
-                        {
-                            Debug.Log(k);
-                            Instantiate(enemies[i].GetComponent<EnemyLootDrop>().itemsToDrop[k].gameObject, enemies[i].GetComponent<Transform>());
-
-                        }
-
                         //Остановка следования к точке
                         agent.isStopped = true;
                         enemies.RemoveAt(i);

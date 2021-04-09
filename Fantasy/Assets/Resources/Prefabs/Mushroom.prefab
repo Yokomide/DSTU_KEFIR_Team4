@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 7928373186059583756}
   - component: {fileID: 2087107208559847515}
   - component: {fileID: 1576432946915132430}
-  - component: {fileID: 2116413437165008966}
-  - component: {fileID: -2674894672594080097}
-  m_Layer: 0
+  - component: {fileID: 909142495512371883}
+  - component: {fileID: -5214020899971861438}
+  m_Layer: 3
   m_Name: Mushroom
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,21 @@ MonoBehaviour:
   pathIcon: Icons/mushroom
   pathPrefab: Prefabs/Mushroom
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
---- !u!54 &2116413437165008966
+--- !u!64 &909142495512371883
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950164936467085716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 098247ac8ae81a74f8ae25c9a7163ff7, type: 3}
+--- !u!54 &-5214020899971861438
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,17 +151,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &-2674894672594080097
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950164936467085716}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 098247ac8ae81a74f8ae25c9a7163ff7, type: 3}
