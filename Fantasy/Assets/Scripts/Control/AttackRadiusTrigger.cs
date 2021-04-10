@@ -18,6 +18,7 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     private float _NavMeshSpeedTemp = 3f;
     private float _attackCoolDown = 0f;
+    private float _tempSpeed;
     public List<GameObject> enemies = new List<GameObject>();
 
     private string _enemyTemp;
@@ -32,11 +33,13 @@ public class AttackRadiusTrigger : MonoBehaviour
     {
         _attackCoolDown += Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer)
         {
+            StopAllCoroutines();
             _attackCoolDown = 0f;
-            player.GetComponent<Rigidbody>().isKinematic = true;
-            StartCoroutine(StopOnAttack());
+            _tempSpeed = player.GetComponent<Player>().speed;
+            player.GetComponent<Player>().speed = 0.2f;
+            StartCoroutine(StopOnAttack(_tempSpeed));
             if (enemies.Count != 0)
             {
                 for (int i = 0; i < enemies.Count; i++)
@@ -57,13 +60,6 @@ public class AttackRadiusTrigger : MonoBehaviour
                         player.GetComponent<MainHeroHp>()._ExpNum += Random.Range(50, 70);
                         //Активация триггера для начала анимации смерти.
                         DeathAnim.SetTrigger("Active");
-
-                        for (int k = 0; k < enemies[i].GetComponent<EnemyLootDrop>().countItemsToDrop; k++)
-                        {
-                            Debug.Log(k);
-                            Instantiate(enemies[i].GetComponent<EnemyLootDrop>().itemsToDrop[k].gameObject, enemies[i].GetComponent<Transform>());
-
-                        }
 
                         //Остановка следования к точке
                         agent.isStopped = true;
@@ -122,18 +118,19 @@ public class AttackRadiusTrigger : MonoBehaviour
 
         other.GetComponent<NavMeshAgent>().speed = 0f;
         //Задержка анимации получения урона
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
         DeathAnim.Play("Hit");
+        yield return new WaitForSeconds(0.1f);
         bloodPos = other.GetComponent<Transform>();
         Instantiate(bloodSplat, bloodPos);
         other.GetComponent<NavMeshAgent>().speed = _NavMeshSpeedTemp;
 
     }
 
-    IEnumerator StopOnAttack()
+    IEnumerator StopOnAttack(float tempSpeed)
     {
         yield return new WaitForSeconds(1f);
-        player.GetComponent<Rigidbody>().isKinematic = false;
+        player.GetComponent<Player>().speed = tempSpeed;
     }
 
 }

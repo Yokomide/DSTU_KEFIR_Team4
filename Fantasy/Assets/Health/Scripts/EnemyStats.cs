@@ -6,15 +6,13 @@ public class EnemyStats : MonoBehaviour
     public float maxHp = 100;
     public float damage = 15;
     public float hp;
-
     private AttackRadiusTrigger _beingAttacked;
-   
 
     public GameObject hpBar;
     Transform linePos;
     private GameObject _hpLine;
     private GameObject _hpLineRed;
-    private GameObject Corp;
+    private bool _isRedHpLineDestroyed = false;
 
     [HideInInspector]
     public bool isAlive = true;
@@ -29,8 +27,6 @@ public class EnemyStats : MonoBehaviour
 
         _hpLine.GetComponent<Transform>().localScale = new Vector3(hp / maxHp, 0.1f, 0.01f);
         _hpLineRed.GetComponent<Transform>().localScale = _hpLine.GetComponent<Transform>().localScale;
-
-        Corp = GameObject.Find("Corpses");
     }
     private void Update()
     {
@@ -46,32 +42,37 @@ public class EnemyStats : MonoBehaviour
 
     public void Attacked(float heroDamage)
     {
-        _hpLineRed.GetComponent<MeshRenderer>().enabled = true;
-        _hpLine.GetComponent<MeshRenderer>().enabled = true;
-        StartCoroutine(AttackedDelay(heroDamage));
-        _hpLine.GetComponent<Transform>().localScale = new Vector3(hp / maxHp, 0.25f, 0.01f);
-        if (hp <= 0)
+        if (hp > 0)
         {
-            Destroy(_hpLine);
-            Destroy(_hpLineRed);
-
-            var deadBody = Instantiate(gameObject.GetComponentInChildren<SkinnedMeshRenderer>(), gameObject.GetComponent<Transform>());
-            deadBody.transform.parent = Corp.transform;
-            Destroy(gameObject, 2);
-           
-            isAlive = false;
+            _hpLineRed.GetComponent<MeshRenderer>().enabled = true;
+            _hpLine.GetComponent<MeshRenderer>().enabled = true;
+            StartCoroutine(AttackedDelay(heroDamage));
+            _hpLine.GetComponent<Transform>().localScale = new Vector3(hp / maxHp, 0.25f, 0.01f);
         }
+        else StartCoroutine(DeathOnCommand());
     }
 
     IEnumerator AttackedDelay(float heroDamage)
     {
-
-        if (isAlive)
+        hp -= (Random.Range(10, 20) + heroDamage);
+        if (hp <= 0)
         {
-            hp -= (Random.Range(10, 20) + heroDamage);
-            yield return new WaitForSeconds(2f);
+            StartCoroutine(DeathOnCommand());
+            yield break;
+            }
+        yield return new WaitForSeconds(2f);
+        if (!_isRedHpLineDestroyed)
+        {
             _hpLineRed.GetComponent<Transform>().localScale = _hpLine.GetComponent<Transform>().localScale;
         }
+    }
 
+    IEnumerator DeathOnCommand()
+    {
+        Destroy(_hpLine);
+        Destroy(_hpLineRed);
+        _isRedHpLineDestroyed = true;
+        isAlive = false;
+        yield return new WaitForEndOfFrame();
     }
 }

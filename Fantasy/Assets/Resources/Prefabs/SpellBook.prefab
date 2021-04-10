@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 1207253950496558610}
   - component: {fileID: 7097301015721160562}
   - component: {fileID: 7200336692618964603}
-  - component: {fileID: 6894044345307433602}
-  - component: {fileID: 5645622969096709050}
-  m_Layer: 0
+  - component: {fileID: 2472325679753303890}
+  - component: {fileID: -791306069197436794}
+  m_Layer: 3
   m_Name: SpellBook
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,21 @@ MonoBehaviour:
   pathIcon: Icons/spellBook
   pathPrefab: Prefabs/SpellBook
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
---- !u!54 &6894044345307433602
+--- !u!64 &2472325679753303890
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207253950499025878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: da3e53f1a6878fc4c8003d69bbe73a94, type: 3}
+--- !u!54 &-791306069197436794
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,17 +151,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &5645622969096709050
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1207253950499025878}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: da3e53f1a6878fc4c8003d69bbe73a94, type: 3}
