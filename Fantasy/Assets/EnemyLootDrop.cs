@@ -9,7 +9,7 @@ public class EnemyLootDrop : MonoBehaviour
     public int countItemsToDrop;
 
     private GameObject item;
-    private bool _itemsAreDroped = false;
+    GameObject tempItem;
     private void Start()
     {
         item = GameObject.Find("Items");
@@ -31,17 +31,13 @@ public class EnemyLootDrop : MonoBehaviour
             }
         }
     }
-    private void Update()
+    public void DropItems()
     {
-        if (gameObject.GetComponent<EnemyStats>().hp<0 && !_itemsAreDroped)
+        for (int i = 0; i < countItemsToDrop; i++)
         {
-            for (int i = 0; i < countItemsToDrop; i++)
-            {
-                GameObject temp =  Instantiate(itemsToDrop[i].gameObject,gameObject.GetComponent<Transform>().position,Quaternion.identity);
-                temp.GetComponent<Rigidbody>().AddForce(Vector3.up*255);
-                temp.transform.parent = item.transform;
-            }
-            _itemsAreDroped = true;
+            tempItem = Instantiate(itemsToDrop[i].gameObject, gameObject.GetComponent<Transform>().position, Quaternion.identity);
+            tempItem.GetComponent<Rigidbody>().AddForce(Vector3.up * 255);
+            tempItem.transform.parent = item.transform;
         }
     }
 }
