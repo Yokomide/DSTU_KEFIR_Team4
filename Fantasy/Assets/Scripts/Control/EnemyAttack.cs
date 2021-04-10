@@ -6,17 +6,25 @@ public class EnemyAttack : MonoBehaviour
 {
     public float _attackCoolDown = 1.5f;
     public MainHeroHp player;
+
+    private EnemyStats _enemyStats;
+
+    private Transform _enemyTransform;
+    private Transform _playerTransform;
     private void Awake()
     {
+        _enemyStats = gameObject.GetComponent<EnemyStats>();
+        _enemyTransform = _enemyStats.GetComponent<Transform>();
+        _playerTransform = player.GetComponent<Transform>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<MainHeroHp>();
     }
 
     private void Update()
     {
-        if (gameObject.GetComponent<EnemyStats>().isAlive)
+        if (_enemyStats.isAlive)
         {
             _attackCoolDown += Time.deltaTime;
-            if (_attackCoolDown > 1.5f && Vector3.Distance(gameObject.GetComponent<EnemyStats>().GetComponent<Transform>().position, player.GetComponent<Transform>().position) < 4f)
+            if (_attackCoolDown > 1.5f && Vector3.Distance(_enemyTransform.position, _playerTransform.position) < 4f)
             {
                 _attackCoolDown = 0;
                 Attack();
