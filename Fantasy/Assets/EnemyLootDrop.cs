@@ -8,9 +8,11 @@ public class EnemyLootDrop : MonoBehaviour
     public List<Items> itemsToDrop;
     public int countItemsToDrop;
 
+    private GameObject item;
     private bool _itemsAreDroped = false;
     private void Start()
     {
+        item = GameObject.Find("Items");
         countItemsToDrop = Random.Range(0, EnemyItemsDropCount + 1);
         itemsToDrop = new List<Items>();
         for (int i = 0; i < countItemsToDrop; i++)
@@ -37,6 +39,7 @@ public class EnemyLootDrop : MonoBehaviour
             {
                 GameObject temp =  Instantiate(itemsToDrop[i].gameObject,gameObject.GetComponent<Transform>().position,Quaternion.identity);
                 temp.GetComponent<Rigidbody>().AddForce(Vector3.up*255);
+                temp.transform.parent = item.transform;
             }
             _itemsAreDroped = true;
         }

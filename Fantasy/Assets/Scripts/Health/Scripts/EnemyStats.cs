@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour
     private AttackRadiusTrigger _beingAttacked;
 
     public GameObject hpBar;
+    private GameObject Corp;
     Transform linePos;
     private GameObject _hpLine;
     private GameObject _hpLineRed;
@@ -27,6 +28,8 @@ public class EnemyStats : MonoBehaviour
 
         _hpLine.GetComponent<Transform>().localScale = new Vector3(hp / maxHp, 0.1f, 0.01f);
         _hpLineRed.GetComponent<Transform>().localScale = _hpLine.GetComponent<Transform>().localScale;
+
+        Corp = GameObject.Find("Corpses");
     }
     private void Update()
     {
@@ -71,8 +74,52 @@ public class EnemyStats : MonoBehaviour
     {
         Destroy(_hpLine);
         Destroy(_hpLineRed);
+        var deadBody = Instantiate(gameObject.GetComponentInChildren<SkinnedMeshRenderer>(), gameObject.GetComponent<Transform>());
+        deadBody.transform.parent = Corp.transform;
+        Destroy(gameObject, 4);
         _isRedHpLineDestroyed = true;
         isAlive = false;
         yield return new WaitForEndOfFrame();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

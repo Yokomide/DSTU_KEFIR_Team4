@@ -459,8 +459,7 @@ GameObject:
   - component: {fileID: 1327146849335566754}
   - component: {fileID: 5532825546096526368}
   - component: {fileID: 7815609080150652906}
-  - component: {fileID: 8662217600288171116}
-  - component: {fileID: 7725704080349952935}
+  - component: {fileID: 5499851375895533292}
   m_Layer: 0
   m_Name: Character_BR_MechanicalGolem_01
   m_TagString: Untagged
@@ -574,7 +573,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &8662217600288171116
+--- !u!114 &5499851375895533292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -595,19 +594,6 @@ MonoBehaviour:
   level: {fileID: 0}
   moneyText: {fileID: 0}
   _ExpNum: 0
---- !u!114 &7725704080349952935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1170732337855516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f2db0d3a8f14044089e354f15c39a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1327146849335566754}
 --- !u!1 &1186076032050976
 GameObject:
   m_ObjectHideFlags: 0

@@ -24854,6 +24854,18 @@ PrefabInstance:
       propertyPath: AttackRadiusT
       value: 
       objectReference: {fileID: 246506848}
+    - target: {fileID: 5499851375895533292, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+      propertyPath: level
+      value: 
+      objectReference: {fileID: 547965737}
+    - target: {fileID: 5499851375895533292, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+      propertyPath: lvlBar
+      value: 
+      objectReference: {fileID: 227233973}
+    - target: {fileID: 5499851375895533292, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+      propertyPath: moneyText
+      value: 
+      objectReference: {fileID: 30852722}
     - target: {fileID: 5532825546096526368, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -52708,11 +52720,10 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 95902137545226380, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
   m_PrefabInstance: {fileID: 779758593}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1883823159
+--- !u!114 &1883823159 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5499851375895533292, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+  m_PrefabInstance: {fileID: 779758593}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883823154}
   m_Enabled: 1
@@ -52720,15 +52731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1689c04db1b37cd498993a9f8fc9dc15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeroHp: 250
-  maxHeroHp: 250
-  Lvl: 0
-  money: 0
-  damage: 20
-  lvlBar: {fileID: 227233973}
-  level: {fileID: 547965737}
-  moneyText: {fileID: 30852722}
-  _ExpNum: 0
 --- !u!114 &1883823160
 MonoBehaviour:
   m_ObjectHideFlags: 0
