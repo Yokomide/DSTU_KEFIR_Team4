@@ -1865,7 +1865,6 @@ GameObject:
   - component: {fileID: 7257737611534596388}
   - component: {fileID: 4443178809859371412}
   - component: {fileID: 1779831973024986385}
-  - component: {fileID: 7348974005026114135}
   - component: {fileID: 3259775641053659200}
   - component: {fileID: 5368499563635010741}
   m_Layer: 0
@@ -1984,8 +1983,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0843d6272eeb9fb428c263ae1e1e6027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 100
+  damage: 15
   hp: 0
   hpBar: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
+  isAlive: 1
 --- !u!114 &1779831973024986385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1998,19 +2000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ce3e5ac7954974d9fe75048bf67335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7348974005026114135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c56fef71fa89ac4cbcda1edbe00e2e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goal: {fileID: 0}
 --- !u!198 &3259775641053659200
 ParticleSystem:
   m_ObjectHideFlags: 0

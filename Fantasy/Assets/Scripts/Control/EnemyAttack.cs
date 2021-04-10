@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    private float _attackCoolDown = 1.5f;
+    public float _attackCoolDown = 1.5f;
     public MainHeroHp player;
     private void Awake()
     {

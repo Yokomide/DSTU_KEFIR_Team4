@@ -3674,7 +3674,113 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: '
+
+    Transform ''Finger_03'' has been deleted
+
+    Transform
+    ''Finger_02'' has been deleted
+
+    Transform ''Finger_01'' has been deleted
+
+    Transform
+    ''IndexFinger_03'' has been deleted
+
+    Transform ''IndexFinger_02'' has been
+    deleted
+
+    Transform ''IndexFinger_01'' has been deleted
+
+    Transform ''Thumb_03''
+    has been deleted
+
+    Transform ''Thumb_02'' has been deleted
+
+    Transform
+    ''Thumb_01'' has been deleted
+
+    Transform ''Hand_L'' has been deleted
+
+    Transform
+    ''Elbow_L'' has been deleted
+
+    Transform ''Shoulder_L'' has been deleted
+
+    Transform
+    ''Clavicle_L'' has been deleted
+
+    Transform ''Finger_03 1'' has been deleted
+
+    Transform
+    ''Finger_02 1'' has been deleted
+
+    Transform ''Finger_01 1'' has been deleted
+
+    Transform
+    ''IndexFinger_03 1'' has been deleted
+
+    Transform ''IndexFinger_02 1'' has
+    been deleted
+
+    Transform ''IndexFinger_01 1'' has been deleted
+
+    Transform
+    ''Thumb_03 1'' has been deleted
+
+    Transform ''Thumb_02 1'' has been deleted
+
+    Transform
+    ''Thumb_01 1'' has been deleted
+
+    Transform ''Hand_R'' has been deleted
+
+    Transform
+    ''Elbow_R'' has been deleted
+
+    Transform ''Shoulder_R'' has been deleted
+
+    Transform
+    ''Clavicle_R'' has been deleted
+
+    Transform ''Eyes'' has been deleted
+
+    Transform
+    ''Head'' has been deleted
+
+    Transform ''Neck'' has been deleted
+
+    Transform
+    ''Spine_03'' has been deleted
+
+    Transform ''Spine_02'' has been deleted
+
+    Transform
+    ''Spine_01'' has been deleted
+
+    Transform ''Ball_L'' has been deleted
+
+    Transform
+    ''Ankle_L'' has been deleted
+
+    Transform ''LowerLeg_L'' has been deleted
+
+    Transform
+    ''UpperLeg_L'' has been deleted
+
+    Transform ''Ball_R'' has been deleted
+
+    Transform
+    ''Ankle_R'' has been deleted
+
+    Transform ''LowerLeg_R'' has been deleted
+
+    Transform
+    ''UpperLeg_R'' has been deleted
+
+    Transform ''Hips'' has been deleted
+
+    Transform
+    ''Root'' has been deleted'
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -3753,8 +3859,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0843d6272eeb9fb428c263ae1e1e6027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 100
+  damage: 15
   hp: 0
   hpBar: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
+  isAlive: 1
 --- !u!114 &590177330952168123
 MonoBehaviour:
   m_ObjectHideFlags: 0

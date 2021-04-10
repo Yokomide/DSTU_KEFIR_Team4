@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
         //Смерть ГГ
         if (GetComponent<MainHeroHp>().HeroHp <=0)
-        {
+        {   
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
             GetComponent<Rigidbody>().freezeRotation = true;
             Destroy(GetComponent <MouseFollow>());
