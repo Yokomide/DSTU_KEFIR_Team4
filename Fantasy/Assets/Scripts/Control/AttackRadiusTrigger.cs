@@ -119,7 +119,7 @@ public class AttackRadiusTrigger : MonoBehaviour
         other.GetComponent<NavMeshAgent>().speed = 0f;
         //Задержка анимации получения урона
         yield return new WaitForSeconds(0.3f);
-        DeathAnim.Play("Hit");
+        DeathAnim.Play("TakeDmg");
         yield return new WaitForSeconds(0.1f);
         bloodPos = other.GetComponent<Transform>();
         Instantiate(bloodSplat, bloodPos);

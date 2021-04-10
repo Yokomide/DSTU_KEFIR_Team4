@@ -36,7 +36,7 @@ public class MobAI : MonoBehaviour
 
     public void StartAttack()
     {
-        InvokeRepeating("Attack", 0.5f, 1f);
+        InvokeRepeating("Attack", 0.2f, 0f);
     }
     void Start()
     {   
