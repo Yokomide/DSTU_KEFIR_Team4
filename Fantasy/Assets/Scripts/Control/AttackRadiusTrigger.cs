@@ -27,21 +27,25 @@ public class AttackRadiusTrigger : MonoBehaviour
     private Player _playerMove;
     private NavMeshAgent agent;
 
+    public bool isAttacking = false;
+
 
     private void Start()
     {
         _playerMove = player.GetComponent<Player>();
         heroStats = player.GetComponent<MainHeroHp>();
         _attackCoolDown = coolDownTimer;
+        _tempSpeed = _playerMove.speed;
     }
 
     private void Update()
     {
         _attackCoolDown += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer && heroStats.HeroHp>0)
         {
             StopAllCoroutines();
+            gameObject.GetComponentInParent<AnimMoveset>().AttackAnimation();
             _attackCoolDown = 0f;
             _tempSpeed = _playerMove.speed;
             _playerMove.speed = 0.2f;
@@ -113,7 +117,10 @@ public class AttackRadiusTrigger : MonoBehaviour
 
             }
         }
-        isTriggered = false;
+        if (enemies.Count == 0)
+        {
+            isTriggered = false;
+        }
     }
 
 
