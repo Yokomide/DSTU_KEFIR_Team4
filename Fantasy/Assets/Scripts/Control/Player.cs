@@ -4,19 +4,19 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public AttackRadiusTrigger AttackRadiusT;
-    public float speed = 2f; // скорость нашего персонажа
-    public float shiftSpeedMultiplier = 1.6f; // скорость при нажатии Shift
-    public float sensetivity = 5f; //скорость поворота камеры при вращении мышки
+    public float speed = 2f;
+    public float shiftSpeedMultiplier = 1.6f;
+    public float sensetivity = 5f;
 
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
         Vector3 direction = new Vector3(h, 0, v);
 
-        //бег при нажатии клавиши Shift
+        
         if (Input.GetKey(KeyCode.LeftShift))
         {
             transform.GetComponent<Rigidbody>().MovePosition(transform.GetComponent<Rigidbody>().position + direction * speed * shiftSpeedMultiplier * Time.deltaTime);
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
             transform.GetComponent<Rigidbody>().MovePosition(transform.GetComponent<Rigidbody>().position + direction * speed * Time.deltaTime);
         }  
 
-        //—мерть √√
+        
         if (GetComponent<MainHeroHp>().HeroHp <=0)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
