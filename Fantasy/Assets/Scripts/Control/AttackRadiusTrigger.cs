@@ -21,11 +21,17 @@ public class AttackRadiusTrigger : MonoBehaviour
     private float _tempSpeed;
     public List<GameObject> enemies = new List<GameObject>();
 
-    private string _enemyTemp;
+
+    private MainHeroHp heroStats;
+    private EnemyStats _enemyStats;
+    private Player _playerMove;
+    private NavMeshAgent agent;
 
 
     private void Start()
     {
+        _playerMove = player.GetComponent<Player>();
+        heroStats = player.GetComponent<MainHeroHp>();
         _attackCoolDown = coolDownTimer;
     }
 
@@ -37,27 +43,27 @@ public class AttackRadiusTrigger : MonoBehaviour
         {
             StopAllCoroutines();
             _attackCoolDown = 0f;
-            _tempSpeed = player.GetComponent<Player>().speed;
-            player.GetComponent<Player>().speed = 0.2f;
+            _tempSpeed = _playerMove.speed;
+            _playerMove.speed = 0.2f;
             StartCoroutine(StopOnAttack(_tempSpeed));
             if (enemies.Count != 0)
             {
                 for (int i = 0; i < enemies.Count; i++)
                 {
-                    NavMeshAgent agent = enemies[i].GetComponent<NavMeshAgent>();
+                    _enemyStats = enemies[i].GetComponent<EnemyStats>();
+                    agent = enemies[i].GetComponent<NavMeshAgent>();
                     DeathAnim = enemies[i].GetComponent<Animator>();
 
-                    enemies[i].GetComponent<EnemyStats>().Attacked(player.GetComponent<MainHeroHp>().damage);
+                    _enemyStats.Attacked(player.GetComponent<MainHeroHp>().damage);
 
                     //Запуск анимации получения урона с задержкой
-                    if (enemies[i].GetComponent<EnemyStats>().isAlive)
+                    if (_enemyStats.isAlive)
                     {
                         StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
                     }
-
-                    if (!enemies[i].GetComponent<EnemyStats>().isAlive)
+                    else
                     {
-                        player.GetComponent<MainHeroHp>()._ExpNum += Random.Range(50, 70);
+                        heroStats._ExpNum += Random.Range(50, 70);
                         //Активация триггера для начала анимации смерти.
                         DeathAnim.SetTrigger("Active");
 
@@ -130,7 +136,7 @@ public class AttackRadiusTrigger : MonoBehaviour
     IEnumerator StopOnAttack(float tempSpeed)
     {
         yield return new WaitForSeconds(1f);
-        player.GetComponent<Player>().speed = tempSpeed;
+        _playerMove.speed = tempSpeed;
     }
 
 }

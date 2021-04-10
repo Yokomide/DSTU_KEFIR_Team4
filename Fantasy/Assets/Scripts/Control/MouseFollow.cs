@@ -7,7 +7,7 @@ public class MouseFollow : MonoBehaviour
 
     public Player player;
 
-    void Update()
+    void LateUpdate()
     {
         float hitdist = 0.0f;
 
