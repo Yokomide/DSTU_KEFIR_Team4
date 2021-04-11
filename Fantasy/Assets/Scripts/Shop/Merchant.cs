@@ -16,6 +16,8 @@ public class Merchant : MonoBehaviour
     public GameObject shopContainer;
     public GameObject player;
 
+    public GameObject menu;
+
 
 
     private void Start()
@@ -50,7 +52,7 @@ public class Merchant : MonoBehaviour
 
     private void ToggleShopMenu()
     {
-        if (_isHere && Input.GetKeyDown(KeyCode.T))
+        if (_isHere && Input.GetKeyDown(KeyCode.T) && !menu.activeSelf)
         {
             _showShop = !_showShop;
             shopContainer.SetActive(_showShop);
