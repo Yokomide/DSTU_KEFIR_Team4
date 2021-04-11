@@ -11,6 +11,8 @@ public class Inventory : MonoBehaviour
 
     public GameObject cellContainer;
 
+    public GameObject menu;
+
 
     void Start()
     {
@@ -83,7 +85,7 @@ public class Inventory : MonoBehaviour
 
     void ToggleInventory()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && !menu.activeSelf)
         {
             if (cellContainer.activeSelf)
             {

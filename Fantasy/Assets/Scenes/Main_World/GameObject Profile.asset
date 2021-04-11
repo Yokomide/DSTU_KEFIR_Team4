@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 1.29
+    m_Value: 3.88
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 13.06
+    m_Value: 20.35
     min: 0
   scatter:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 0.455
     min: 0
     max: 1
   clamp:
@@ -42,7 +42,7 @@ MonoBehaviour:
     m_Value: 1
   skipIterations:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 11
     min: 0
     max: 16
   dirtTexture:
@@ -68,14 +68,14 @@ MonoBehaviour:
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   gaussianStart:
-    m_OverrideState: 1
-    m_Value: 4.15
+    m_OverrideState: 0
+    m_Value: 3.16
     min: 0
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 14.34
     min: 0
   gaussianMaxRadius:
     m_OverrideState: 1
@@ -84,19 +84,19 @@ MonoBehaviour:
     max: 1.5
   highQualitySampling:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   focusDistance:
     m_OverrideState: 1
-    m_Value: 1.06
+    m_Value: 2.85
     min: 0.1
   aperture:
     m_OverrideState: 1
-    m_Value: 32
+    m_Value: 10.2
     min: 1
     max: 32
   focalLength:
     m_OverrideState: 1
-    m_Value: 65.41
+    m_Value: 112
     min: 1
     max: 300
   bladeCount:
@@ -111,7 +111,7 @@ MonoBehaviour:
     max: 1
   bladeRotation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 36
     min: -180
     max: 180
 --- !u!114 &-2246895864896449926
@@ -129,17 +129,17 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   color:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   center:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.338
+    m_Value: 0.451
     min: 0
     max: 1
   smoothness:
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.17
+    m_Value: 0.201
     min: 0
     max: 1
 --- !u!114 &5808019226016571355
@@ -219,16 +219,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
     min: -100
     max: 100
   tint:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
     min: -100
     max: 100
 --- !u!114 &8435780993057780385
@@ -247,13 +247,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 0
-    m_Value: {x: 0.8465707, y: 0.99430215, z: 1, w: -0.03273322}
+    m_Value: {x: 0.92235035, y: 1, z: 0.96643376, w: -0.01613571}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.747476, y: 0.8008291, z: 1, w: 0.18657929}
+    m_Value: {x: 0.6477537, y: 0.69653803, z: 1, w: 0.037201695}
   gain:
     m_OverrideState: 0
-    m_Value: {x: 0.9694855, y: 1, z: 0.8541718, w: -0.07528628}
+    m_Value: {x: 1, y: 0.74769664, z: 0.8240904, w: -0.07528628}
 --- !u!114 &8936920888996908208
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -266,14 +266,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 0.5
   contrast:
     m_OverrideState: 1
-    m_Value: -21.88
+    m_Value: -7
     min: -100
     max: 100
   colorFilter:
@@ -289,6 +289,6 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 84.98
+    m_Value: 71
     min: -100
     max: 100
