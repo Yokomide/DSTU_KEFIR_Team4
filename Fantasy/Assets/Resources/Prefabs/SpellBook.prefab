@@ -114,8 +114,8 @@ MonoBehaviour:
   nameItem: SpellBook
   id: 2
   countItem: 0
-  isStackable: 0
-  maxStackSize: 1
+  isStackable: 1
+  maxStackSize: 3
   lootType: high
   descriptionItem: 
   pathIcon: Icons/spellBook

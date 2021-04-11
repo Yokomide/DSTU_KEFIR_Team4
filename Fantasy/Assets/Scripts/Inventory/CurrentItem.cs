@@ -34,18 +34,27 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                     GameObject droppedObject = Instantiate(Resources.Load<GameObject>(inventory.items[index].pathPrefab));
                     playerObject = GameObject.FindGameObjectWithTag("Player");
                     droppedObject.transform.position = playerObject.transform.position + new Vector3(-1, +1, 0);
+                    if (inventory.items[index].countItem > 1)
+                    {
+                        inventory.items[index].countItem--;
+                    }
+                    else
+                    {
+                        inventory.items[index] = new Items();
+                    }
                 }
                 else
                 {
-                    merchant.AddItem(inventory.items[index]);
-                }
-                if (inventory.items[index].countItem > 1)
-                {
-                    inventory.items[index].countItem--;
-                }
-                else
-                {
-                    inventory.items[index] = new Items();
+                    if(inventory.items[index].countItem > 1)
+                    {
+                        inventory.items[index].countItem--;
+                        merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                    }
+                    else
+                    {
+                        merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                        inventory.items[index] = new Items();
+                    }
                 }
                 merchant.DisplayItem();
                 inventory.DisplayItem();
