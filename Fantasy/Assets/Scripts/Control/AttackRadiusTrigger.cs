@@ -27,21 +27,25 @@ public class AttackRadiusTrigger : MonoBehaviour
     private Player _playerMove;
     private NavMeshAgent agent;
 
+    public bool isAttacking = false;
+
 
     private void Start()
     {
         _playerMove = player.GetComponent<Player>();
         heroStats = player.GetComponent<MainHeroHp>();
         _attackCoolDown = coolDownTimer;
+        _tempSpeed = _playerMove.speed;
     }
 
     private void Update()
     {
         _attackCoolDown += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer && heroStats.HeroHp>0)
         {
             StopAllCoroutines();
+            gameObject.GetComponentInParent<AnimMoveset>().AttackAnimation();
             _attackCoolDown = 0f;
             _tempSpeed = _playerMove.speed;
             _playerMove.speed = 0.2f;
@@ -56,7 +60,6 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                     _enemyStats.Attacked(player.GetComponent<MainHeroHp>().damage);
 
-                    //Запуск анимации получения урона с задержкой
                     if (_enemyStats.isAlive)
                     {
                         StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
@@ -64,10 +67,8 @@ public class AttackRadiusTrigger : MonoBehaviour
                     else
                     {
                         heroStats._ExpNum += Random.Range(50, 70);
-                        //Активация триггера для начала анимации смерти.
                         DeathAnim.SetTrigger("Active");
 
-                        //Остановка следования к точке
                         agent.isStopped = true;
                         enemies.RemoveAt(i);
 
@@ -113,7 +114,10 @@ public class AttackRadiusTrigger : MonoBehaviour
 
             }
         }
-        isTriggered = false;
+        if (enemies.Count == 0)
+        {
+            isTriggered = false;
+        }
     }
 
 
@@ -123,7 +127,6 @@ public class AttackRadiusTrigger : MonoBehaviour
     {
 
         other.GetComponent<NavMeshAgent>().speed = 0f;
-        //Задержка анимации получения урона
         yield return new WaitForSeconds(0.3f);
         DeathAnim.Play("TakeDmg");
         yield return new WaitForSeconds(0.1f);

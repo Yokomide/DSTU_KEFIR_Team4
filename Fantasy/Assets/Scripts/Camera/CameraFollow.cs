@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     public float cameraHeight = 8f;
     public float cameraZoffset = 2f;
 
-    private void FixedUpdate()
+    private void Update()
     {
         Vector3 pos = new Vector3(player.transform.position.x, player.transform.position.y+cameraHeight, player.transform.position.z-cameraZoffset);
         transform.GetComponent<Rigidbody>().MovePosition(pos);

@@ -17,20 +17,19 @@ public class Player : MonoBehaviour
     {
         _rb = transform.GetComponent<Rigidbody>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         v = Input.GetAxis("Vertical");
         h = Input.GetAxis("Horizontal");
         Vector3 direction = new Vector3(h, 0, v);
 
-
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            _rb.MovePosition(_rb.position + direction * speed * shiftSpeedMultiplier * Time.deltaTime);
+            _rb.MovePosition(_rb.position + direction * speed * shiftSpeedMultiplier * Time.fixedDeltaTime);
         }
         else
         {
-            _rb.MovePosition(_rb.position + direction * speed * Time.deltaTime);
+            _rb.MovePosition(_rb.position + direction * speed * Time.fixedDeltaTime);
         }
 
 
@@ -38,11 +37,12 @@ public class Player : MonoBehaviour
         {
             _rb.constraints = RigidbodyConstraints.FreezePosition;
             _rb.freezeRotation = true;
-            Destroy(GetComponent<MouseFollow>());
-            Destroy(GetComponent<AnimMoveset>());
-            Destroy(GetComponent<SphereCollider>());
-            Destroy(AttackRadiusT.GetComponent<SphereCollider>());
-
+            gameObject.GetComponent<AnimMoveset>().DeathAnimation();
+        }
+        else
+        {
+            _rb.constraints = RigidbodyConstraints.None;
+            _rb.freezeRotation = false;
         }
 
     }
