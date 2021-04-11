@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyStats : MonoBehaviour
 {
@@ -24,8 +25,13 @@ public class EnemyStats : MonoBehaviour
     private MeshRenderer _meshRedHpLine;
     private Transform _transformRedHpLine;
 
+    private Animator DeathAnim;
+    private NavMeshAgent agent;
+
     public void Awake()
     {
+        DeathAnim = gameObject.GetComponent<Animator>();
+        agent = gameObject.GetComponent<NavMeshAgent>();
         
         hp = 100;
         linePos = transform;
@@ -82,9 +88,11 @@ public class EnemyStats : MonoBehaviour
     {
         Destroy(_hpLine);
         Destroy(_hpLineRed);
+
         var deadBody = Instantiate(gameObject.GetComponentInChildren<SkinnedMeshRenderer>(), gameObject.GetComponent<Transform>());
         deadBody.transform.parent = Corp.transform;
         Destroy(gameObject, 4);
+
         _isRedHpLineDestroyed = true;
         isAlive = false;
         gameObject.GetComponent<EnemyLootDrop>().DropItems();

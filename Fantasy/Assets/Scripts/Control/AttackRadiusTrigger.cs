@@ -29,6 +29,8 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     public bool isAttacking = false;
 
+    GameObject tempObject;
+
 
     private void Start()
     {
@@ -42,7 +44,7 @@ public class AttackRadiusTrigger : MonoBehaviour
     {
         _attackCoolDown += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer && heroStats.HeroHp>0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer && heroStats.HeroHp > 0)
         {
             StopAllCoroutines();
             gameObject.GetComponentInParent<AnimMoveset>().AttackAnimation();
@@ -68,12 +70,9 @@ public class AttackRadiusTrigger : MonoBehaviour
                     {
                         heroStats._ExpNum += Random.Range(50, 70);
                         DeathAnim.SetTrigger("Active");
-
                         agent.isStopped = true;
                         enemies.RemoveAt(i);
-
                     }
-
                 }
             }
         }
@@ -86,29 +85,29 @@ public class AttackRadiusTrigger : MonoBehaviour
         if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && other.GetComponent<EnemyStats>().isAlive)
         {
             bool _isHere = false;
-            GameObject temp = other.gameObject;
-            for (int i = 0; i < enemies.Count; i++)
+            tempObject = other.gameObject;
+            foreach (GameObject i in enemies)
             {
-                if (enemies[i] == temp)
+                if (i == tempObject)
                 {
                     _isHere = true;
                     break;
                 }
 
             }
-            if (!_isHere) enemies.Add(temp);
+            if (!_isHere) enemies.Add(tempObject);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && other.GetComponent<EnemyStats>().isAlive)
         {
-            GameObject temp = other.gameObject;
-            for (int i = 0; i < enemies.Count; i++)
+            tempObject = other.gameObject;
+            foreach (GameObject i in enemies)
             {
-                if (enemies[i] == temp)
+                if (i == tempObject)
                 {
-                    enemies.RemoveAt(i);
+                    enemies.Remove(i);
                     break;
                 }
 
