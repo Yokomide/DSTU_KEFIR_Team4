@@ -4,13 +4,9 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
 {
     [HideInInspector]
     public int index;
-    public GameObject shop;
-
-    GameObject playerObject;
     GameObject inventoryObject;
     Inventory inventory;
     Merchant merchant;
-    Bag bag;
 
     void Start()
     {
@@ -18,7 +14,6 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
         inventory = inventoryObject.GetComponent<Inventory>();
         merchant = inventoryObject.GetComponent<Merchant>();
     }
-
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -40,5 +35,6 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                 inventory.DisplayItem();
             }
         }
+        //Shift fo full stack
     }
 }

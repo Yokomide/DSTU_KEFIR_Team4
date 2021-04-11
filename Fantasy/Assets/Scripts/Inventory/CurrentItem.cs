@@ -2,10 +2,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class CurrentItem : MonoBehaviour, IPointerClickHandler
 {
-    [HideInInspector]
-    public int index;
+    [HideInInspector]public int index;
     public GameObject shop;
-
     GameObject playerObject;
     GameObject inventoryObject;
     Inventory inventory;
@@ -18,8 +16,6 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
         inventory = inventoryObject.GetComponent<Inventory>();
         merchant = inventoryObject.GetComponent<Merchant>();
     }
-
-
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right)
@@ -40,14 +36,14 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                         inventory.items[index] = new Items();
                     }
                 }
-                else
-                {
-                    if(inventory.items[index].countItem > 1)
+                else 
+                { 
+                    if (inventory.items[index].countItem > 1)
                     {
                         inventory.items[index].countItem--;
                         merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
                     }
-                    else
+                    else 
                     {
                         merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
                         inventory.items[index] = new Items();
@@ -57,6 +53,5 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                 inventory.DisplayItem();
             }
         }
-
     }
 }
