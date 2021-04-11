@@ -6,15 +6,13 @@ public class Merchant : MonoBehaviour
 {
     private bool _isHere = false;
     private bool _showShop = false;
-
-
     private Canvas _canvas;
     public List<Items> _merchantsItems;
+
     public GameObject shopContainer;
     public GameObject player;
 
     public GameObject menu;
-
 
     private void Start()
     {
@@ -25,11 +23,14 @@ public class Merchant : MonoBehaviour
         {
             _merchantsItems.Add(new Items());
         }
+        for (int i = 0; i < shopContainer.transform.childCount; i++)
+        {
+            shopContainer.transform.GetChild(i).GetComponent<CurrentItem>().index = i;
+        }
     }
     private void Update()
     {
         ToggleShopMenu();
-
     }
     private void OnTriggerEnter(Collider other)
     {

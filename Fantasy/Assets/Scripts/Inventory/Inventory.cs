@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     public float rayDistance;
     [HideInInspector]
     public List<Items> items;
+    [HideInInspector]
     public List<Items> itemsOnTrigger;
 
     public GameObject cellContainer;
@@ -74,7 +75,6 @@ public class Inventory : MonoBehaviour
             {
                 items[i] = item;
                 items[i].countItem = 1;
-
                 DisplayItem();
                 Destroy(item.gameObject);
                 itemsOnTrigger.Remove(item);

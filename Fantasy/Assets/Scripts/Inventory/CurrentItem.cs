@@ -1,8 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-
-
-
 public class CurrentItem : MonoBehaviour, IPointerClickHandler
 {
     [HideInInspector]
