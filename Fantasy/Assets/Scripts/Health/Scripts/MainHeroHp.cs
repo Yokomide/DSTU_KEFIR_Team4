@@ -39,11 +39,5 @@ public class MainHeroHp : MonoBehaviour
             }
             lvlBar.fillAmount = _ExpNum / (100 + Lvl * 10);
         }
-        else
-        {
-            //gameObject.GetComponent<Player>().GetComponent<AttackRadiusTrigger>().enemies.Clear();
-            //Destroy(gameObject.GetComponent<AttackRadiusTrigger>().GetComponent<SphereCollider>());
-
-        }
     }
 }

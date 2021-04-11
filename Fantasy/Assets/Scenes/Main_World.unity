@@ -6804,6 +6804,7 @@ MonoBehaviour:
   isTriggered: 0
   coolDownTimer: 1.3
   enemies: []
+  isAttacking: 0
 --- !u!135 &246506849
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -24886,6 +24887,10 @@ PrefabInstance:
       propertyPath: weaponTrail
       value: 
       objectReference: {fileID: 569950257}
+    - target: {fileID: 8947278975237475603, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
+      propertyPath: MainCharacterAnimation
+      value: 
+      objectReference: {fileID: 1883823158}
     - target: {fileID: 8947278975237475603, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: MainCharacter_Animation
       value: 

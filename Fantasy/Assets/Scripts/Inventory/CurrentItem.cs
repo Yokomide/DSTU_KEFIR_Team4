@@ -25,7 +25,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right) // нопки мыши : Left Right Middle
+        if (eventData.button == PointerEventData.InputButton.Right)
         {
             if (inventory.items[index].id != 0)
             {

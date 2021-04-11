@@ -60,7 +60,6 @@ public class AttackRadiusTrigger : MonoBehaviour
 
                     _enemyStats.Attacked(player.GetComponent<MainHeroHp>().damage);
 
-                    //Запуск анимации получения урона с задержкой
                     if (_enemyStats.isAlive)
                     {
                         StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
@@ -68,10 +67,8 @@ public class AttackRadiusTrigger : MonoBehaviour
                     else
                     {
                         heroStats._ExpNum += Random.Range(50, 70);
-                        //Активация триггера для начала анимации смерти.
                         DeathAnim.SetTrigger("Active");
 
-                        //Остановка следования к точке
                         agent.isStopped = true;
                         enemies.RemoveAt(i);
 
@@ -130,7 +127,6 @@ public class AttackRadiusTrigger : MonoBehaviour
     {
 
         other.GetComponent<NavMeshAgent>().speed = 0f;
-        //Задержка анимации получения урона
         yield return new WaitForSeconds(0.3f);
         DeathAnim.Play("TakeDmg");
         yield return new WaitForSeconds(0.1f);

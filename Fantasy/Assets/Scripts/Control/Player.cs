@@ -38,10 +38,6 @@ public class Player : MonoBehaviour
             _rb.constraints = RigidbodyConstraints.FreezePosition;
             _rb.freezeRotation = true;
             gameObject.GetComponent<AnimMoveset>().DeathAnimation();
-            Destroy(GetComponent<MouseFollow>());
-            Destroy(GetComponent<SphereCollider>());
-            Destroy(AttackRadiusT.GetComponent<SphereCollider>());
-
         }
 
     }
