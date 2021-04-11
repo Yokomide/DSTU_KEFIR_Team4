@@ -13,7 +13,7 @@ public class MouseFollow : MonoBehaviour
     {
         _heroStats = gameObject.GetComponent<MainHeroHp>();
     }
-    void LateUpdate()
+    void Update()
     {
         float hitdist = 0.0f;
 
