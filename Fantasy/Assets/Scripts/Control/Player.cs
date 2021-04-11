@@ -39,11 +39,6 @@ public class Player : MonoBehaviour
             _rb.freezeRotation = true;
             gameObject.GetComponent<AnimMoveset>().DeathAnimation();
         }
-        else
-        {
-            _rb.constraints = RigidbodyConstraints.None;
-            _rb.freezeRotation = false;
-        }
 
     }
 
