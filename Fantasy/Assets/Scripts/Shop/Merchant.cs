@@ -35,8 +35,11 @@ public class Merchant : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) _isHere = false;
-        shopContainer.SetActive(_isHere);
+        if (other.CompareTag("Player"))
+        {
+            _isHere = false;
+            shopContainer.SetActive(_isHere);
+        }
     }
 
     private void ToggleShopMenu()
