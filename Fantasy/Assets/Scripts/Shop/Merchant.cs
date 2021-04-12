@@ -6,25 +6,15 @@ public class Merchant : MonoBehaviour
 {
     private bool _isHere = false;
     private bool _showShop = false;
-
-    public Inventory inventory;
-
     private Canvas _canvas;
     public List<Items> _merchantsItems;
-    public List<Items> itemsOnTrigger;
-
     public GameObject shopContainer;
     public GameObject player;
-
     public GameObject menu;
-
-
-
     private void Start()
     {
         shopContainer.SetActive(false);
         _canvas = GetComponent<Canvas>();
-        itemsOnTrigger = new List<Items>();
         _merchantsItems = new List<Items>();
         for (int i = 0; i < shopContainer.transform.childCount; i++)
         {
@@ -32,13 +22,12 @@ public class Merchant : MonoBehaviour
         }
         for (int i = 0; i < shopContainer.transform.childCount; i++)
         {
-            //shopContainer.transform.GetChild(i).GetComponent<CurrentItem>().index = i;
+            shopContainer.transform.GetChild(i).GetComponent<CurrentItemMerchant>().index = i;
         }
     }
     private void Update()
     {
         ToggleShopMenu();
-
     }
     private void OnTriggerEnter(Collider other)
     {
