@@ -37,7 +37,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                         inventory.items[index] = new Items();
                     }
                 }
-                else if (!merchant.full)
+                else
                 {
                     if (inventory.items[index].countItem > 1)
                     {
