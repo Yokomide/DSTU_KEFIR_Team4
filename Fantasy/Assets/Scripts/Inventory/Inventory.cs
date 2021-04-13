@@ -8,8 +8,10 @@ public class Inventory : MonoBehaviour
     [HideInInspector]public List<Items> items;
     [HideInInspector]public List<Items> itemsOnTrigger;
     public GameObject cellContainer;
-
+    public GameObject shopContainer;
     public GameObject menu;
+
+    public bool full=false;
 
 
     void Start()
@@ -30,6 +32,15 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         ToggleInventory();
+        if (itemsOnTrigger.Count != 0 && !full)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if(!shopContainer.activeSelf){
+                    AddItem(itemsOnTrigger[0]);
+                }
+            }
+        }
     }
 
 

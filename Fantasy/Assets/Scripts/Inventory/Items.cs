@@ -27,16 +27,6 @@ public class Items : MonoBehaviour
         inventory = inventoryObject.GetComponent<Inventory>();
     }
 
-    void Update()
-    {
-        if (inventory.itemsOnTrigger.Count != 0)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                inventory.AddItem(inventory.itemsOnTrigger[0]);
-            }
-        }
-    }
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
