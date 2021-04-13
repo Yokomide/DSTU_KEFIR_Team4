@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyStats : MonoBehaviour
 {
+    public string enemyName = "Враг";
     public float maxHp = 100;
     public float damage = 15;
     public float hp;
