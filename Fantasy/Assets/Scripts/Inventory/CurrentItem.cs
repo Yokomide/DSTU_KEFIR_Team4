@@ -2,13 +2,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class CurrentItem : MonoBehaviour, IPointerClickHandler
 {
-    [HideInInspector]public int index;
+    [HideInInspector] public int index;
     public GameObject shop;
     GameObject playerObject;
     GameObject inventoryObject;
     Inventory inventory;
     Merchant merchant;
     Bag bag;
+
 
     void Start()
     {
@@ -36,19 +37,66 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                         inventory.items[index] = new Items();
                     }
                 }
-                else 
-                { 
+                else if (!merchant.full)
+                {
                     if (inventory.items[index].countItem > 1)
                     {
-                        inventory.items[index].countItem--;
-                        merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                        for (int i = 0; i < merchant._merchantsItems.Count; i++)
+                        {
+
+                            if (merchant._merchantsItems[i].id == 0)
+                            {
+                                inventory.items[index].countItem--;
+                                merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                                break;
+                            }
+                            else if (merchant._merchantsItems[i].id == inventory.items[index].id && merchant._merchantsItems[i].countItem != merchant._merchantsItems[i].maxStackSize)
+                            {
+                                inventory.items[index].countItem--;
+                                merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                                break;
+                            }
+
+                        }
                     }
-                    else 
+                    else
                     {
-                        merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
-                        inventory.items[index] = new Items();
+                        if (inventory.items[index].isStackable)
+                        {
+                            for (int i = 0; i < merchant._merchantsItems.Count; i++)
+                            {
+                                
+                                 if (merchant._merchantsItems[i].id == 0)
+                                {
+                                    merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                                    inventory.items[index] = new Items();
+                                    break;
+                                }
+                                else if (merchant._merchantsItems[i].id == inventory.items[index].id && merchant._merchantsItems[i].countItem != merchant._merchantsItems[i].maxStackSize)
+                                {
+                                    merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                                    inventory.items[index] = new Items();
+                                    break;
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            for (int i = 0; i < merchant._merchantsItems.Count; i++)
+                            {
+                                if (merchant._merchantsItems[i].id == 0)
+                                {
+                                    merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                                    inventory.items[index] = new Items();
+                                    break;
+                                }
+                            }
+                        }
                     }
                 }
+                
+                //Shift fo full stack
                 merchant.DisplayItem();
                 inventory.DisplayItem();
             }

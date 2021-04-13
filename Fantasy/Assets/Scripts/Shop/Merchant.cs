@@ -2,15 +2,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Merchant : MonoBehaviour
+public class Merchant : MonoBehaviour 
 {
     private bool _isHere = false;
-    private bool _showShop = false;
+    public bool _showShop = false;
     private Canvas _canvas;
     public List<Items> _merchantsItems;
     public GameObject shopContainer;
     public GameObject player;
     public GameObject menu;
+    public bool full = false;
+
     private void Start()
     {
         shopContainer.SetActive(false);
@@ -38,7 +40,6 @@ public class Merchant : MonoBehaviour
         if (other.CompareTag("Player")) _isHere = false;
         shopContainer.SetActive(_isHere);
     }
-
     private void ToggleShopMenu()
     {
         if (_isHere && Input.GetKeyDown(KeyCode.T) && !menu.activeSelf)
@@ -49,7 +50,6 @@ public class Merchant : MonoBehaviour
     }
     public void AddItem(Items item)
     {
-        player.GetComponent<MainHeroHp>().money += item.cost;
         if (item.isStackable)
         {
             AddStackableItem(item);
@@ -59,7 +59,6 @@ public class Merchant : MonoBehaviour
             AddUnstackableItem(item);
         }
     }
-
     void AddStackableItem(Items item)
     {
         for (int i = 0; i < _merchantsItems.Count; i++)
@@ -85,14 +84,11 @@ public class Merchant : MonoBehaviour
             {
                 _merchantsItems[i] = item;
                 _merchantsItems[i].countItem = 1;
-
                 DisplayItem();
                 break;
             }
         }
     }
-
-
     public void DisplayItem()
     {
         for (int i = 0; i < _merchantsItems.Count; i++)
@@ -101,7 +97,6 @@ public class Merchant : MonoBehaviour
             Transform icon = cell.GetChild(0);
             Transform count = icon.GetChild(0);
             Text txt = count.GetComponent<Text>();
-
             Image img = icon.GetComponent<Image>();
             if (_merchantsItems[i].id != 0)
             {
@@ -121,8 +116,24 @@ public class Merchant : MonoBehaviour
                 img.enabled = false;
                 img.sprite = null;
                 txt.text = null;
-
             }
         }
+    }
+    public void SellPushButton()
+    {
+        for (int i = 0; i < _merchantsItems.Count; i++)
+            if (_merchantsItems[i].id != 0)
+            {
+                if (_merchantsItems[i].isStackable && _merchantsItems[i].countItem>1){
+                    for (int j = 0;i<_merchantsItems[i].countItem;j++){
+                        _merchantsItems[i].countItem--;
+                        player.GetComponent<MainHeroHp>().money += _merchantsItems[i].cost;
+                    }
+                }
+                else 
+                player.GetComponent<MainHeroHp>().money += _merchantsItems[i].cost;
+                _merchantsItems[i] = new Items();
+            }
+        DisplayItem();
     }
 }
