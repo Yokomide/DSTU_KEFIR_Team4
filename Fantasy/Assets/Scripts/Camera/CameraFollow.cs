@@ -1,16 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
     public Player player;
+    public Transform target;
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset;
+
     public float cameraHeight = 8f;
     public float cameraZoffset = 2f;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        Vector3 pos = new Vector3(player.transform.position.x, player.transform.position.y+cameraHeight, player.transform.position.z-cameraZoffset);
-        transform.GetComponent<Rigidbody>().MovePosition(pos);
+        Vector3 desiredPosition = target.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
     }
+
 }
