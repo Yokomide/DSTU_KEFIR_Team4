@@ -6,7 +6,9 @@ public class EnemyStats : MonoBehaviour
 {
     public string enemyName = "Враг";
     public float maxHp = 100;
-    public float damage = 15;
+    public float damage;
+    public float minDamage;
+    public float maxDamage;
     public float hp;
     private AttackRadiusTrigger _beingAttacked;
 

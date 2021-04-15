@@ -9,7 +9,6 @@ public class MobAI : MonoBehaviour
     public Transform direction;
     public GameObject player;
     public MainHeroHp hero;
-
     public GameObject GetPlayer()
     {
         return player;
@@ -17,6 +16,8 @@ public class MobAI : MonoBehaviour
 
     void Attack()
     {
+       
+
         hero = player.GetComponent<MainHeroHp>();
         if (hero.HeroHp < 0)
         {
