@@ -34,7 +34,7 @@ public class EnemyStats : MonoBehaviour
         DeathAnim = gameObject.GetComponent<Animator>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         
-        hp = 100;
+ 
         linePos = transform;
         _hpLine = Instantiate(hpBar, linePos);
         _meshHpLine = _hpLine.GetComponent<MeshRenderer>();
