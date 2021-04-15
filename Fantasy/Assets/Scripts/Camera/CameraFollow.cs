@@ -7,9 +7,6 @@ public class CameraFollow : MonoBehaviour
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
 
-    public float cameraHeight = 8f;
-    public float cameraZoffset = 2f;
-
     private void FixedUpdate()
     {
         Vector3 desiredPosition = target.position + offset;

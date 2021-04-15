@@ -96,6 +96,7 @@ public class EnemyStats : MonoBehaviour
         deadBody.transform.parent = Corp.transform;
         Destroy(gameObject, 4);
 
+
         _isRedHpLineDestroyed = true;
         isAlive = false;
         gameObject.GetComponent<EnemyLootDrop>().DropItems();
