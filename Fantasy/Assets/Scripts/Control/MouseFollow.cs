@@ -25,6 +25,7 @@ public class MouseFollow : MonoBehaviour
             Vector3 targetPoint = ray.GetPoint(hitdist);
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - player.transform.position);
             player.transform.rotation = Quaternion.Slerp(player.transform.rotation, targetRotation, player.speed * Time.deltaTime * player.sensetivity);
+            player.GetComponent<Animator>().rootRotation = player.transform.rotation;
         }
     }
 }

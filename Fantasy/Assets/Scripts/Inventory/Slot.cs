@@ -27,6 +27,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     void OnDisable()
     {
-        img.GetComponent<Image>().sprite = defaultCell;
+       // img.GetComponent<Image>().sprite = defaultCell;
     }
 }
