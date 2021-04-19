@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# UNT0010: Component instance creation
+dotnet_diagnostic.UNT0010.severity = suggestion

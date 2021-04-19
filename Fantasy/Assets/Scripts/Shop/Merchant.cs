@@ -130,11 +130,11 @@ public class Merchant : MonoBehaviour
                 if (_merchantsItems[i].isStackable && _merchantsItems[i].countItem>1){
                     for (int j = 0;i<_merchantsItems[i].countItem;j++){
                         _merchantsItems[i].countItem--;
-                        player.GetComponent<MainHeroHp>().money += _merchantsItems[i].cost;
+                        player.GetComponent<MainHeroHp>().heroStats.money += _merchantsItems[i].cost;
                     }
                 }
                 else 
-                player.GetComponent<MainHeroHp>().money += _merchantsItems[i].cost;
+                player.GetComponent<MainHeroHp>().heroStats.money += _merchantsItems[i].cost;
                 _merchantsItems[i] = new Items();
             }
         DisplayItem();

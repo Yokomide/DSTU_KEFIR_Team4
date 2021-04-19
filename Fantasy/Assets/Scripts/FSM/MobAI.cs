@@ -19,14 +19,14 @@ public class MobAI : MonoBehaviour
        
 
         hero = player.GetComponent<MainHeroHp>();
-        if (hero.HeroHp < 0)
+        if (hero.heroStats.HeroHp < 0)
         {
             animAi.SetBool("Dead", true);
             animAi.Play("Patrol");
         }
         if (Vector3.Distance(gameObject.GetComponent<EnemyStats>().GetComponent<Transform>().position, player.GetComponent<Transform>().position) < 4f)
         {
-            hero.HeroHp -= Random.Range(10, 15);
+            hero.heroStats.HeroHp -= Random.Range(10, 15);
         }
     }
 

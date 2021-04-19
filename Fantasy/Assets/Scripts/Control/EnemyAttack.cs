@@ -34,6 +34,6 @@ public class EnemyAttack : MonoBehaviour
 
     private void Attack()
     {
-        player.HeroHp -= Random.Range(10, 15);
+        player.heroStats.HeroHp -= Random.Range(10, 15);
     }
 }
