@@ -65,8 +65,8 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                         {
                             for (int i = 0; i < merchant._merchantsItems.Count; i++)
                             {
-                                
-                                 if (merchant._merchantsItems[i].id == 0)
+
+                                if (merchant._merchantsItems[i].id == 0)
                                 {
                                     merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
                                     inventory.items[index] = new Items();
@@ -95,7 +95,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                         }
                     }
                 }
-                
+
                 //Shift fo full stack
                 merchant.DisplayItem();
                 inventory.DisplayItem();

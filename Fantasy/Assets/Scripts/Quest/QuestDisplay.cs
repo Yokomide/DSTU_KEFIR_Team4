@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestDisplay : MonoBehaviour
@@ -8,5 +6,5 @@ public class QuestDisplay : MonoBehaviour
 
     public GameObject questOnSceneUI;
 
-    
+
 }

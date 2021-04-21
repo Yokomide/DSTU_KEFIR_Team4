@@ -1,21 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class MobMoving : MonoBehaviour
 {
 
     public Transform goal;
 
-    public Transform GetGoal() {
+    public Transform GetGoal()
+    {
 
         return goal;
     }
 
 
     void Start()
-    {   
+    {
         InvokeRepeating("GameObject_ChangePosition", 0.0f, 5.0f);
     }
 

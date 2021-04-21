@@ -33,7 +33,7 @@ public class Items : MonoBehaviour
         {
             inventory.itemsOnTrigger.Add(gameObject.GetComponent<Items>());
         }
-        if(other.tag == "Item")
+        if (other.tag == "Item")
         {
             Physics.IgnoreCollision(gameObject.GetComponent<MeshCollider>(), other);
         }

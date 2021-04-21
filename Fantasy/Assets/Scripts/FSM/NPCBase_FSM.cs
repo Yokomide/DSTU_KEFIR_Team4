@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -22,8 +20,7 @@ public class NPCBase_FSM : StateMachineBehaviour
         NPC_Move = NPC.GetComponent<NavMeshAgent>();
         opponent = NPC.GetComponent<MobAI>().GetPlayer();
         direction = NPC.GetComponent<MobMoving>().GetGoal();
-        damageMin = NPC.GetComponent<EnemyStats>().minDamage;
-        damageMax = NPC.GetComponent<EnemyStats>().maxDamage;
+
     }
 
 }

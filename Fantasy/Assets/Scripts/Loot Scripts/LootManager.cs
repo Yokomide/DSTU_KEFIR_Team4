@@ -7,5 +7,5 @@ public class LootManager : ScriptableObject
     public List<GameObject> CommonItems;
     public List<GameObject> RareItems;
     public List<GameObject> EpicItems;
-    
+
 }

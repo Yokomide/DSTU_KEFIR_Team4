@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CutoutObject : MonoBehaviour
@@ -32,7 +30,7 @@ public class CutoutObject : MonoBehaviour
         {
             Material[] materials = hitObjects[i].transform.GetComponent<Renderer>().materials;
 
-            for(int m = 0; m < materials.Length; ++m)
+            for (int m = 0; m < materials.Length; ++m)
             {
                 materials[m].SetVector("_CutoutPos", cutoutPos);
                 materials[m].SetFloat("_CutoutSize", 0.2f);

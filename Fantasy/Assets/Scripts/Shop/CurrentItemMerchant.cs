@@ -33,7 +33,8 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                                 inventory.AddItem(Instantiate(Resources.Load<Items>(merchant._merchantsItems[index].pathPrefab)));
                                 break;
                             }
-                            else if(merchant._merchantsItems[index].id == inventory.items[i].id && inventory.items[i].countItem != inventory.items[i].maxStackSize){
+                            else if (merchant._merchantsItems[index].id == inventory.items[i].id && inventory.items[i].countItem != inventory.items[i].maxStackSize)
+                            {
                                 merchant._merchantsItems[index].countItem--;
                                 inventory.AddItem(Instantiate(Resources.Load<Items>(merchant._merchantsItems[index].pathPrefab)));
                                 break;
@@ -52,7 +53,8 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                                     merchant._merchantsItems[index] = new Items();
                                     break;
                                 }
-                                else if(merchant._merchantsItems[index].id == inventory.items[i].id){
+                                else if (merchant._merchantsItems[index].id == inventory.items[i].id)
+                                {
                                     inventory.AddItem(Instantiate(Resources.Load<Items>(merchant._merchantsItems[index].pathPrefab)));
                                     merchant._merchantsItems[index] = new Items();
                                     break;
@@ -61,7 +63,7 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                         }
                         else
                         {
-                            for (int i = 0; i <inventory.items.Count; i++)
+                            for (int i = 0; i < inventory.items.Count; i++)
                             {
                                 if (inventory.items[i].id == 0)
                                 {

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -27,6 +25,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     void OnDisable()
     {
-       // img.GetComponent<Image>().sprite = defaultCell;
+        // img.GetComponent<Image>().sprite = defaultCell;
     }
 }

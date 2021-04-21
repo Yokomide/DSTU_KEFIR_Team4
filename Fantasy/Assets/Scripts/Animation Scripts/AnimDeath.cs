@@ -10,7 +10,7 @@ public class AnimDeath : MonoBehaviour
 
     void Update()
     {
-            if (AttackRadiusT.GetComponent<EnemyStats>().hp < 0)
+            if (AttackRadiusT.GetComponent<EnemyStats>().enemyStats.hp < 0)
         {
             Debug.Log("5");
             AttackRadiusT.DeathAnim.SetTrigger("Active");

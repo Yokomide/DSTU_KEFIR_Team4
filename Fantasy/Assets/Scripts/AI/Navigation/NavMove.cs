@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,7 +6,7 @@ public class NavMove : MonoBehaviour
 
     private Camera _mainCamera;
     private NavMeshAgent agent;
-    
+
 
     void Start()
     {

@@ -5386,6 +5386,10 @@ PrefabInstance:
       propertyPath: enemyName
       value: "\u041F\u0440\u043E\u043A\u043B\u044F\u0442\u044B\u0439"
       objectReference: {fileID: 0}
+    - target: {fileID: 3541122332219392890, guid: 534b7b0f42c1d304299f3f3762536fb4, type: 3}
+      propertyPath: enemyStats
+      value: 
+      objectReference: {fileID: 11400000, guid: c409e87f75b23f6429454fab47c2918c, type: 2}
     - target: {fileID: 6223436754737282516, guid: 534b7b0f42c1d304299f3f3762536fb4, type: 3}
       propertyPath: m_StoppingDistance
       value: 4
@@ -8639,6 +8643,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &295463785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295463779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbe45832111d7643922465d450edc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 11400000, guid: dc6dc445f5b774048a15798ab6fa7424, type: 2}
+  enemy: {fileID: 0}
 --- !u!1 &295844596 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7064237561198603847, guid: 91573b04396467240a553ddf19a43562, type: 3}
@@ -9060,6 +9078,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 5
   m_ObstacleAvoidanceType: 4
+--- !u!114 &316425012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316425010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbe45832111d7643922465d450edc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 11400000, guid: dc6dc445f5b774048a15798ab6fa7424, type: 2}
+  enemy: {fileID: 0}
 --- !u!4 &316425014 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4373196678005266, guid: 2250a4a4fc528684c85ba955eb992ec6, type: 3}
@@ -13703,8 +13735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d70ab10a80c0d748812d610a46f07dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackCoolDown: 1.5
-  player: {fileID: 1883823159}
 --- !u!114 &316425022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14463,6 +14493,7 @@ GameObject:
   - component: {fileID: 344419509}
   - component: {fileID: 344419513}
   - component: {fileID: 344419514}
+  - component: {fileID: 344419512}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14540,6 +14571,18 @@ MonoBehaviour:
   target: {fileID: 1277601255}
   smoothSpeed: 0.125
   offset: {x: 0, y: 11, z: -7.5}
+--- !u!114 &344419512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344419507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76ecf0551531b746aaa52a60cbc9c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &344419513
 Camera:
   m_ObjectHideFlags: 0
@@ -22673,6 +22716,10 @@ PrefabInstance:
       propertyPath: minDamage
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7944891052733297341, guid: d4d17342014c96842ae633419b8f07a5, type: 3}
+      propertyPath: enemyStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 5fc6fc4dc11078742a38031d062addbe, type: 2}
     m_RemovedComponents:
     - {fileID: 7204543303618551381, guid: d4d17342014c96842ae633419b8f07a5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d4d17342014c96842ae633419b8f07a5, type: 3}
@@ -35316,26 +35363,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3320785, y: 2.7876668, z: 3.764314}
   m_Center: {x: 0.05478725, y: 0.89383304, z: 0.4052049}
---- !u!114 &1004479353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004479348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0843d6272eeb9fb428c263ae1e1e6027, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyName: "\u0412\u0440\u0430\u0433"
-  maxHp: 10000000
-  damage: 15
-  minDamage: 0
-  maxDamage: 0
-  hp: 0
-  hpBar: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
-  isAlive: 1
 --- !u!4 &1005006858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4139199580613414, guid: 085524390fafd6b4e9fed9d924db437b, type: 3}
@@ -42983,6 +43010,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4373196678005266, guid: 2250a4a4fc528684c85ba955eb992ec6, type: 3}
   m_PrefabInstance: {fileID: 1573546884}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1243554614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243554609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbe45832111d7643922465d450edc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 11400000, guid: dc6dc445f5b774048a15798ab6fa7424, type: 2}
+  enemy: {fileID: 0}
 --- !u!65 &1243554615
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43024,8 +43065,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d70ab10a80c0d748812d610a46f07dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackCoolDown: 1.5
-  player: {fileID: 1883823159}
 --- !u!114 &1243554620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44717,6 +44756,10 @@ PrefabInstance:
       propertyPath: enemyName
       value: "\u0412\u0435\u0434\u044C\u043C\u0430"
       objectReference: {fileID: 0}
+    - target: {fileID: 7944891052733297341, guid: d4d17342014c96842ae633419b8f07a5, type: 3}
+      propertyPath: enemyStats
+      value: 
+      objectReference: {fileID: 11400000, guid: c409e87f75b23f6429454fab47c2918c, type: 2}
     m_RemovedComponents:
     - {fileID: 7204543303618551381, guid: d4d17342014c96842ae633419b8f07a5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d4d17342014c96842ae633419b8f07a5, type: 3}
@@ -49182,6 +49225,10 @@ PrefabInstance:
       propertyPath: enemyName
       value: "\u0412\u043E\u043B\u0448\u0435\u0431\u043D\u0438\u043A"
       objectReference: {fileID: 0}
+    - target: {fileID: 3932504323228234975, guid: aea27ca7a35042c419065833e8daf224, type: 3}
+      propertyPath: enemyStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 861e500077a63d04597c332dd25b27de, type: 2}
     - target: {fileID: 4670961142108841109, guid: aea27ca7a35042c419065833e8daf224, type: 3}
       propertyPath: goal
       value: 
@@ -49207,6 +49254,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 179454, guid: d4d17342014c96842ae633419b8f07a5, type: 3}
   m_PrefabInstance: {fileID: 1298297187}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1465366126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465366125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbe45832111d7643922465d450edc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 11400000, guid: dc6dc445f5b774048a15798ab6fa7424, type: 2}
+  enemy: {fileID: 0}
 --- !u!4 &1465366127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 431210, guid: d4d17342014c96842ae633419b8f07a5, type: 3}
@@ -52465,6 +52526,10 @@ PrefabInstance:
       propertyPath: enemyName
       value: "\u0422\u0440\u043E\u043B\u043B\u044C"
       objectReference: {fileID: 0}
+    - target: {fileID: 5673105888922660439, guid: 2250a4a4fc528684c85ba955eb992ec6, type: 3}
+      propertyPath: enemyStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 92a9f793103e9ce43aca8a7b83413d8e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2250a4a4fc528684c85ba955eb992ec6, type: 3}
 --- !u!1 &1575506322
@@ -53246,6 +53311,10 @@ PrefabInstance:
       propertyPath: enemyName
       value: "\u0422\u0440\u043E\u043B\u043B\u044C"
       objectReference: {fileID: 0}
+    - target: {fileID: 5673105888922660439, guid: 2250a4a4fc528684c85ba955eb992ec6, type: 3}
+      propertyPath: enemyStats
+      value: 
+      objectReference: {fileID: 11400000, guid: d4a0ac1d8e204b5409c308a002a8f2c3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2250a4a4fc528684c85ba955eb992ec6, type: 3}
 --- !u!1001 &1610715768
@@ -66075,6 +66144,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 130070, guid: 534b7b0f42c1d304299f3f3762536fb4, type: 3}
   m_PrefabInstance: {fileID: 190081789}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2041864913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041864912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbe45832111d7643922465d450edc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 11400000, guid: dc6dc445f5b774048a15798ab6fa7424, type: 2}
+  enemy: {fileID: 11400000, guid: c409e87f75b23f6429454fab47c2918c, type: 2}
 --- !u!114 &2041864915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68450,6 +68533,10 @@ PrefabInstance:
       propertyPath: enemyName
       value: "\u0414\u0440\u0443\u0438\u0434"
       objectReference: {fileID: 0}
+    - target: {fileID: 4443178809859371412, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
+      propertyPath: enemyStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a11e22478c73a241974689712854aef, type: 2}
     m_RemovedComponents:
     - {fileID: 1779831973024986385, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
@@ -68458,6 +68545,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 136616, guid: f7e586317327fe240bef5a82944f49c2, type: 3}
   m_PrefabInstance: {fileID: 2122475183}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2122475185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122475184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbe45832111d7643922465d450edc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 11400000, guid: dc6dc445f5b774048a15798ab6fa7424, type: 2}
+  enemy: {fileID: 0}
 --- !u!195 &2122475186
 NavMeshAgent:
   m_ObjectHideFlags: 0

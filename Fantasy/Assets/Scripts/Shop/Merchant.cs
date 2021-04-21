@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Merchant : MonoBehaviour 
+public class Merchant : MonoBehaviour
 {
     private bool _isHere = false;
     public bool _showShop = false;
@@ -127,14 +127,16 @@ public class Merchant : MonoBehaviour
         for (int i = 0; i < _merchantsItems.Count; i++)
             if (_merchantsItems[i].id != 0)
             {
-                if (_merchantsItems[i].isStackable && _merchantsItems[i].countItem>1){
-                    for (int j = 0;i<_merchantsItems[i].countItem;j++){
+                if (_merchantsItems[i].isStackable && _merchantsItems[i].countItem > 1)
+                {
+                    for (int j = 0; i < _merchantsItems[i].countItem; j++)
+                    {
                         _merchantsItems[i].countItem--;
                         player.GetComponent<MainHeroHp>().heroStats.money += _merchantsItems[i].cost;
                     }
                 }
-                else 
-                player.GetComponent<MainHeroHp>().heroStats.money += _merchantsItems[i].cost;
+                else
+                    player.GetComponent<MainHeroHp>().heroStats.money += _merchantsItems[i].cost;
                 _merchantsItems[i] = new Items();
             }
         DisplayItem();

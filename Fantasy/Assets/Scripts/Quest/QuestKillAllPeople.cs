@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,14 +14,14 @@ public class QuestKillAllPeople : MonoBehaviour
 
     public Text questName;
     public new List<Text> enemiesKilled;
-    List<bool> enemyIsKilled = new List<bool>{ false, false, false, false, false, false };
+    List<bool> enemyIsKilled = new List<bool> { false, false, false, false, false, false };
 
     private void Start()
     {
         for (int i = 0; i < enemies.Count; i++)
         {
-            enemiesKilled[i].text = enemies[i].enemyName;
-            
+            enemiesKilled[i].text = enemies[i].GetComponent<EnemyStats>().enemyStats.enemyName;
+
         }
     }
     private void Update()

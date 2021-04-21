@@ -4,12 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyStats : MonoBehaviour
 {
-    public string enemyName = "Враг";
-    public float maxHp = 100;
-    public float damage;
-    public float minDamage;
-    public float maxDamage;
-    public float hp;
+    public ScrObjEnemyStats enemyStats;
     private AttackRadiusTrigger _beingAttacked;
 
     public GameObject hpBar;
@@ -33,16 +28,18 @@ public class EnemyStats : MonoBehaviour
 
     public void Awake()
     {
+        enemyStats.hp = enemyStats.maxHp;
+
         DeathAnim = gameObject.GetComponent<Animator>();
         agent = gameObject.GetComponent<NavMeshAgent>();
-        
- 
+
+
         linePos = transform;
         _hpLine = Instantiate(hpBar, linePos);
         _meshHpLine = _hpLine.GetComponent<MeshRenderer>();
         _transformHpLine = _hpLine.GetComponent<Transform>();
         _meshHpLine.enabled = false;
-        _transformHpLine.localScale = new Vector3(hp / maxHp, 0.1f, 0.01f);
+        _transformHpLine.localScale = new Vector3(enemyStats.hp / enemyStats.maxHp, 0.1f, 0.01f);
 
         _hpLineRed = Instantiate(_hpLine, linePos);
         _meshRedHpLine = _hpLineRed.GetComponent<MeshRenderer>();
@@ -57,7 +54,7 @@ public class EnemyStats : MonoBehaviour
         if (isAlive)
         {
             _transformHpLine.position = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z);
-            _transformHpLine.localScale = new Vector3(hp / maxHp, 0.1f, 0.01f);
+            _transformHpLine.localScale = new Vector3(enemyStats.hp / enemyStats.maxHp, 0.1f, 0.01f);
             _transformHpLine.rotation = Quaternion.identity;
             _transformRedHpLine.position = new Vector3(_hpLine.transform.position.x, _hpLine.transform.position.y, _hpLine.transform.position.z + 0.02f);
             _transformRedHpLine.rotation = Quaternion.identity;
@@ -69,13 +66,13 @@ public class EnemyStats : MonoBehaviour
         _meshRedHpLine.enabled = true;
         _meshHpLine.enabled = true;
         StartCoroutine(AttackedDelay(heroDamage));
-        _transformHpLine.localScale = new Vector3(hp / maxHp, 0.25f, 0.01f);
+        _transformHpLine.localScale = new Vector3(enemyStats.hp / enemyStats.maxHp, 0.25f, 0.01f);
     }
 
     IEnumerator AttackedDelay(float heroDamage)
     {
-        hp -= (Random.Range(10, 20) + heroDamage);
-        if (hp <= 0)
+        enemyStats.hp -= (Random.Range(10, 20) + heroDamage);
+        if (enemyStats.hp <= 0)
         {
             StartCoroutine(DeathOnCommand());
             yield break;
@@ -103,44 +100,3 @@ public class EnemyStats : MonoBehaviour
         yield return new WaitForEndOfFrame();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

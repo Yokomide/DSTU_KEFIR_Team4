@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,19 +16,19 @@ public class Patrol : NPCBase_FSM
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-            if (NPC_Move.GetComponent<NavMeshAgent>() != null)
-            {
-                NPC_Move.speed = 3f;
-                NPC_Move.SetDestination(direction.position);
-            }
+        if (NPC_Move.GetComponent<NavMeshAgent>() != null)
+        {
+            NPC_Move.speed = 3f;
+            NPC_Move.SetDestination(direction.position);
+        }
 
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-     public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+
     }
 
-  
+
 }

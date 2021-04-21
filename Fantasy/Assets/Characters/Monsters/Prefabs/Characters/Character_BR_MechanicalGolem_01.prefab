@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 5532825546096526368}
   - component: {fileID: 7815609080150652906}
   - component: {fileID: 5499851375895533292}
+  - component: {fileID: 5731777485324445394}
   m_Layer: 0
   m_Name: Character_BR_MechanicalGolem_01
   m_TagString: Untagged
@@ -350,7 +351,7 @@ Transform:
   - {fileID: 4810071759811394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95902137545226380
 Animator:
   serializedVersion: 3
@@ -383,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1170732337855516}
-  MainCharacterAnimation: {fileID: 0}
+  MainCharacterAnimation: {fileID: 95902137545226380}
   WeaponTrail: {fileID: 0}
 --- !u!114 &1327146849335566754
 MonoBehaviour:
@@ -447,6 +448,19 @@ MonoBehaviour:
   lvlBar: {fileID: 0}
   level: {fileID: 0}
   moneyText: {fileID: 0}
+--- !u!114 &5731777485324445394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170732337855516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2db0d3a8f14044089e354f15c39a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1327146849335566754}
 --- !u!1 &1188154518482354
 GameObject:
   m_ObjectHideFlags: 0

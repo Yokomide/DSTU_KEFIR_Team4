@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SellButton : MonoBehaviour
 {
     public GameObject shopContainer;
     public GameObject button;
- 
+
     void Start()
     {
-        
+
     }
-    void Update() {
+    void Update()
+    {
         if (shopContainer.activeSelf)
         {
             button.SetActive(true);
@@ -23,5 +21,5 @@ public class SellButton : MonoBehaviour
         }
 
     }
-    
+
 }

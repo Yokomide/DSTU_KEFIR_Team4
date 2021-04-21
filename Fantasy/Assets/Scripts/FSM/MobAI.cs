@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MobAI : MonoBehaviour
@@ -16,7 +14,7 @@ public class MobAI : MonoBehaviour
 
     void Attack()
     {
-       
+
 
         hero = player.GetComponent<MainHeroHp>();
         if (hero.heroStats.HeroHp < 0)
@@ -26,7 +24,9 @@ public class MobAI : MonoBehaviour
         }
         if (Vector3.Distance(gameObject.GetComponent<EnemyStats>().GetComponent<Transform>().position, player.GetComponent<Transform>().position) < 4f)
         {
-            hero.heroStats.HeroHp -= Random.Range(10, 15);
+            EventManager.OnGetAttack(); // dealing damage through the EventManager
+            // in case of problems in future line bellow is saved here
+            //hero.heroStats.HeroHp -= Random.Range(10, 15);
         }
     }
 
@@ -40,9 +40,9 @@ public class MobAI : MonoBehaviour
         InvokeRepeating("Attack", 0.2f, 0f);
     }
     void Start()
-    {   
+    {
         animAi = GetComponent<Animator>();
-  
+
     }
 
     // Update is called once per frame

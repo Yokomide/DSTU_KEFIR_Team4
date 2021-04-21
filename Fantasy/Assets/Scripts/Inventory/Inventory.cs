@@ -5,13 +5,13 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public float rayDistance;
-    [HideInInspector]public List<Items> items;
-    [HideInInspector]public List<Items> itemsOnTrigger;
+    [HideInInspector] public List<Items> items;
+    [HideInInspector] public List<Items> itemsOnTrigger;
     public GameObject cellContainer;
     public GameObject shopContainer;
     public GameObject menu;
 
-    public bool full=false;
+    public bool full = false;
 
 
     void Start()
@@ -36,7 +36,8 @@ public class Inventory : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if(!shopContainer.activeSelf){
+                if (!shopContainer.activeSelf)
+                {
                     AddItem(itemsOnTrigger[0]);
                 }
             }
