@@ -108,6 +108,7 @@ MonoBehaviour:
   descriptionItem: 
   pathIcon: Icons/bag
   pathPrefab: Prefabs/Bag
+  itemsData: {fileID: 11400000, guid: f25a6c90a0cce78498def9b3b029a597, type: 2}
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!65 &2181053303098479023
 BoxCollider:

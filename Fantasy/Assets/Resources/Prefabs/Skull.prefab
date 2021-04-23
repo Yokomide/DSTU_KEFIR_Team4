@@ -107,6 +107,7 @@ MonoBehaviour:
   descriptionItem: 
   pathIcon: Icons/skull
   pathPrefab: Prefabs/Skull
+  itemsData: {fileID: 11400000, guid: f368c49ac972dee479c327a3f9d41d7b, type: 2}
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!65 &5542272026886030996
 BoxCollider:

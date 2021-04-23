@@ -9,8 +9,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
     Inventory inventory;
     Merchant merchant;
     Bag bag;
-
-
+    
     void Start()
     {
         inventoryObject = GameObject.FindGameObjectWithTag("InventoryTag");
@@ -47,16 +46,15 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                             if (merchant._merchantsItems[i].id == 0)
                             {
                                 inventory.items[index].countItem--;
-                                merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                                merchant.AddItem(CloneClass(inventory.items[index]));
                                 break;
                             }
                             else if (merchant._merchantsItems[i].id == inventory.items[index].id && merchant._merchantsItems[i].countItem != merchant._merchantsItems[i].maxStackSize)
                             {
                                 inventory.items[index].countItem--;
-                                merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                                merchant.AddItem(CloneClass(inventory.items[index]));
                                 break;
                             }
-
                         }
                     }
                     else
@@ -68,17 +66,16 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
 
                                 if (merchant._merchantsItems[i].id == 0)
                                 {
-                                    merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                                    merchant.AddItem(CloneClass(inventory.items[index]));
                                     inventory.items[index] = new Items();
                                     break;
                                 }
                                 else if (merchant._merchantsItems[i].id == inventory.items[index].id && merchant._merchantsItems[i].countItem != merchant._merchantsItems[i].maxStackSize)
                                 {
-                                    merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                                    merchant.AddItem(CloneClass(inventory.items[index]));
                                     inventory.items[index] = new Items();
                                     break;
                                 }
-
                             }
                         }
                         else
@@ -87,7 +84,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                             {
                                 if (merchant._merchantsItems[i].id == 0)
                                 {
-                                    merchant.AddItem(Instantiate(Resources.Load<Items>(inventory.items[index].pathPrefab)));
+                                    merchant.AddItem(CloneClass(inventory.items[index]));
                                     inventory.items[index] = new Items();
                                     break;
                                 }
@@ -95,11 +92,26 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                         }
                     }
                 }
-
                 //Shift fo full stack
                 merchant.DisplayItem();
                 inventory.DisplayItem();
             }
         }
+    }
+
+    public Items CloneClass(Items item)
+    {
+        Items new_item =item;
+        new_item.id = item.id;
+        new_item.cost = item.cost;
+        new_item.nameItem = item.nameItem;
+        new_item.countItem = 1;
+        new_item.isStackable = item.isStackable;
+        new_item.maxStackSize = item.maxStackSize;
+        new_item.lootType = item.lootType;
+        new_item.descriptionItem = item.descriptionItem;
+        new_item.pathPrefab=item.pathPrefab;
+        new_item.pathIcon=item.pathIcon;
+        return new_item;
     }
 }

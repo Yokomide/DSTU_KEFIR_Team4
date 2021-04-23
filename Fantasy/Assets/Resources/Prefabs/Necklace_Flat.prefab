@@ -107,6 +107,7 @@ MonoBehaviour:
   descriptionItem: 
   pathIcon: Icons/necklace_Flat
   pathPrefab: Prefabs/Necklace_Flat
+  itemsData: {fileID: 11400000, guid: 07b7e59e54d602f4ba61c743cf8586d7, type: 2}
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!65 &4508186942232220923
 BoxCollider:

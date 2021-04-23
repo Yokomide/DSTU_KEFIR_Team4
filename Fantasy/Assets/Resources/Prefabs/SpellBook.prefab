@@ -120,6 +120,7 @@ MonoBehaviour:
   descriptionItem: 
   pathIcon: Icons/spellBook
   pathPrefab: Prefabs/SpellBook
+  itemsData: {fileID: 11400000, guid: 3834dcc272d45c147a3201d235092ddd, type: 2}
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!64 &2472325679753303890
 MeshCollider:

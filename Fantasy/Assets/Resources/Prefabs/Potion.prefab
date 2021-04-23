@@ -107,6 +107,7 @@ MonoBehaviour:
   descriptionItem: 
   pathIcon: Icons/potion
   pathPrefab: Prefabs/Potion
+  itemsData: {fileID: 11400000, guid: 735082cad9af8c64ea7a9f3d09b756c1, type: 2}
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!65 &1297295607918042200
 BoxCollider:

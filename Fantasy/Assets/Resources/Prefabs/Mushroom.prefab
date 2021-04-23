@@ -120,6 +120,7 @@ MonoBehaviour:
   descriptionItem: 
   pathIcon: Icons/mushroom
   pathPrefab: Prefabs/Mushroom
+  itemsData: {fileID: 11400000, guid: 311011ab6652959469cfd914c05fd3d6, type: 2}
   Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!64 &909142495512371883
 MeshCollider:

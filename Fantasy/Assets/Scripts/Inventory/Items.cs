@@ -11,14 +11,11 @@ public class Items : MonoBehaviour
     public string lootType;
     [Multiline(5)]
     public string descriptionItem;
-
     public string pathIcon;
     public string pathPrefab;
-
+    public ItemsData itemsData;
     GameObject inventoryObject;
     Inventory inventory;
-
-    public GameObject Inventory;
 
     void Start()
     {
