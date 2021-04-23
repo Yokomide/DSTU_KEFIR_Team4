@@ -101,7 +101,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
 
     public Items CloneClass(Items item)
     {
-        Items new_item =item;
+        Items new_item = new Items();
         new_item.id = item.id;
         new_item.cost = item.cost;
         new_item.nameItem = item.nameItem;

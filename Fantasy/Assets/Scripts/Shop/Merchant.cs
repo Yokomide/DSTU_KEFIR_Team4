@@ -125,19 +125,24 @@ public class Merchant : MonoBehaviour
     public void SellPushButton()
     {
         for (int i = 0; i < _merchantsItems.Count; i++)
+        {
             if (_merchantsItems[i].id != 0)
             {
                 if (_merchantsItems[i].isStackable && _merchantsItems[i].countItem > 1)
                 {
-
-                    _merchantsItems[i].countItem--;
-                    player.GetComponent<MainHeroHp>().heroStats.money += _merchantsItems[i].cost;
-
+                    while (_merchantsItems[i].countItem > 1)
+                    {
+                        player.GetComponent<MainHeroHp>().heroStats.money += _merchantsItems[i].cost;
+                        _merchantsItems[i].countItem--;
+                    }
                 }
-                else
+                if (_merchantsItems[i].countItem == 1)
+                {
                     player.GetComponent<MainHeroHp>().heroStats.money += _merchantsItems[i].cost;
-                _merchantsItems[i] = new Items();
+                    _merchantsItems[i] = new Items();
+                }
             }
+        }
         DisplayItem();
     }
 }
