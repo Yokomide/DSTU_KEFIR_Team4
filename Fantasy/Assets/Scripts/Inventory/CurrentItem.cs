@@ -8,7 +8,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
     GameObject inventoryObject;
     Inventory inventory;
     Merchant merchant;
-    Bag bag;
+    
 
 
     void Start()
