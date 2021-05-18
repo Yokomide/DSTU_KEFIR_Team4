@@ -44,7 +44,7 @@ public class AttackRadiusTrigger : MonoBehaviour
     {
         _attackCoolDown += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer && heroStats.heroStats.HeroHp > 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer && heroStats.HeroHp > 0)
         {
             StopAllCoroutines();
             gameObject.GetComponentInParent<AnimMoveset>().AttackAnimation();
@@ -60,7 +60,7 @@ public class AttackRadiusTrigger : MonoBehaviour
                     agent = enemies[i].GetComponent<NavMeshAgent>();
                     DeathAnim = enemies[i].GetComponent<Animator>();
 
-                    _enemyStats.Attacked(player.GetComponent<MainHeroHp>().heroStats.damage);
+                    _enemyStats.Attacked(player.GetComponent<MainHeroHp>().damage);
 
                     if (_enemyStats.isAlive)
                     {
@@ -68,7 +68,7 @@ public class AttackRadiusTrigger : MonoBehaviour
                     }
                     else
                     {
-                        heroStats.heroStats.ExpNum += Random.Range(50, 70);
+                        heroStats.ExpNum += Random.Range(50, 70);
                         DeathAnim.SetTrigger("Active");
                         agent.isStopped = true;
                         enemies.RemoveAt(i);

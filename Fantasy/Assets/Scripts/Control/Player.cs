@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (GetComponent<MainHeroHp>().heroStats.HeroHp <= 0)
+        if (GetComponent<MainHeroHp>().HeroHp <= 0)
         {
             _rb.constraints = RigidbodyConstraints.FreezePosition;
             _rb.freezeRotation = true;

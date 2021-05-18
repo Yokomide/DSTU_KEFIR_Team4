@@ -18,7 +18,7 @@ public class MouseFollow : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane playerPlane = new Plane(Vector3.up, player.transform.position);
 
-        if (playerPlane.Raycast(ray, out hitdist) && _heroStats.heroStats.HeroHp > 0)
+        if (playerPlane.Raycast(ray, out hitdist) && _heroStats.HeroHp > 0)
         {
             Vector3 targetPoint = ray.GetPoint(hitdist);
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - player.transform.position);

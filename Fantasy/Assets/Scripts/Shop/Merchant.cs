@@ -132,13 +132,13 @@ public class Merchant : MonoBehaviour
                 {
                     while (_merchantsItems[i].countItem > 1)
                     {
-                        player.GetComponent<MainHeroHp>().heroStats.money += _merchantsItems[i].cost;
+                        player.GetComponent<MainHeroHp>().money += _merchantsItems[i].cost;
                         _merchantsItems[i].countItem--;
                     }
                 }
                 if (_merchantsItems[i].countItem == 1)
                 {
-                    player.GetComponent<MainHeroHp>().heroStats.money += _merchantsItems[i].cost;
+                    player.GetComponent<MainHeroHp>().money += _merchantsItems[i].cost;
                     _merchantsItems[i] = new Items();
                 }
             }

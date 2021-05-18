@@ -3,36 +3,42 @@ using UnityEngine.UI;
 
 public class MainHeroHp : MonoBehaviour
 {
-    public HeroStatsScriptableOvject heroStats;
-
     public Image lvlBar;
     public Text level;
     public Text moneyText;
 
+    public float HeroHp = 250;
+    public float maxHeroHp = 250;
+    public float Lvl = 0;
+    public float money = 0;
+    public float damage = 10;
+    public float ExpNum = 0;
+
+
 
     private void Start()
     {
-        heroStats.HeroHp = heroStats.maxHeroHp;
+        HeroHp = maxHeroHp;
     }
     private void Update()
     {
-        if (heroStats.HeroHp >= 0)
+        if (HeroHp >= 0)
         {
             if (Input.GetKey(KeyCode.Minus))
             {
-                heroStats.HeroHp -= 0.1f;
+                HeroHp -= 0.1f;
             }
 
-            level.text = "LEVEL: " + heroStats.Lvl;
-            moneyText.text = "$" + heroStats.money;
-            lvlBar.fillAmount = heroStats.ExpNum / 100;
-            if (heroStats.ExpNum >= 100 + heroStats.Lvl * 10)
+            level.text = "LEVEL: " + Lvl;
+            moneyText.text = "$" + money;
+            lvlBar.fillAmount = ExpNum / 100;
+            if (ExpNum >= 100 + Lvl * 10)
             {
-                heroStats.Lvl++;
-                heroStats.ExpNum = 0;
-                heroStats.HeroHp = heroStats.maxHeroHp;
+                Lvl++;
+                ExpNum = 0;
+                HeroHp = maxHeroHp;
             }
-            lvlBar.fillAmount = heroStats.ExpNum / (100 + heroStats.Lvl * 10);
+            lvlBar.fillAmount = ExpNum / (100 + Lvl * 10);
         }
     }
 }

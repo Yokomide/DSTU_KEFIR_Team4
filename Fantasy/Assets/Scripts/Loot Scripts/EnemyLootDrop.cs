@@ -37,7 +37,6 @@ public class EnemyLootDrop : MonoBehaviour
         {
             tempItem = Instantiate(itemsToDrop[i].gameObject, gameObject.GetComponent<Transform>().position, Quaternion.identity);
             tempItem.GetComponent<Rigidbody>().AddForce(Vector3.up * 255);
-            tempItem.transform.parent = item.transform;
         }
     }
 }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac45b04c99349944a45996409d45ae9, type: 3}
   m_Name: Rouge
   m_EditorClassIdentifier: 
-  enemyName: "\u0412\u043E\u043B\u0448\u0435\u0431\u043D\u0438\u043A"
+  enemyName: "\u041F\u0440\u043E\u043A\u043B\u044F\u0442\u044B\u0439"
   maxHp: 100
   damage: 15
   minDamage: 2
   maxDamage: 5
-  hp: 100
+  hp: -19

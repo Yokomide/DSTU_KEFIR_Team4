@@ -17,7 +17,7 @@ public class MobAI : MonoBehaviour
 
 
         hero = player.GetComponent<MainHeroHp>();
-        if (hero.heroStats.HeroHp < 0)
+        if (hero.HeroHp < 0)
         {
             animAi.SetBool("Dead", true);
             animAi.Play("Patrol");
