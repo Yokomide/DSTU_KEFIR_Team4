@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HPBar : MonoBehaviour
+public class LvlBar : MonoBehaviour
 {
 
     public Image bar;
@@ -18,7 +18,7 @@ public class HPBar : MonoBehaviour
 
     void Update()
     {
-        fill = _heroStats.HeroHp / _heroStats.maxHeroHp;
+        fill = _heroStats.ExpNum / (100 + _heroStats.Lvl * 10);
         bar.fillAmount = fill;
     }
 }

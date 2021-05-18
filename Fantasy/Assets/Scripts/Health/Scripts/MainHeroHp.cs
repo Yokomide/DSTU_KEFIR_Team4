@@ -24,21 +24,14 @@ public class MainHeroHp : MonoBehaviour
     {
         if (HeroHp >= 0)
         {
-            if (Input.GetKey(KeyCode.Minus))
-            {
-                HeroHp -= 0.1f;
-            }
-
             level.text = "LEVEL: " + Lvl;
             moneyText.text = "$" + money;
-            lvlBar.fillAmount = ExpNum / 100;
             if (ExpNum >= 100 + Lvl * 10)
             {
                 Lvl++;
-                ExpNum = 0;
+                ExpNum = ExpNum % (100 + Lvl * 10);
                 HeroHp = maxHeroHp;
             }
-            lvlBar.fillAmount = ExpNum / (100 + Lvl * 10);
         }
     }
 }
