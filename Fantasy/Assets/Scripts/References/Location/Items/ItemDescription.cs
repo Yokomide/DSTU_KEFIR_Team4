@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDescription : MonoBehaviour
+namespace References.Location.Item
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "ItemDescription", menuName = "References/ItemDescription")]
+    public class ItemDescription : ScriptableObject
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public string nameItem; 
+        public int id;
+        public int cost;
+        public bool isStackable;
+        public int maxStackSize;
+        public int countItem;// может быть инвентарь должен иметь количество вещей в ячейке ,а не предмет ?
+        public string lootType;
+        [Multiline(5)]public string descriptionItem;
+        public string pathIcon;
+        public string pathPrefab;
     }
 }
+

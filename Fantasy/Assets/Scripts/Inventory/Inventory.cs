@@ -4,13 +4,11 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public float rayDistance;
     [HideInInspector] public List<Items> items;
     [HideInInspector] public List<Items> itemsOnTrigger;
     public GameObject cellContainer;
     public GameObject shopContainer;
     public GameObject menu;
-
     public bool full = false;
 
 

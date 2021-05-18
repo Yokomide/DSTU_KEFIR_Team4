@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using References.Location.Item;
 
-public class ItemData : MonoBehaviour
+namespace Data.Location.Item
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ItemData 
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public int CostItem { get; private set; }
+        public ItemData(ItemDescription description)
+        {
+            CostItem = description.cost;
+        }
     }
 }
+
