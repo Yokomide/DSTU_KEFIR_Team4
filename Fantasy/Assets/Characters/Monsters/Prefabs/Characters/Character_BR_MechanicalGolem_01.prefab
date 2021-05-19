@@ -329,7 +329,6 @@ GameObject:
   - component: {fileID: 7815609080150652906}
   - component: {fileID: 5499851375895533292}
   - component: {fileID: 5731777485324445394}
-  - component: {fileID: 3734048669035601335}
   m_Layer: 0
   m_Name: Character_BR_MechanicalGolem_01
   m_TagString: Player
@@ -455,19 +454,6 @@ MonoBehaviour:
   damage: 10
   ExpNum: 0
 --- !u!114 &5731777485324445394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1170732337855516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f2db0d3a8f14044089e354f15c39a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1327146849335566754}
---- !u!114 &3734048669035601335
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
