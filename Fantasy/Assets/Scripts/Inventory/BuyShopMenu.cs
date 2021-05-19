@@ -45,7 +45,7 @@ public class BuyShopMenu : MonoBehaviour
     }
     private void ToggleShopMenu()
     {
-        if (_isHere && Input.GetKeyDown(KeyCode.T) )
+        if (_isHere && Input.GetKeyDown(KeyCode.T) && !menu.activeSelf)
         {
             _showShop = !_showShop;
             buyshopContainer.SetActive(_showShop);
