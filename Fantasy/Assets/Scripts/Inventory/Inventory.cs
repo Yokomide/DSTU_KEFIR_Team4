@@ -92,7 +92,7 @@ public class Inventory : MonoBehaviour
 
     void ToggleInventory()
     {
-        if (Input.GetKeyDown(KeyCode.I) && !menu.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Tab) && !menu.activeSelf)
         {
             if (cellContainer.activeSelf)
             {
