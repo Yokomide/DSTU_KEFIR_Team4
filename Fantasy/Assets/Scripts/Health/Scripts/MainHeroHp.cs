@@ -49,13 +49,5 @@ public class MainHeroHp : MonoBehaviour
         ExpNum = data.expNum;
         money = data.gold;
 
-        Vector3 position;
-
-        position.x = data.position[0];
-        position.y = data.position[1];
-        position.z = data.position[2];
-
-        this.gameObject.transform.position = position;
-
     }
 }
