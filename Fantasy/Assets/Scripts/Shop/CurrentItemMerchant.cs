@@ -30,13 +30,13 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                             if (inventory.items[i].id == 0)
                             {
                                 merchant._merchantsItems[index].countItem--;
-                                inventory.AddItem(inventory.CloneItems(inventory.items[index]));
+                                inventory.AddItem(inventory.CloneItems(merchant._merchantsItems[index]));
                                 break;
                             }
                             else if (merchant._merchantsItems[index].id == inventory.items[i].id && inventory.items[i].countItem != inventory.items[i].maxStackSize)
                             {
                                 merchant._merchantsItems[index].countItem--;
-                                inventory.AddItem(inventory.CloneItems(inventory.items[index]));
+                                inventory.AddItem(inventory.CloneItems(merchant._merchantsItems[index]));
                                 break;
                             }
                         }
@@ -49,13 +49,13 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                             {
                                 if (inventory.items[i].id == 0)
                                 {
-                                    inventory.AddItem(inventory.CloneItems(inventory.items[index]));
+                                inventory.AddItem(inventory.CloneItems(merchant._merchantsItems[index]));
                                     merchant._merchantsItems[index] = new Items();
                                     break;
                                 }
                                 else if (merchant._merchantsItems[index].id == inventory.items[i].id)
                                 {
-                                    inventory.AddItem(inventory.CloneItems(inventory.items[index]));
+                                inventory.AddItem(inventory.CloneItems(merchant._merchantsItems[index]));
                                     merchant._merchantsItems[index] = new Items();
                                     break;
                                 }
@@ -67,7 +67,7 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                             {
                                 if (inventory.items[i].id == 0)
                                 {
-                                    inventory.AddItem(inventory.CloneItems(inventory.items[index]));
+                                inventory.AddItem(inventory.CloneItems(merchant._merchantsItems[index]));
                                     merchant._merchantsItems[index] = new Items();
                                     break;
                                 }

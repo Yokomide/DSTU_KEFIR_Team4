@@ -35,8 +35,10 @@ public class Inventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (!shopContainer.activeSelf)
-                {
+                {                    Destroy(itemsOnTrigger[0].gameObject);
+
                     AddItem(itemsOnTrigger[0]);
+
                 }
             }
         }
@@ -65,7 +67,6 @@ public class Inventory : MonoBehaviour
                 {
                     items[i].countItem++;
                     DisplayItem();
-                    Destroy(item.gameObject);
                     itemsOnTrigger.Remove(item);
                     return;
                 }
@@ -83,7 +84,6 @@ public class Inventory : MonoBehaviour
                 items[i] = item;
                 items[i].countItem = 1;
                 DisplayItem();
-                Destroy(item.gameObject);
                 itemsOnTrigger.Remove(item);
                 break;
             }
@@ -145,12 +145,13 @@ public class Inventory : MonoBehaviour
         cloneitem.cost = item.cost;
         cloneitem.nameItem = item.nameItem;
         cloneitem.id = item.id;
-        cloneitem.countItem = item.countItem;
+        cloneitem.countItem = 1;
         cloneitem.maxStackSize = item.maxStackSize;
         cloneitem.lootType = item.lootType;
         cloneitem.descriptionItem = item.descriptionItem;
         cloneitem.pathIcon = item.pathIcon;
         cloneitem.pathPrefab = item.pathPrefab;
+        cloneitem.isStackable = item.isStackable;
         return cloneitem;
     }
 
