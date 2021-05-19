@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Animator anim; 
     public AttackRadiusTrigger AttackRadiusT;
     public float speed = 2f;
     public float shiftSpeedMultiplier = 1.6f;
     public float sensetivity = 5f;
+
+    [HideInInspector]
+    public bool revived = false;
 
     private Rigidbody _rb;
     float v;
@@ -38,6 +42,13 @@ public class Player : MonoBehaviour
             _rb.constraints = RigidbodyConstraints.FreezePosition;
             _rb.freezeRotation = true;
             gameObject.GetComponent<AnimMoveset>().DeathAnimation();
+            revived = false;
+        }
+        else if (revived)
+        {
+            _rb.constraints = RigidbodyConstraints.None;
+            _rb.freezeRotation = false;
+
         }
 
     }
