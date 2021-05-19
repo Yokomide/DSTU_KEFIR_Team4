@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayerData
 {
     public float level;
-    public float health;
     public float expNum;
     public float gold;
 
@@ -16,7 +15,6 @@ public class PlayerData
     public PlayerData(MainHeroHp player)
     {
         level = player.Lvl;
-        health = player.HeroHp;
         expNum = player.ExpNum;
         gold = player.money;
 
