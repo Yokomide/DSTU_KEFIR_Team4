@@ -30,13 +30,13 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                             if (inventory.items[i].id == 0)
                             {
                                 merchant._merchantsItems[index].countItem--;
-                                inventory.AddItem(Instantiate(Resources.Load<Items>(merchant._merchantsItems[index].pathPrefab)));
+                                inventory.AddItem(inventory.CloneItems(inventory.items[index]));
                                 break;
                             }
                             else if (merchant._merchantsItems[index].id == inventory.items[i].id && inventory.items[i].countItem != inventory.items[i].maxStackSize)
                             {
                                 merchant._merchantsItems[index].countItem--;
-                                inventory.AddItem(Instantiate(Resources.Load<Items>(merchant._merchantsItems[index].pathPrefab)));
+                                inventory.AddItem(inventory.CloneItems(inventory.items[index]));
                                 break;
                             }
                         }
@@ -49,13 +49,13 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                             {
                                 if (inventory.items[i].id == 0)
                                 {
-                                    inventory.AddItem(Instantiate(Resources.Load<Items>(merchant._merchantsItems[index].pathPrefab)));
+                                    inventory.AddItem(inventory.CloneItems(inventory.items[index]));
                                     merchant._merchantsItems[index] = new Items();
                                     break;
                                 }
                                 else if (merchant._merchantsItems[index].id == inventory.items[i].id)
                                 {
-                                    inventory.AddItem(Instantiate(Resources.Load<Items>(merchant._merchantsItems[index].pathPrefab)));
+                                    inventory.AddItem(inventory.CloneItems(inventory.items[index]));
                                     merchant._merchantsItems[index] = new Items();
                                     break;
                                 }
@@ -67,7 +67,7 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                             {
                                 if (inventory.items[i].id == 0)
                                 {
-                                    inventory.AddItem(Instantiate(Resources.Load<Items>(merchant._merchantsItems[index].pathPrefab)));
+                                    inventory.AddItem(inventory.CloneItems(inventory.items[index]));
                                     merchant._merchantsItems[index] = new Items();
                                     break;
                                 }

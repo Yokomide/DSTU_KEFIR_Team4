@@ -138,4 +138,22 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    public Items CloneItems(Items item)
+    {
+        Items cloneitem = new Items();
+        cloneitem.cost = item.cost;
+        cloneitem.nameItem = item.nameItem;
+        cloneitem.id = item.id;
+        cloneitem.countItem = item.countItem;
+        cloneitem.maxStackSize = item.maxStackSize;
+        cloneitem.lootType = item.lootType;
+        cloneitem.descriptionItem = item.descriptionItem;
+        cloneitem.pathIcon = item.pathIcon;
+        cloneitem.pathPrefab = item.pathPrefab;
+        return cloneitem;
+    }
+
+
+
 }
