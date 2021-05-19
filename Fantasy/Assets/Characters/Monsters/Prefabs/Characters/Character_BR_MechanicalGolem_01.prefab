@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 7815609080150652906}
   - component: {fileID: 5499851375895533292}
   - component: {fileID: 5731777485324445394}
+  - component: {fileID: 2462273048538198492}
   m_Layer: 0
   m_Name: Character_BR_MechanicalGolem_01
   m_TagString: Player
@@ -398,10 +399,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2861aeac2275fe449a342f15b897b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   AttackRadiusT: {fileID: 0}
   speed: 5
   shiftSpeedMultiplier: 1.6
   sensetivity: 2
+  revived: 0
 --- !u!136 &5532825546096526368
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -466,6 +469,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1327146849335566754}
+--- !u!114 &2462273048538198492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170732337855516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8dbebcee0334f44ca85ff853ffbeda8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1188154518482354
 GameObject:
   m_ObjectHideFlags: 0
