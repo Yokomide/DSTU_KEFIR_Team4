@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 399900571399375266}
   - component: {fileID: 4571985994739330520}
   - component: {fileID: -904203455702418835}
-  - component: {fileID: 4780438996762860346}
+  - component: {fileID: 551539931207111458}
+  - component: {fileID: 3160727994514862954}
   m_Layer: 0
   m_Name: Sword1
   m_TagString: Untagged
@@ -103,7 +104,15 @@ MonoBehaviour:
   isStackable: 0
   maxStackSize: 1
   lootType: high
-  descriptionItem: 
+  descriptionItem: "\u041E\u0413\u041D\u0415\u041D\u041D\u042B\u0419 \u041C\u0415\u0427
+    OVER 9000 \u0421\u041E\u041A\u0420\u0423\u0428\u0418\u0415\u041B\u042C \u041D\u0415\u0411\u0415\u0421
+    \u0413\u0423\u0420\u0420\u0415\u041D \u0414\u0416\u041E\u0414\u0416\u041E(2000$)\n\n*\u0414\u043B\u044F
+    \u043F\u0440\u043E\u0434\u0430\u0436\u0438\n*\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F
+    \u043A\u0430\u043A \u043E\u0440\u0443\u0436\u0438\u0435\n\n\u0414\u0410\u0414\u0410
+    , \u0442\u043E\u0442 \u0441\u0430\u043C\u044B\u0439 \u043C\u0435\u0447 \u0441
+    \u0442\u044B\u0449\u0435\u0439 \u0443\u0440\u043E\u043D\u0430.\n\u041D\u0443
+    \u0434\u0430,\u0432\u0441\u0451 \u0442\u0430\u043A \u043F\u0440\u043E\u0441\u0442\u043E...\u043F\u043E-\u0434\u0440\u0443\u0433\u043E\u043C\u0443
+    \u0431\u044B\u0442\u044C \u0438 \u043D\u0435 \u043C\u043E\u0433\u043B\u043E."
   pathIcon: Icons/Sword1
   pathPrefab: Prefabs/Sword1
 --- !u!65 &-904203455702418835
@@ -119,8 +128,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0.000000029802322, y: 0.4193256, z: 0.000000014901161}
---- !u!65 &4780438996762860346
-BoxCollider:
+--- !u!64 &551539931207111458
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -129,6 +138,23 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 61f4e8d2a5b031a41b97ad2c616ae894, type: 3}
+--- !u!54 &3160727994514862954
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399900571397402254}
   serializedVersion: 2
-  m_Size: {x: 0.076803744, y: 1.1755023, z: 0.21692896}
-  m_Center: {x: 0.000000029802322, y: 0.4193256, z: 0.000000014901161}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
