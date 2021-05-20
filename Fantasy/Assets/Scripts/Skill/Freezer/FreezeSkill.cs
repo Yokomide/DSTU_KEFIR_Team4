@@ -23,7 +23,7 @@ public class FreezeSkill : MonoBehaviour
     public void Update()
     {
         _freezeTime += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Alpha1) && _freezeTime > freezeTimeCounter && _heroStats.HeroHp > 0) Freeze();
+        if (Input.GetKey(KeyCode.Alpha1) && _freezeTime > freezeTimeCounter && _heroStats.HeroHp > 0 && _heroStats.Lvl>3) Freeze();
     }
 
 
