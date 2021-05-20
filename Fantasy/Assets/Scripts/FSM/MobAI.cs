@@ -4,9 +4,10 @@ public class MobAI : MonoBehaviour
 {
     Animator animAi;
     NPCBase_FSM NPC_base;
-    public Transform direction;
+    [SerializeField]
+    private Transform direction;
     public GameObject player;
-    public MainHeroHp hero;
+    private MainHeroHp hero;
     public GameObject GetPlayer()
     {
         return player;
