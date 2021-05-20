@@ -170,6 +170,7 @@ public class Inventory : MonoBehaviour
             items[i].countItem = data.counters[i];
         }
 
+
     }
 
 
