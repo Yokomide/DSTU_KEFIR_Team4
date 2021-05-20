@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7950164936467085716}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.1925, y: -0.0033, z: -2.1606}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.7080154, y: 4.00051, z: 7.212884}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,13 +115,11 @@ MonoBehaviour:
   id: 4
   countItem: 0
   isStackable: 1
-  maxStackSize: 4
+  maxStackSize: 6
   lootType: middle
   descriptionItem: 
   pathIcon: Icons/mushroom
   pathPrefab: Prefabs/Mushroom
-  itemsData: {fileID: 11400000, guid: 311011ab6652959469cfd914c05fd3d6, type: 2}
-  Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!64 &909142495512371883
 MeshCollider:
   m_ObjectHideFlags: 0

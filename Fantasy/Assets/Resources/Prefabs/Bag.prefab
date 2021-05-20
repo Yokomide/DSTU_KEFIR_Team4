@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8746748466791950021}
   - component: {fileID: 9051411177396367336}
   - component: {fileID: 2181053303098479023}
-  - component: {fileID: 2757563527260995288}
   - component: {fileID: 8325567605337567018}
   - component: {fileID: -3336230798566231374}
   m_Layer: 3
@@ -31,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8732605197071047313}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.7688, y: 0.6374, z: -1.313}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5.8967, y: 5.134773, z: 7.1197}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,14 +101,12 @@ MonoBehaviour:
   nameItem: Bag
   id: 5
   countItem: 0
-  isStackable: 0
-  maxStackSize: 1
+  isStackable: 1
+  maxStackSize: 3
   lootType: middle
   descriptionItem: 
   pathIcon: Icons/bag
   pathPrefab: Prefabs/Bag
-  itemsData: {fileID: 11400000, guid: f25a6c90a0cce78498def9b3b029a597, type: 2}
-  Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!65 &2181053303098479023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123,37 +120,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.3, z: 0.6}
   m_Center: {x: 0.0023409948, y: 0.025, z: 0.0005144961}
---- !u!114 &2757563527260995288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8732605197071047313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0d4f5d7616e14b4480a57ca8a8cdc04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bag_Items:
-  - name: Mushroom
-    item: {fileID: 7950164936467085716, guid: 56f45d120fcf11d448c9569594639ca3, type: 3}
-    count_Items: 4
-    drop_Rarity: 100
-    pathItem: Prefabs/Mushroom
-    pathIcon: Icons/mushroom
-  - name: Bones
-    item: {fileID: 1993093291295802865, guid: 5c3b4a6e188bb594fa10d383ee8edd5b, type: 3}
-    count_Items: 3
-    drop_Rarity: 80
-    pathItem: Prefabs/Bones
-    pathIcon: Icons/bones
-  - name: Skull
-    item: {fileID: 8484020605651004218, guid: d8bb481b26fa88749af7decfb08e8319, type: 3}
-    count_Items: 2
-    drop_Rarity: 78
-    pathItem: Prefabs/Skull
-    pathIcon: Icons/skull
 --- !u!64 &8325567605337567018
 MeshCollider:
   m_ObjectHideFlags: 0

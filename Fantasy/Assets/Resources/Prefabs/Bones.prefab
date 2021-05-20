@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993093291295802865}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.5649, y: -0, z: -5.1421}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 2.0797, y: 1, z: 1.5738}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,13 +102,11 @@ MonoBehaviour:
   id: 7
   countItem: 0
   isStackable: 1
-  maxStackSize: 3
+  maxStackSize: 6
   lootType: low
   descriptionItem: 
   pathIcon: Icons/bones
   pathPrefab: Prefabs/Bones
-  itemsData: {fileID: 11400000, guid: 2eb1b2d7814205d4ca7b7f488b3e40cb, type: 2}
-  Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!65 &5508027719466341760
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226469970775394615}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.4468, y: 0.0029, z: -5.2837}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.4761, y: 2.7928, z: 1.8431042}
   m_Children: []
   m_Father: {fileID: 0}
@@ -107,8 +107,6 @@ MonoBehaviour:
   descriptionItem: 
   pathIcon: Icons/necklace_Flat
   pathPrefab: Prefabs/Necklace_Flat
-  itemsData: {fileID: 11400000, guid: 07b7e59e54d602f4ba61c743cf8586d7, type: 2}
-  Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!65 &4508186942232220923
 BoxCollider:
   m_ObjectHideFlags: 0
