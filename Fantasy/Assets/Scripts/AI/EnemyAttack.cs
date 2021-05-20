@@ -25,5 +25,9 @@ public class EnemyAttack : MonoBehaviour
     private void Attack()
     {
         player.HeroHp -= Random.Range(10, 15);
+        if (player.GetComponent<HealingSkill>().lerping)
+        {
+            player.GetComponent<HealingSkill>().endHealingAmount-= Random.Range(10, 15);
+        }
     }
 }
