@@ -7,6 +7,7 @@ public class MoveToThroneHall : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<MainHeroHp>().SavePlayer();
             SceneManager.LoadScene(2);
         }
     }
