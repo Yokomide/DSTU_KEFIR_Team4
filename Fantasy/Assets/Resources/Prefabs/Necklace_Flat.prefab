@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4508186942232220923}
   - component: {fileID: -6567870477574394539}
   - component: {fileID: 5353870410907311104}
+  - component: {fileID: 211328279129954480}
   m_Layer: 3
   m_Name: Necklace_Flat
   m_TagString: Item
@@ -153,3 +154,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &211328279129954480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226469970775394615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3837ad4d4bb1b10458ba7d8e6c9be1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 

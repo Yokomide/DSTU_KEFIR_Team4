@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2181053303098479023}
   - component: {fileID: 8325567605337567018}
   - component: {fileID: -3336230798566231374}
+  - component: {fileID: -5304978627709779043}
   m_Layer: 3
   m_Name: Bag
   m_TagString: Item
@@ -153,3 +154,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-5304978627709779043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8732605197071047313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3837ad4d4bb1b10458ba7d8e6c9be1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 

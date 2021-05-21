@@ -6,7 +6,8 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
     public int index;
     GameObject inventoryObject;
     Inventory inventory;
-    Merchant merchant;
+    [HideInInspector]
+    public Merchant merchant;
 
     void Start()
     {
