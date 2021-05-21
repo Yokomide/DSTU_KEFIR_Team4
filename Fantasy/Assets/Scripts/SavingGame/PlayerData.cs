@@ -18,6 +18,7 @@ public class PlayerData
         expNum = player.ExpNum;
         gold = player.money;
 
+
     }
     
 }

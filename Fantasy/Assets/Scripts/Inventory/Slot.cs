@@ -27,6 +27,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnDisable()
     {
         ToolTip.isUI = false;
-        img.GetComponent<Image>().sprite = defaultCell;
+        //img.GetComponent<Image>().sprite = defaultCell;
     }
 }
