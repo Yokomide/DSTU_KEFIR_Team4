@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207253950499025878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.32, y: 0.33, z: -2.59}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.041705098, y: 0.078042254, z: 0.041437887}
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,15 +113,18 @@ MonoBehaviour:
   cost: 25
   nameItem: SpellBook
   id: 2
-  countItem: 0
+  countItem: 1
   isStackable: 1
-  maxStackSize: 3
+  maxStackSize: 6
   lootType: high
-  descriptionItem: 
+  descriptionItem: "\u043A\u041D\u0438\u0433\u0430 \u0437\u0430\u043A\u043B\u0438\u043D\u0430\u043D\u0438\u0439(25
+    $)\n\n*\u0414\u043B\u044F \u043F\u0440\u043E\u0434\u0430\u0436\u0438\n*\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F\n\n\u0412\u043E\u0442
+    \u043C\u0435\u0441\u0442\u043E \u0441\u043C\u0435\u0440\u0442\u0438 \u043A\u043E\u043B\u0434\u0443\u043D\u0430:\r\n\u041F\u043E\u043B\u0435\u043D\u044C\u044F,
+    \u0445\u0432\u043E\u0440\u043E\u0441\u0442,\r\n\u041D\u0430 \u043A\u0430\u0437\u043D\u044C
+    \u043F\u0440\u0438\u0435\u0445\u0430\u043B \u043A\u0430\u0440\u0434\u0438\u043D\u0430\u043B,\r\n\u0425\u043E\u0442\u044C
+    \u0441\u044B\u0440\u043E\u0441\u0442\u044C, \u043C\u043E\u0440\u043E\u0441\u044C\u2026"
   pathIcon: Icons/spellBook
   pathPrefab: Prefabs/SpellBook
-  itemsData: {fileID: 11400000, guid: 3834dcc272d45c147a3201d235092ddd, type: 2}
-  Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!64 &2472325679753303890
 MeshCollider:
   m_ObjectHideFlags: 0

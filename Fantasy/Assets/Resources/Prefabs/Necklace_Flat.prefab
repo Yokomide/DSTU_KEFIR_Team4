@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226469970775394615}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.4468, y: 0.0029, z: -5.2837}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.4761, y: 2.7928, z: 1.8431042}
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,11 +104,12 @@ MonoBehaviour:
   isStackable: 0
   maxStackSize: 1
   lootType: high
-  descriptionItem: 
+  descriptionItem: "\u041E\u0436\u0435\u0440\u0435\u043B\u044C\u0435(25 $)\n\n*\u0414\u043B\u044F
+    \u043F\u0440\u043E\u0434\u0430\u0436\u0438\n\n\u041E\u0436\u0435\u0440\u0435\u043B\u044C\u0435
+    \u0441\u0430\u043C\u044B\u0445 \u0431\u043E\u0433\u0430\u0442\u044B\u0445 \u043B\u044E\u0434\u0435\u0439.\n\u041D\u0435\u0442,\u0441\u0435\u0440\u044C\u0451\u0437\u043D\u043E?\u041A\u0442\u043E
+    \u043F\u0438\u0441\u0430\u043B \u044D\u0442\u043E\u0442 \u0431\u0440\u0435\u0434..."
   pathIcon: Icons/necklace_Flat
   pathPrefab: Prefabs/Necklace_Flat
-  itemsData: {fileID: 11400000, guid: 07b7e59e54d602f4ba61c743cf8586d7, type: 2}
-  Inventory: {fileID: 770205867458501306, guid: fa59c13fb7eaa034aafd1300351e4c88, type: 3}
 --- !u!65 &4508186942232220923
 BoxCollider:
   m_ObjectHideFlags: 0

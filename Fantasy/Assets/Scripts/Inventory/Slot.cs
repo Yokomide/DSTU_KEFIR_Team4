@@ -8,6 +8,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Sprite defaultCell;
     Image img;
 
+
     void Start()
     {
         img = GetComponent<Image>();
@@ -23,8 +24,9 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         img.GetComponent<Image>().sprite = defaultCell;
     }
 
-    void OnDisable()
+    public void OnDisable()
     {
-        // img.GetComponent<Image>().sprite = defaultCell;
+        ToolTip.isUI = false;
+        //img.GetComponent<Image>().sprite = defaultCell;
     }
 }

@@ -6,7 +6,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
     public GameObject shop;
     GameObject playerObject;
     GameObject inventoryObject;
-    Inventory inventory;
+    [HideInInspector]public Inventory inventory;
     Merchant merchant;
     
 

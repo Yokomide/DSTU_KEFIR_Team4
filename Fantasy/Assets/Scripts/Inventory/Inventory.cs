@@ -155,6 +155,24 @@ public class Inventory : MonoBehaviour
         return cloneitem;
     }
 
+    public void SaveInventory()
+    {
+        SaveSystem.SaveInventory(this);
+    }
+
+    public void LoadInventory()
+    {
+        InventoryData data = SaveSystem.LoadInventory();
+
+        for (int i = 0; i < 21; i++)
+        {
+            items[i].id = data.ids[i];
+            items[i].countItem = data.counters[i];
+        }
+
+
+    }
+
 
 
 }
