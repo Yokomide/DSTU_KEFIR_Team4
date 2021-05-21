@@ -7,11 +7,13 @@ public class Merchant : MonoBehaviour
     private bool _isHere = false;
     public bool _showShop = false;
     private Canvas _canvas;
+    [HideInInspector]
     public List<Items> _merchantsItems;
     public GameObject shopContainer;
     public GameObject player;
     public GameObject menu;
     public bool full = false;
+    public List<Items> itemsInShop;
 
 
     public AudioClip sound;
@@ -32,6 +34,10 @@ public class Merchant : MonoBehaviour
         for (int i = 0; i < shopContainer.transform.childCount; i++)
         {
             shopContainer.transform.GetChild(i).GetComponent<CurrentItemMerchant>().index = i;
+        }
+        for(int i = 0; i < itemsInShop.Count; i++)
+        {
+            AddItem(itemsInShop[i]);
         }
     }
     private void Update()
