@@ -5,6 +5,7 @@ public class HealingSkill : MonoBehaviour
 {
     static float t = 0.0f;
 
+    
     private MainHeroHp _heroStats;
     private float _healTime = 0;
     [HideInInspector]
@@ -17,9 +18,13 @@ public class HealingSkill : MonoBehaviour
     public int healAmount = 25;
     public GameObject effect;
 
-    
+    public AudioClip sound;
+    AudioSource audio;
+
+
     private void Start()
     {
+        audio = gameObject.GetComponent<AudioSource>();
         _heroStats = gameObject.GetComponent<MainHeroHp>();
         endHealingAmount = 0;
     }
@@ -30,6 +35,7 @@ public class HealingSkill : MonoBehaviour
         {
             if (endHealingAmount == 0)
             {
+                audio.PlayOneShot(sound);
                 Vector3 pos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 3, gameObject.transform.position.z);
                 tempEffect = Instantiate(effect,pos,Quaternion.identity, gameObject.transform);
                 endHealingAmount = _heroStats.HeroHp + healAmount;

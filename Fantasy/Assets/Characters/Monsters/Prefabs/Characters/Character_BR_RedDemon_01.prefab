@@ -481,7 +481,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0238181fe71b30942a9259947a17d668, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -584,6 +584,7 @@ MonoBehaviour:
   player: {fileID: 0}
   menu: {fileID: 0}
   full: 0
+  sound: {fileID: 8300000, guid: 0238181fe71b30942a9259947a17d668, type: 3}
 --- !u!65 &2792596819377512037
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -14,8 +14,14 @@ public class FreezeSkill : MonoBehaviour
     private GameObject tempEffect;
     public List<GameObject> enemies = new List<GameObject>();
 
+    public AudioClip sound;
+    AudioSource audio;
+
     private void Start()
     {
+        gameObject.AddComponent<AudioSource>();
+        audio = gameObject.GetComponent<AudioSource>();
+        gameObject.GetComponent<AudioSource>().clip = sound;
         _heroStats = gameObject.GetComponentInParent<MainHeroHp>();
         _freezeTime = 0;
     }
@@ -30,6 +36,7 @@ public class FreezeSkill : MonoBehaviour
 
     public void Freeze()
     {
+        audio.PlayOneShot(sound);
         tempEffect = Instantiate(effect, gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
         foreach (GameObject i in enemies)
         {
