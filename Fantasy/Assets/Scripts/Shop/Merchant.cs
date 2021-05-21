@@ -19,7 +19,9 @@ public class Merchant : MonoBehaviour
 
     private void Start()
     {
+        gameObject.AddComponent<AudioSource>();
         audio = gameObject.GetComponent<AudioSource>();
+        gameObject.GetComponent<AudioSource>().clip = sound;
         shopContainer.SetActive(false);
         _canvas = GetComponent<Canvas>();
         _merchantsItems = new List<Items>();
