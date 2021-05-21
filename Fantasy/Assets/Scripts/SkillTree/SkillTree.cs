@@ -27,11 +27,11 @@ public class SkillTree : MonoBehaviour
 
     public void hpBoost()
     {
-        if (player.SkillPoint > 0)
+        if (player.SkillPoint > 0 && player.money > 50)
         {
             player.SkillPoint--;
             player.money-=50;
-            player.maxHeroHp += 25;
+            player.maxHeroHp += 50;
             hpBoostCount++;
             hpText.text = "Улучшено: " + hpBoostCount + " раз";
         }
@@ -39,8 +39,9 @@ public class SkillTree : MonoBehaviour
 
     public void adBoost()
     {
-        if (player.SkillPoint > 0 && player.Lvl > 2 && player.money > 50)
+        if (player.SkillPoint > 0 && player.money > 100)
         {
+            player.damage += 20;
             player.SkillPoint--;
             player.money -= 100;
             adBoostCount++;
@@ -50,7 +51,7 @@ public class SkillTree : MonoBehaviour
 
     public void apBoost()
     {
-        if (player.SkillPoint > 0 && player.Lvl > 2 && player.money > 50)
+        if (player.SkillPoint > 0 && player.money > 100)
         {
             player.SkillPoint--;
             player.money -= 100;
