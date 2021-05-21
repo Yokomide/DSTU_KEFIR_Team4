@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Animator anim; 
     public AttackRadiusTrigger AttackRadiusT;
     public float speed = 2f;
     public float shiftSpeedMultiplier = 1.6f;
@@ -16,10 +15,11 @@ public class Player : MonoBehaviour
     float v;
     float h;
 
-
     private void Start()
     {
+
         _rb = transform.GetComponent<Rigidbody>();
+
     }
     private void FixedUpdate()
     {
@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
         {
             _rb.MovePosition(_rb.position + direction * speed * Time.fixedDeltaTime);
         }
+
 
 
         if (GetComponent<MainHeroHp>().HeroHp <= 0)

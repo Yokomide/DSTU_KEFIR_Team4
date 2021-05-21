@@ -15,8 +15,15 @@ public class Merchant : MonoBehaviour
     public bool full = false;
     public List<Items> itemsInShop;
 
+
+    public AudioClip sound;
+    AudioSource audio;
+
     private void Start()
     {
+        gameObject.AddComponent<AudioSource>();
+        audio = gameObject.GetComponent<AudioSource>();
+        gameObject.GetComponent<AudioSource>().clip = sound;
         shopContainer.SetActive(false);
         _canvas = GetComponent<Canvas>();
         _merchantsItems = new List<Items>();
@@ -130,6 +137,7 @@ public class Merchant : MonoBehaviour
     }
     public void SellPushButton()
     {
+        audio.PlayOneShot(sound);
         for (int i = 0; i < _merchantsItems.Count; i++)
         {
             if (_merchantsItems[i].id != 0)

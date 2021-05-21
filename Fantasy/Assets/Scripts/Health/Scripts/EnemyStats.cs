@@ -28,8 +28,18 @@ public class EnemyStats : MonoBehaviour
     private Animator DeathAnim;
     private NavMeshAgent agent;
 
+
+    public AudioClip sound;
+    AudioSource audio;
+
     public void Awake()
     {
+
+
+        gameObject.AddComponent<AudioSource>();
+        audio = gameObject.GetComponent<AudioSource>();
+        gameObject.GetComponent<AudioSource>().clip = sound;
+
         enemyStats.hp = enemyStats.maxHp;
         enemyHp = enemyStats.hp;
 
@@ -100,6 +110,7 @@ public class EnemyStats : MonoBehaviour
         _isRedHpLineDestroyed = true;
         isAlive = false;
         gameObject.GetComponent<EnemyLootDrop>().DropItems();
+        audio.PlayOneShot(sound);
         yield return new WaitForEndOfFrame();
     }
 }

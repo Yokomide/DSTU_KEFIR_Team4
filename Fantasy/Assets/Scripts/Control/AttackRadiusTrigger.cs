@@ -31,9 +31,16 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     GameObject tempObject;
 
+    public AudioClip soundAttack;
+    public AudioClip soundMiss;
+    AudioSource audio;
+
 
     private void Start()
     {
+        gameObject.AddComponent<AudioSource>();
+        audio = gameObject.GetComponent<AudioSource>();
+        gameObject.GetComponent<AudioSource>().clip = soundMiss;
         _playerMove = player.GetComponent<Player>();
         heroStats = player.GetComponent<MainHeroHp>();
         _attackCoolDown = coolDownTimer;
@@ -74,6 +81,10 @@ public class AttackRadiusTrigger : MonoBehaviour
                         enemies.RemoveAt(i);
                     }
                 }
+            }
+            else
+            {
+                StartCoroutine(AttackMiss());
             }
         }
 
@@ -124,15 +135,23 @@ public class AttackRadiusTrigger : MonoBehaviour
 
     IEnumerator HitAnimDelay(Collider other)
     {
-
+        
         other.GetComponent<NavMeshAgent>().speed = 0f;
         yield return new WaitForSeconds(0.3f);
+        audio.PlayOneShot(soundAttack);
         yield return new WaitForSeconds(0.1f);
         bloodPos = other.GetComponent<Transform>();
         Instantiate(bloodSplat, bloodPos);
         DeathAnim.Play("TakeDmg");
         other.GetComponent<NavMeshAgent>().speed = _NavMeshSpeedTemp;
 
+    }
+
+    IEnumerator AttackMiss()
+    {
+        yield return new WaitForSeconds(0.3f);
+        audio.PlayOneShot(soundMiss);
+        yield return new WaitForSeconds(0.1f);
     }
 
     IEnumerator StopOnAttack(float tempSpeed)
