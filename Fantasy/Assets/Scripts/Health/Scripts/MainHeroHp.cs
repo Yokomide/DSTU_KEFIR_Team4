@@ -10,6 +10,7 @@ public class MainHeroHp : MonoBehaviour
     public float HeroHp = 250;
     public float maxHeroHp = 250;
     public float Lvl = 0;
+    public float SkillPoint = 0;
     public float money = 0;
     public float damage = 10;
     public float ExpNum = 0;
@@ -28,6 +29,7 @@ public class MainHeroHp : MonoBehaviour
             moneyText.text = "$" + money;
             if (ExpNum >= 100 + Lvl * 10)
             {
+                SkillPoint++;
                 Lvl++;
                 ExpNum = ExpNum % (100 + Lvl * 10);
                 HeroHp = maxHeroHp;
