@@ -17,25 +17,4 @@ public class ActiveSkillTree : MonoBehaviour
     {
         activeSkillTree.SetActive(false);
     }
-
-
-    private void Update()
-    {
-        
-    }
-
-
-    public void nextTree()
-    {
-        if (passiveSkillTree.activeSelf)
-        {
-            passiveSkillTree.SetActive(false);
-            activeSkillTree.SetActive(true);
-        }
-        else
-        {
-            passiveSkillTree.SetActive(true);
-            activeSkillTree.SetActive(false);
-        }
-    }
 }

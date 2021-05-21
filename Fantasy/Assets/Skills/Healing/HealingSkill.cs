@@ -26,7 +26,7 @@ public class HealingSkill : MonoBehaviour
     private void Update()
     {
         _healTime += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Alpha2) && _healTime > healTimeCounter && _heroStats.HeroHp > 0 && _heroStats.Lvl>2)
+        if (Input.GetKey(KeyCode.Alpha2) && _healTime > healTimeCounter && _heroStats.HeroHp > 0)
         {
             if (endHealingAmount == 0)
             {

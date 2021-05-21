@@ -17,6 +17,8 @@ public class SkillTree : MonoBehaviour
     public Text hpText;
     public Text adText;
     public Text apText;
+    public Text SkillPoints;
+    public Text SkillPassivePoints;
 
     private void Start()
     {
@@ -25,13 +27,13 @@ public class SkillTree : MonoBehaviour
 
     public void hpBoost()
     {
-        if (player.SkillPoint > 0 && player.Lvl>2 && player.money > 50)
+        if (player.SkillPoint > 0)
         {
             player.SkillPoint--;
             player.money-=50;
             player.maxHeroHp += 25;
             hpBoostCount++;
-            hpText.text = "Улучшено:" + hpBoostCount + " раз";
+            hpText.text = "Улучшено: " + hpBoostCount + " раз";
         }
     }
 
@@ -64,20 +66,24 @@ public class SkillTree : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (passiveSkillTree.activeSelf)
+            SkillPoints.text = "Души: " + player.SkillPoint;
+            SkillPassivePoints.text = "Души: " + player.SkillPoint;
+            if (passiveSkillTree.activeSelf || activeSkillTree.activeSelf)
             {
                 passiveSkillTree.SetActive(false);
+                activeSkillTree.SetActive(false);
             }
             else
             {
                 passiveSkillTree.SetActive(true);
-
             }
         }
     }
 
     public void nextTree()
     {
+        SkillPoints.text = "Души: " + player.SkillPoint;
+        SkillPassivePoints.text = "Души: " + player.SkillPoint;
         if (passiveSkillTree.activeSelf)
         {
             passiveSkillTree.SetActive(false);
