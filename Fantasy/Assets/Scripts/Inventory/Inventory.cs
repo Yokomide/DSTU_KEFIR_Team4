@@ -35,10 +35,9 @@ public class Inventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (!shopContainer.activeSelf)
-                {                    Destroy(itemsOnTrigger[0].gameObject);
-
+                {                    
+                    Destroy(itemsOnTrigger[0].gameObject);
                     AddItem(itemsOnTrigger[0]);
-
                 }
             }
         }
@@ -169,10 +168,5 @@ public class Inventory : MonoBehaviour
             items[i].id = data.ids[i];
             items[i].countItem = data.counters[i];
         }
-
-
     }
-
-
-
 }
