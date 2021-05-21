@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -40,7 +40,7 @@ public class EnemyAttack : MonoBehaviour
         player.HeroHp -= Random.Range(10, 15);
         if (player.GetComponent<HealingSkill>().lerping)
         {
-            player.GetComponent<HealingSkill>().endHealingAmount-= Random.Range(10, 15);
+            player.GetComponent<HealingSkill>().endHealingAmount -= Random.Range(10, 15);
         }
     }
 }

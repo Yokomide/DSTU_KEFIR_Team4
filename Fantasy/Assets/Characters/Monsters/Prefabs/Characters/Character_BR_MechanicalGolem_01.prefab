@@ -403,7 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2861aeac2275fe449a342f15b897b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
   AttackRadiusT: {fileID: 5058761986194306254}
   speed: 5
   shiftSpeedMultiplier: 1.6
