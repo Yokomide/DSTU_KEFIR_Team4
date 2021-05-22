@@ -69,7 +69,7 @@ public class EnemyStats : MonoBehaviour
             _transformHpLine.position = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z);
             _transformHpLine.localScale = new Vector3(enemyHp / enemyStats.maxHp, 0.1f, 0.01f);
             _transformHpLine.rotation = Quaternion.identity;
-            _transformRedHpLine.position = new Vector3(_hpLine.transform.position.x, _hpLine.transform.position.y, _hpLine.transform.position.z + 0.02f);
+            _transformRedHpLine.position = new Vector3(_hpLine.transform.position.x, _hpLine.transform.position.y, _hpLine.transform.position.z + 0.01f);
             _transformRedHpLine.rotation = Quaternion.identity;
         }
     }

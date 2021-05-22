@@ -18,7 +18,7 @@ public class HPBar : MonoBehaviour
 
     void Update()
     {
-        fill = _heroStats.HeroHp / _heroStats.maxHeroHp;
+        fill = Mathf.Lerp(fill, _heroStats.HeroHp / _heroStats.maxHeroHp, 2 * Time.deltaTime);
         bar.fillAmount = fill;
     }
 }

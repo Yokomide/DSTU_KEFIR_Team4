@@ -93,7 +93,7 @@ public class AttackRadiusTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         isTriggered = true;
-        if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && other.GetComponent<EnemyStats>().isAlive)
+        if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && ((other.GetComponent<EnemyStats>().isAlive) || (other.GetComponent<BossStats_>().isAlive)))
         {
             bool _isHere = false;
             tempObject = other.gameObject;
@@ -111,7 +111,7 @@ public class AttackRadiusTrigger : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && other.GetComponent<EnemyStats>().isAlive)
+        if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && ((other.GetComponent<EnemyStats>().isAlive) || (other.GetComponent<BossStats_>().isAlive)))
         {
             tempObject = other.gameObject;
             foreach (GameObject i in enemies)
