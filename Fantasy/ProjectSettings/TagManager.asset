@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - waypoint
   - Citizen
+  - Freeze
   layers:
   - Default
   - TransparentFX
