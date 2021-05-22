@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: 
   enemyName: "\u041C\u044F\u0441\u043D\u0438\u043A"
-  maxHp: 200
-  damage: 100
-  minDamage: 30
-  maxDamage: 60
-  hp: 200
+  maxHp: 400
+  damage: 150
+  minDamage: 40
+  maxDamage: 80
+  hp: 400
