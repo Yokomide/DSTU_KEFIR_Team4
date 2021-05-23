@@ -96,6 +96,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (enemyHp <= 0)
         {
+
             DeathAnim.SetTrigger("Active");
             StartCoroutine(DeathOnCommand());
             yield break;

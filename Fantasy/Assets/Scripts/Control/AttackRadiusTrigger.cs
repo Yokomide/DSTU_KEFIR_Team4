@@ -20,8 +20,6 @@ public class AttackRadiusTrigger : MonoBehaviour
     private float _attackCoolDown = 0f;
     private float _tempSpeed;
     public List<GameObject> enemies = new List<GameObject>();
-
-
     private MainHeroHp heroStats;
     private EnemyStats _enemyStats;
     private BossStats_ _bossStats;
@@ -51,7 +49,6 @@ public class AttackRadiusTrigger : MonoBehaviour
     private void Update()
     {
         _attackCoolDown += Time.deltaTime;
-
         if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer && heroStats.HeroHp > 0)
         {
             StopAllCoroutines();

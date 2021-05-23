@@ -7,6 +7,10 @@ public class HeroAttack : MonoBehaviour
     public AudioClip sound;
     public AudioClip miss;
     public Animator animator;
+    private MainHeroHp heroStats;
+    private Player _playerMove;
+    private float _tempSpeed;
+
     AudioSource audio;
     public float _attackCoolDown = -2f;
     public float coolDownTimer = 1.5f;
@@ -16,6 +20,7 @@ public class HeroAttack : MonoBehaviour
     {
         _missattack = true;
         _attackCoolDown = coolDownTimer;
+        _tempSpeed = hero.GetComponent<Player>().speed;
     }
 
     private void Awake()
@@ -24,6 +29,7 @@ public class HeroAttack : MonoBehaviour
         hero.AddComponent<AudioSource>();
         audio = hero.GetComponent<AudioSource>();
         hero.GetComponent<AudioSource>().clip = sound;
+        heroStats = hero.GetComponent<MainHeroHp>();
 
     }
     private void Update()
@@ -33,7 +39,9 @@ public class HeroAttack : MonoBehaviour
             {
             hero.GetComponent<AnimMoveset>().AttackAnimation();
             _attackCoolDown = 0f;
+            hero.GetComponent<Player>().speed = 0.2f;
             audio.PlayOneShot(miss);
+            StartCoroutine(StopOnAttack(_tempSpeed));
         }
     }
 
@@ -46,20 +54,33 @@ public class HeroAttack : MonoBehaviour
 
                 if (other.CompareTag("Enemy") || other.CompareTag("Citizen"))
                 {
-
                     other.GetComponent<EnemyStats>().AttackM(hero.GetComponent<MainHeroHp>().damage);
                     audio.PlayOneShot(sound);
                     other.GetComponent<EnemyStats>().enemyHp -= Random.Range(20, 40);
+                    if (other.GetComponent<EnemyStats>().enemyHp <= 0)
+                    {
+                        heroStats.ExpNum += Random.Range(50, 70);
+                    }
 
                 }
                 if (other.CompareTag("Boss"))
                 {
+
                     other.GetComponent<BossStats_>().AttackM(hero.GetComponent<MainHeroHp>().damage);
                     audio.PlayOneShot(sound);
                     other.GetComponent<BossStats_>().bossHp -= Random.Range(20, 40);
-
+                    if (other.GetComponent<BossStats_>().bossHp <= 0)
+                    {
+                        heroStats.ExpNum += 250;
+                    }
                 }
             }
         }
+
+    }
+    IEnumerator StopOnAttack(float tempSpeed)
+    {
+        yield return new WaitForSeconds(1f);
+        hero.GetComponent<Player>().speed = tempSpeed;
     }
 }

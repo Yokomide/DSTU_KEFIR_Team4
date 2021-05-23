@@ -69,7 +69,7 @@ public class FreezeSkill : MonoBehaviour
 
        else if (enemy.CompareTag("Boss"))
         {
-            enemy.GetComponent<BossAttack>().enabled = false;
+            enemy.GetComponentInChildren<BoxCollider>().enabled = false;
             enemy.GetComponent<Animator>().enabled = false;
             enemy.GetComponent<Boss_AI>().enabled = false;
             enemy.GetComponent<Boss_Move>().enabled = false;
@@ -98,8 +98,9 @@ public class FreezeSkill : MonoBehaviour
             enemy.GetComponent<MobMoving>().enabled = true;
         }
         else if (enemy.CompareTag("Boss"))
-        {
-            enemy.GetComponent<BossAttack>().enabled = true;
+        {   
+            enemy.GetComponentInChildren<BoxCollider>().enabled = true;
+
             enemy.GetComponent<Animator>().enabled = true;
             enemy.GetComponent<Boss_AI>().enabled = true;
             enemy.GetComponent<Boss_Move>().enabled = true;

@@ -30,7 +30,7 @@ public class BossAttack : MonoBehaviour
                     player.GetComponent<HealingSkill>().endHealingAmount -= Random.Range(10, 15);
                 }
                 audio.PlayOneShot(sound);
-                player.HeroHp -= Random.Range(20, 40);
+                player.HeroHp -= Random.Range(40, 80);
             }
         }
     }

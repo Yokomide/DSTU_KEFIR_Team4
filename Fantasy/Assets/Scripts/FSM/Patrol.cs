@@ -18,7 +18,7 @@ public class Patrol : NPCBase_FSM
 
         if (NPC_Move.GetComponent<NavMeshAgent>() != null)
         {
-            NPC_Move.speed = 3f;
+            NPC_Move.speed = 1f;
             NPC_Move.SetDestination(direction.position);
         }
 
