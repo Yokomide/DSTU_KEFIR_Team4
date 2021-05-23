@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 300
   nameItem: JewelCircle
-  id: 11
+  id: 2
   countItem: 0
   isStackable: 0
   maxStackSize: 1

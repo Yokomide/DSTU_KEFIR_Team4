@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   nameItem: Skull
-  id: 6
+  id: 9
   countItem: 0
   isStackable: 1
   maxStackSize: 6

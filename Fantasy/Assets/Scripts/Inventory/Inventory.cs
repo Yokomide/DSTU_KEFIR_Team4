@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    [HideInInspector] public List<Items> items;
+    /*[HideInInspector]*/ public List<Items> items;
     [HideInInspector] public List<Items> itemsOnTrigger;
     public GameObject cellContainer;
     public GameObject shopContainer;
@@ -163,7 +163,11 @@ public class Inventory : MonoBehaviour
     {
         InventoryData data = SaveSystem.LoadInventory();
 
-        for (int i = 0; i < 21; i++)
+        for (int i = 0; i < cellContainer.transform.childCount; i++)
+        {
+            items.Add(new Items());
+        }
+        for (int i = 0; i < cellContainer.transform.childCount; i++)
         {
             items[i].id = data.ids[i];
             items[i].countItem = data.counters[i];

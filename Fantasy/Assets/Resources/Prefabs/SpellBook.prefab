@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 25
   nameItem: SpellBook
-  id: 2
+  id: 10
   countItem: 1
   isStackable: 1
   maxStackSize: 6

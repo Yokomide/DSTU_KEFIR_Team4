@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 25
   nameItem: Necklace_Flat
-  id: 8
+  id: 6
   countItem: 0
   isStackable: 0
   maxStackSize: 1

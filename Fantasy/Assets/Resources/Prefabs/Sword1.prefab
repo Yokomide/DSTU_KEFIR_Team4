@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2000
   nameItem: Sword1
-  id: 50
+  id: 11
   countItem: 1
   isStackable: 0
   maxStackSize: 1

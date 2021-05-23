@@ -6,8 +6,8 @@ using UnityEngine;
 [System.Serializable]
 public class InventoryData
 {
-    public float[] ids;
-    public float[] counters;
+    public float[] ids = new float[21];
+    public float[] counters = new float[21];
 
 
 

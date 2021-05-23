@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 3
   nameItem: Bag
-  id: 5
+  id: 0
   countItem: 0
   isStackable: 1
   maxStackSize: 3

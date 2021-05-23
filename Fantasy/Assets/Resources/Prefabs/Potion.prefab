@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 5
   nameItem: Potion
-  id: 3
+  id: 8
   countItem: 0
   isStackable: 1
   maxStackSize: 6

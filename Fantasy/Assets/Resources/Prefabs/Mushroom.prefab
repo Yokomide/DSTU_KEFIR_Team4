@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 5
   nameItem: Mushroom
-  id: 4
+  id: 5
   countItem: 0
   isStackable: 1
   maxStackSize: 6

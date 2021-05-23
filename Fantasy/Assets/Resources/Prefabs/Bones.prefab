@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   nameItem: Bones
-  id: 7
+  id: 1
   countItem: 0
   isStackable: 1
   maxStackSize: 6
