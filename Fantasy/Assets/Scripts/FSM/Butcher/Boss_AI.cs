@@ -16,19 +16,11 @@ public class Boss_AI : MonoBehaviour
 
     void Attack()
     {
-
-
         hero = player.GetComponent<MainHeroHp>();
         if (hero.HeroHp < 0)
         {
             animAi.SetBool("dead", true);
 
-        }
-        if (Vector3.Distance(gameObject.GetComponent<BossStats_>().GetComponent<Transform>().position, player.GetComponent<Transform>().position) < 4f)
-        {
-            EventManager.OnGetAttack(); // dealing damage through the EventManager
-            // in case of problems in future line bellow is saved here
-            //hero.heroStats.HeroHp -= Random.Range(10, 15);
         }
     }
 
@@ -39,7 +31,10 @@ public class Boss_AI : MonoBehaviour
 
     public void StartAttack()
     {
-        InvokeRepeating("Attack", 0.2f, 0f);
+        if (gameObject.GetComponent<BossStats_>().isAlive)
+        {
+            InvokeRepeating("Attack", 0.2f, 0f);
+        }
     }
     void Start()
     {
@@ -55,7 +50,7 @@ public class Boss_AI : MonoBehaviour
         {
             direction = GetComponent<Boss_Move>().GetGoal();
 
-            if (CompareTag("Enemy"))
+            if (CompareTag("Boss"))
             {
                 animAi.SetFloat("distance", Vector3.Distance(transform.position, player.transform.position));
             }

@@ -8,7 +8,7 @@ public class BossStats_ : MonoBehaviour
     public ScrObjEnemyStats bossStats;
     private AttackRadiusTrigger _beingAttacked;
     [SerializeField]
-    private float bossHp;
+    public float bossHp;
 
     public GameObject hpBar;
     private GameObject Corp;
@@ -82,13 +82,24 @@ public class BossStats_ : MonoBehaviour
         StartCoroutine(AttackedDelay(heroDamage));
         _transformHpLine.localScale = new Vector3(bossHp / bossStats.maxHp, 0.25f, 0.01f);
     }
-
+    public void AttackM(float heroDamage)
+    {
+        _meshRedHpLine.enabled = true;
+        _meshHpLine.enabled = true;
+        StartCoroutine(AttackedDelay(heroDamage));
+        _transformHpLine.localScale = new Vector3(bossHp / bossStats.maxHp, 0.25f, 0.01f);
+    }
     IEnumerator AttackedDelay(float heroDamage)
     {
         bossHp -= (Random.Range(10, 20) + heroDamage);
         if (bossHp <= 0)
         {
+            DeathAnim.SetTrigger("Death");
+            DeathAnim.Play("Death");
+            Destroy(gameObject.GetComponent<BoxCollider>());
+            Destroy(gameObject.GetComponent<Rigidbody>());
             StartCoroutine(DeathOnCommand());
+
             yield break;
         }
         yield return new WaitForSeconds(3f);
@@ -102,11 +113,6 @@ public class BossStats_ : MonoBehaviour
     {
         Destroy(_hpLine);
         Destroy(_hpLineRed);
-
-        var deadBody = Instantiate(gameObject.GetComponentInChildren<SkinnedMeshRenderer>(), gameObject.GetComponent<Transform>());
-        deadBody.transform.parent = Corp.transform;
-        Destroy(gameObject, 4);
-
 
         _isRedHpLineDestroyed = true;
         isAlive = false;

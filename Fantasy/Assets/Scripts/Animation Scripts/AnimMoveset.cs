@@ -26,15 +26,15 @@ public class AnimMoveset : MonoBehaviour
     public void AttackAnimation()
     {
 
-        int combo = Random.Range(0, 2);
+        int combo = Random.Range(1, 4);
         switch (combo) {
-            case 0:
-        MainCharacterAnimation.Play("Attack");
-                break;
             case 1:
-                MainCharacterAnimation.Play("Attack1");
+                MainCharacterAnimation.Play("Attack");
                 break;
             case 2:
+                MainCharacterAnimation.Play("Attack1");
+                break;
+            case 3:
                 MainCharacterAnimation.Play("Attack2");
                 break;
         }

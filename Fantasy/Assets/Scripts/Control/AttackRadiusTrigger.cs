@@ -70,21 +70,24 @@ public class AttackRadiusTrigger : MonoBehaviour
                     if (enemies[i].GetComponent<EnemyStats>())
                     {
                         _enemyStats = enemies[i].GetComponent<EnemyStats>();
-                        _enemyStats.Attacked(player.GetComponent<MainHeroHp>().damage); 
+                        _enemyStats.Attacked(player.GetComponent<MainHeroHp>().damage);
+                        if (_enemyStats.isAlive)
+                        {
+                            StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
+                        }
                     }
                     else if (enemies[i].GetComponent<BossStats_>())
 
                     {
                         _bossStats = enemies[i].GetComponent<BossStats_>();
                         _bossStats.Attacked(player.GetComponent<MainHeroHp>().damage);
+                        if (_bossStats.isAlive)
+                        {
+                            StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
+                        }
                     }
 
-
-                    if (_enemyStats.isAlive || _bossStats.isAlive )
-                    {
-                        StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
-                    }
-                    else
+                    else 
                     {
                         heroStats.ExpNum += Random.Range(50, 70);
                         DeathAnim.SetTrigger("Active");

@@ -50,24 +50,9 @@ public class FreezeSkill : MonoBehaviour
     IEnumerator FreezeCount(GameObject enemy)
     {
         enemy.GetComponent<Rigidbody>().isKinematic = true;
-        
-          if (enemy.GetComponent<EnemyAttack>())
-        {
-            enemy.GetComponent<EnemyAttack>().enabled = false;
-            enemy.GetComponent<Animator>().enabled = false;
-            enemy.GetComponent<MobAI>().enabled = false;
-            enemy.GetComponent<MobMoving>().enabled = false;
-        }
-          
-          else if (!enemy.GetComponent<EnemyAttack>())
-          {
-              enemy.GetComponent<NavMeshAgent>().enabled = false;
-              enemy.GetComponent<Animator>().enabled = false;
-              enemy.GetComponent<MobAI>().enabled = false;
-              enemy.GetComponent<MobMoving>().enabled = false;
-          }
-        
-        if (enemy.GetComponent<BossAttack>())
+
+
+        if (enemy.CompareTag("Boss"))
         {
             enemy.GetComponent<BossAttack>().enabled = false;
             enemy.GetComponent<Animator>().enabled = false;
@@ -76,26 +61,13 @@ public class FreezeSkill : MonoBehaviour
         }
         
         yield return new WaitForSeconds(2);
+
         Destroy(tempEffect);
+
         enemy.GetComponent<Rigidbody>().isKinematic = false;
-        
-        if (enemy.GetComponent<EnemyAttack>())
-        {
-            enemy.GetComponent<EnemyAttack>().enabled = true;
-            enemy.GetComponent<Animator>().enabled = true;
-            enemy.GetComponent<MobAI>().enabled = true;
-            enemy.GetComponent<MobMoving>().enabled = true;
-        }
-        
-        else if (!enemy.GetComponent<EnemyAttack>())
-        {
-            enemy.GetComponent<NavMeshAgent>().enabled = true;
-            enemy.GetComponent<Animator>().enabled = true;
-            enemy.GetComponent<MobAI>().enabled = true;
-            enemy.GetComponent<MobMoving>().enabled = true;
-        }
-        
-        if (enemy.GetComponent<BossAttack>())
+
+
+        if (enemy.CompareTag("Boss"))
         {
             enemy.GetComponent<BossAttack>().enabled = true;
             enemy.GetComponent<Animator>().enabled = true;
@@ -135,7 +107,7 @@ public class FreezeSkill : MonoBehaviour
         
         if (other.GetComponent<BossStats_>())
         {
-            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && (other.GetComponent<BossStats_>().isAlive))
+            if ((other.CompareTag("Boss")) && (other.GetComponent<BossStats_>().isAlive))
             {
                 bool _isHere = false;
                 tempObject = other.gameObject;
@@ -158,8 +130,7 @@ public class FreezeSkill : MonoBehaviour
     {
         if (other.GetComponent<BossStats_>())
         {
-            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) &&
-                (other.GetComponent<BossStats_>().isAlive))
+            if ((other.CompareTag("Boss")) && (other.GetComponent<BossStats_>().isAlive))
             {
                 tempObject = other.gameObject;
                 foreach (GameObject i in enemies)

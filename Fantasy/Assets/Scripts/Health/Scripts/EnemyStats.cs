@@ -7,7 +7,7 @@ public class EnemyStats : MonoBehaviour
     public ScrObjEnemyStats enemyStats;
     private AttackRadiusTrigger _beingAttacked;
     [SerializeField]
-    private float enemyHp;
+    public float enemyHp;
 
     public GameObject hpBar;
     private GameObject Corp;
@@ -72,6 +72,7 @@ public class EnemyStats : MonoBehaviour
             _transformRedHpLine.position = new Vector3(_hpLine.transform.position.x, _hpLine.transform.position.y, _hpLine.transform.position.z + 0.01f);
             _transformRedHpLine.rotation = Quaternion.identity;
         }
+
     }
 
     public void Attacked(float heroDamage)
@@ -82,11 +83,20 @@ public class EnemyStats : MonoBehaviour
         _transformHpLine.localScale = new Vector3(enemyHp / enemyStats.maxHp, 0.25f, 0.01f);
     }
 
+    public void AttackM(float heroDamage)
+    {
+        _meshRedHpLine.enabled = true;
+        _meshHpLine.enabled = true;
+        StartCoroutine(AttackedDelay(heroDamage));
+        _transformHpLine.localScale = new Vector3(enemyHp / enemyStats.maxHp, 0.25f, 0.01f);
+    }
+
+
     IEnumerator AttackedDelay(float heroDamage)
     {
-        enemyHp -= (Random.Range(10, 20) + heroDamage);
         if (enemyHp <= 0)
         {
+            DeathAnim.SetTrigger("Active");
             StartCoroutine(DeathOnCommand());
             yield break;
         }

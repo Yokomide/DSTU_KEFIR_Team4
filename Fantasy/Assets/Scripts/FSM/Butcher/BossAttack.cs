@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
-
+    public GameObject boss;
     public AudioClip sound;
     private Animator animator;
     AudioSource audio;
@@ -12,35 +12,26 @@ public class BossAttack : MonoBehaviour
     public MainHeroHp player;
     private void Awake()
     {
-        animator = GetComponent<Animator>();
-        gameObject.AddComponent<AudioSource>();
-        audio = gameObject.GetComponent<AudioSource>();
-        gameObject.GetComponent<AudioSource>().clip = sound;
+        animator = boss.GetComponent<Animator>();
+        boss.AddComponent<AudioSource>();
+        audio = boss.GetComponent<AudioSource>();
+        boss.GetComponent<AudioSource>().clip = sound;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<MainHeroHp>();
     }
 
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.GetComponent<BossStats_>().isAlive)
+        if (boss.GetComponent<BossStats_>().isAlive)
         {
-            _attackCoolDown += Time.deltaTime;
-            if (_attackCoolDown > 2f && Vector3.Distance(gameObject.GetComponent<BossStats_>().GetComponent<Transform>().position, player.GetComponent<Transform>().position) < 6f
-                && animator.IsInTransition(0))
+            if (other.CompareTag("Player"))
             {
-                _attackCoolDown = 0;
-                StartCoroutine(Attack());
+                if (other.GetComponent<HealingSkill>().lerping)
+                {
+                    player.GetComponent<HealingSkill>().endHealingAmount -= Random.Range(10, 15);
+                }
+                audio.PlayOneShot(sound);
+                player.HeroHp -= Random.Range(20, 40);
             }
-        }
-    }
-
-    IEnumerator Attack()
-    {
-        yield return new WaitForSeconds(1f);
-        audio.PlayOneShot(sound);
-        player.HeroHp -= Random.Range(20, 40);
-        if (player.GetComponent<HealingSkill>().lerping)
-        {
-            player.GetComponent<HealingSkill>().endHealingAmount -= Random.Range(10, 15);
         }
     }
 }

@@ -5,7 +5,7 @@ public class EnemyLootDrop : MonoBehaviour
 {
     public LootManager lootShell;
     public int EnemyItemsDropCount = 3;
-    public List<Items> itemsToDrop;
+    public List<Items> itemsToDrop = new List<Items>();
     public int countItemsToDrop;
 
     private GameObject item;
@@ -14,7 +14,6 @@ public class EnemyLootDrop : MonoBehaviour
     {
         item = GameObject.Find("Items");
         countItemsToDrop = Random.Range(0, EnemyItemsDropCount + 1);
-        itemsToDrop = new List<Items>();
         for (int i = 0; i < countItemsToDrop; i++)
         {
             switch (Random.Range(1, 4))
