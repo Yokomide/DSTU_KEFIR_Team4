@@ -51,8 +51,23 @@ public class FreezeSkill : MonoBehaviour
     {
         enemy.GetComponent<Rigidbody>().isKinematic = true;
 
+        if (enemy.CompareTag("Enemy"))
+        {
+            enemy.GetComponent<EnemyAttack>().enabled = false;
+            enemy.GetComponent<Animator>().enabled = false;
+            enemy.GetComponent<MobAI>().enabled = false;
+            enemy.GetComponent<MobMoving>().enabled = false;
+        }
 
-        if (enemy.CompareTag("Boss"))
+        if (enemy.CompareTag("Citizen"))
+        {
+              enemy.GetComponent<NavMeshAgent>().enabled = false;
+              enemy.GetComponent<Animator>().enabled = false;
+              enemy.GetComponent<MobAI>().enabled = false;
+              enemy.GetComponent<MobMoving>().enabled = false;
+          }
+
+       else if (enemy.CompareTag("Boss"))
         {
             enemy.GetComponent<BossAttack>().enabled = false;
             enemy.GetComponent<Animator>().enabled = false;
@@ -66,8 +81,23 @@ public class FreezeSkill : MonoBehaviour
 
         enemy.GetComponent<Rigidbody>().isKinematic = false;
 
+        if (enemy.CompareTag("Enemy"))
+        {
+            enemy.GetComponent<EnemyAttack>().enabled = true;
+            enemy.GetComponent<Animator>().enabled = true;
+            enemy.GetComponent<MobAI>().enabled = true;
+            enemy.GetComponent<MobMoving>().enabled = true;
+        }
+        
 
-        if (enemy.CompareTag("Boss"))
+        if (enemy.CompareTag("Citizen"))
+        {
+            enemy.GetComponent<NavMeshAgent>().enabled = true;
+            enemy.GetComponent<Animator>().enabled = true;
+            enemy.GetComponent<MobAI>().enabled = true;
+            enemy.GetComponent<MobMoving>().enabled = true;
+        }
+        else if (enemy.CompareTag("Boss"))
         {
             enemy.GetComponent<BossAttack>().enabled = true;
             enemy.GetComponent<Animator>().enabled = true;

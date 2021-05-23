@@ -10,6 +10,7 @@ TagManager:
   - waypoint
   - Citizen
   - Freeze
+  - Boss
   layers:
   - Default
   - TransparentFX
