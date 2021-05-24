@@ -67,7 +67,7 @@ public class AttackRadiusTrigger : MonoBehaviour
                     if (enemies[i].GetComponent<EnemyStats>())
                     {
                         _enemyStats = enemies[i].GetComponent<EnemyStats>();
-                        _enemyStats.Attacked(player.GetComponent<MainHeroHp>().damage);
+                    
                         if (_enemyStats.isAlive)
                         {
                             StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));

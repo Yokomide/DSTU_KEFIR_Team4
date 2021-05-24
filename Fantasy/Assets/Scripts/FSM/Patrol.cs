@@ -15,11 +15,17 @@ public class Patrol : NPCBase_FSM
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
-        if (NPC_Move.GetComponent<NavMeshAgent>() != null)
+        if (Enemy.GetComponent<EnemyStats>().enemyHp > 0)
         {
-            NPC_Move.speed = 1f;
-            NPC_Move.SetDestination(direction.position);
+            if (NPC_Move.GetComponent<NavMeshAgent>() != null)
+            {
+                NPC_Move.speed = 1f;
+                NPC_Move.SetDestination(direction.position);
+            }
+        }
+        else
+        {
+            NPC_Move.speed = 0f;
         }
 
     }

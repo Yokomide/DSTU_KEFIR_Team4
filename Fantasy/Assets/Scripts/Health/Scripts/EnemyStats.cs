@@ -75,13 +75,6 @@ public class EnemyStats : MonoBehaviour
 
     }
 
-    public void Attacked(float heroDamage)
-    {
-        _meshRedHpLine.enabled = true;
-        _meshHpLine.enabled = true;
-        StartCoroutine(AttackedDelay(heroDamage));
-        _transformHpLine.localScale = new Vector3(enemyHp / enemyStats.maxHp, 0.25f, 0.01f);
-    }
 
     public void AttackM(float heroDamage)
     {
@@ -96,8 +89,9 @@ public class EnemyStats : MonoBehaviour
     {
         if (enemyHp <= 0)
         {
-
+            Destroy(gameObject.GetComponent<BoxCollider>());
             DeathAnim.SetTrigger("Active");
+     
             StartCoroutine(DeathOnCommand());
             yield break;
         }
@@ -110,10 +104,11 @@ public class EnemyStats : MonoBehaviour
 
     IEnumerator DeathOnCommand()
     {
+        Vector3 y = new Vector3(0f, 2f, 0);
         Destroy(_hpLine);
         Destroy(_hpLineRed);
-
-        var deadBody = Instantiate(gameObject.GetComponentInChildren<SkinnedMeshRenderer>(), gameObject.GetComponent<Transform>());
+        Debug.Log(gameObject.GetComponent<Transform>().position);
+        var deadBody = Instantiate(gameObject.GetComponentInChildren<SkinnedMeshRenderer>(), gameObject.GetComponentInChildren<Transform>());
         deadBody.transform.parent = Corp.transform;
         Destroy(gameObject, 4);
 

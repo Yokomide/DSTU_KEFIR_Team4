@@ -41,9 +41,10 @@ public class EnemyLootDrop : MonoBehaviour
     }
     public void DropItems()
     {
+        Vector3 y = new Vector3(0f, 2f, 0);
         for (int i = 0; i < countItemsToDrop; i++)
         {
-            tempItem = Instantiate(itemsToDrop[i].gameObject, gameObject.GetComponent<Transform>().position, Quaternion.identity);
+            tempItem = Instantiate(itemsToDrop[i].gameObject, gameObject.GetComponent<Transform>().position + y, Quaternion.identity);
             tempItem.GetComponent<Rigidbody>().AddForce(Vector3.up * 255);
         }
     }
