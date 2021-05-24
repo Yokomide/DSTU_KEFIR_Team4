@@ -171,12 +171,17 @@ public class Inventory : MonoBehaviour
         }
         for (int i = 0; i < cellContainer.transform.childCount; i++)
         {
+            cellContainer.transform.GetChild(i).GetComponent<CurrentItem>().index = i;
+        }
+        for (int i = 0; i < cellContainer.transform.childCount; i++)
+        {
             int id = Convert.ToInt32(data.ids[i]) - 1;
             Debug.Log(allLoot.AllItems[id]);
             Debug.Log(allLoot.AllItems[id].GetComponent<Items>());
-            AddItem(CloneItems(allLoot.AllItems[id].GetComponent<Items>()));
+            GameObject tempItem = Instantiate(allLoot.AllItems[id], new Vector3(-1000, -1999, -1000), Quaternion.identity);
+            AddItem(tempItem.GetComponent<Items>());
+            Destroy(tempItem.gameObject);
             items[i].countItem = data.counters[i];
-            Debug.Log(items[i].countItem);
 
         }
     }
