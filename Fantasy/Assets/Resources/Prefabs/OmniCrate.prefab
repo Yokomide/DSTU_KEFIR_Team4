@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 100
   nameItem: OmniCrate
-  id: 7
+  id: 8
   countItem: 1
   isStackable: 0
   maxStackSize: 1

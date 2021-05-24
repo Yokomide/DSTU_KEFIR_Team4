@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 12
   nameItem: Meat
-  id: 4
+  id: 5
   countItem: 0
   isStackable: 1
   maxStackSize: 6

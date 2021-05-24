@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 200
   nameItem: JewelDiamond
-  id: 3
+  id: 4
   countItem: 1
   isStackable: 0
   maxStackSize: 1

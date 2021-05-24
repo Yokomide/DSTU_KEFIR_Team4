@@ -1,11 +1,13 @@
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    /*[HideInInspector]*/ public List<Items> items;
+    [HideInInspector] public List<Items> items;
     [HideInInspector] public List<Items> itemsOnTrigger;
+    public AllLootId allLoot;
     public GameObject cellContainer;
     public GameObject shopContainer;
     public GameObject menu;
@@ -169,8 +171,13 @@ public class Inventory : MonoBehaviour
         }
         for (int i = 0; i < cellContainer.transform.childCount; i++)
         {
-            items[i].id = data.ids[i];
+            int id = Convert.ToInt32(data.ids[i]) - 1;
+            Debug.Log(allLoot.AllItems[id]);
+            Debug.Log(allLoot.AllItems[id].GetComponent<Items>());
+            AddItem(CloneItems(allLoot.AllItems[id].GetComponent<Items>()));
             items[i].countItem = data.counters[i];
+            Debug.Log(items[i].countItem);
+
         }
     }
 }
