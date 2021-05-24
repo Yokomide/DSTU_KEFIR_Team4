@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac45b04c99349944a45996409d45ae9, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  enemyName: "\u041C\u044F\u0441\u043D\u0438\u043A"
+  maxHp: 800
+  damage: 150
+  minDamage: 40
+  maxDamage: 80
+  hp: 800

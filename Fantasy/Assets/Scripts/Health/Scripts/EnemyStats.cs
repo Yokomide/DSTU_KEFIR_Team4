@@ -7,7 +7,7 @@ public class EnemyStats : MonoBehaviour
     public ScrObjEnemyStats enemyStats;
     private AttackRadiusTrigger _beingAttacked;
     [SerializeField]
-    private float enemyHp;
+    public float enemyHp;
 
     public GameObject hpBar;
     private GameObject Corp;
@@ -69,12 +69,14 @@ public class EnemyStats : MonoBehaviour
             _transformHpLine.position = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z);
             _transformHpLine.localScale = new Vector3(enemyHp / enemyStats.maxHp, 0.1f, 0.01f);
             _transformHpLine.rotation = Quaternion.identity;
-            _transformRedHpLine.position = new Vector3(_hpLine.transform.position.x, _hpLine.transform.position.y, _hpLine.transform.position.z + 0.02f);
+            _transformRedHpLine.position = new Vector3(_hpLine.transform.position.x, _hpLine.transform.position.y, _hpLine.transform.position.z + 0.01f);
             _transformRedHpLine.rotation = Quaternion.identity;
         }
+
     }
 
-    public void Attacked(float heroDamage)
+
+    public void AttackM(float heroDamage)
     {
         _meshRedHpLine.enabled = true;
         _meshHpLine.enabled = true;
@@ -82,11 +84,14 @@ public class EnemyStats : MonoBehaviour
         _transformHpLine.localScale = new Vector3(enemyHp / enemyStats.maxHp, 0.25f, 0.01f);
     }
 
+
     IEnumerator AttackedDelay(float heroDamage)
     {
-        enemyHp -= (Random.Range(10, 20) + heroDamage);
         if (enemyHp <= 0)
         {
+            Destroy(gameObject.GetComponent<BoxCollider>());
+            DeathAnim.SetTrigger("Active");
+     
             StartCoroutine(DeathOnCommand());
             yield break;
         }
@@ -99,10 +104,11 @@ public class EnemyStats : MonoBehaviour
 
     IEnumerator DeathOnCommand()
     {
+        Vector3 y = new Vector3(0f, 2f, 0);
         Destroy(_hpLine);
         Destroy(_hpLineRed);
-
-        var deadBody = Instantiate(gameObject.GetComponentInChildren<SkinnedMeshRenderer>(), gameObject.GetComponent<Transform>());
+        Debug.Log(gameObject.GetComponent<Transform>().position);
+        var deadBody = Instantiate(gameObject.GetComponentInChildren<SkinnedMeshRenderer>(), gameObject.GetComponentInChildren<Transform>());
         deadBody.transform.parent = Corp.transform;
         Destroy(gameObject, 4);
 

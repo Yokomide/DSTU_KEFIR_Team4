@@ -20,10 +20,9 @@ public class AttackRadiusTrigger : MonoBehaviour
     private float _attackCoolDown = 0f;
     private float _tempSpeed;
     public List<GameObject> enemies = new List<GameObject>();
-
-
     private MainHeroHp heroStats;
     private EnemyStats _enemyStats;
+    private BossStats_ _bossStats;
     private Player _playerMove;
     private NavMeshAgent agent;
 
@@ -36,8 +35,8 @@ public class AttackRadiusTrigger : MonoBehaviour
     AudioSource audio;
 
 
-    private void Start()
-    {
+    private void Start(){
+    
         gameObject.AddComponent<AudioSource>();
         audio = gameObject.GetComponent<AudioSource>();
         gameObject.GetComponent<AudioSource>().clip = soundMiss;
@@ -50,7 +49,6 @@ public class AttackRadiusTrigger : MonoBehaviour
     private void Update()
     {
         _attackCoolDown += Time.deltaTime;
-
         if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer && heroStats.HeroHp > 0)
         {
             StopAllCoroutines();
@@ -63,17 +61,30 @@ public class AttackRadiusTrigger : MonoBehaviour
             {
                 for (int i = 0; i < enemies.Count; i++)
                 {
-                    _enemyStats = enemies[i].GetComponent<EnemyStats>();
+                    
                     agent = enemies[i].GetComponent<NavMeshAgent>();
                     DeathAnim = enemies[i].GetComponent<Animator>();
-
-                    _enemyStats.Attacked(player.GetComponent<MainHeroHp>().damage);
-
-                    if (_enemyStats.isAlive)
+                    if (enemies[i].GetComponent<EnemyStats>())
                     {
-                        StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
+                        _enemyStats = enemies[i].GetComponent<EnemyStats>();
+                    
+                        if (_enemyStats.isAlive)
+                        {
+                            StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
+                        }
                     }
-                    else
+                    else if (enemies[i].GetComponent<BossStats_>())
+
+                    {
+                        _bossStats = enemies[i].GetComponent<BossStats_>();
+                        _bossStats.Attacked(player.GetComponent<MainHeroHp>().damage);
+                        if (_bossStats.isAlive)
+                        {
+                            StartCoroutine(HitAnimDelay(enemies[i].GetComponent<Collider>()));
+                        }
+                    }
+
+                    else 
                     {
                         heroStats.ExpNum += Random.Range(50, 70);
                         DeathAnim.SetTrigger("Active");
@@ -93,40 +104,90 @@ public class AttackRadiusTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         isTriggered = true;
-        if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && other.GetComponent<EnemyStats>().isAlive)
+        if (other.GetComponent<EnemyStats>())
         {
-            bool _isHere = false;
-            tempObject = other.gameObject;
-            foreach (GameObject i in enemies)
+            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && (other.GetComponent<EnemyStats>().isAlive))
             {
-                if (i == tempObject)
+                bool _isHere = false;
+                tempObject = other.gameObject;
+                foreach (GameObject i in enemies)
                 {
-                    _isHere = true;
-                    break;
+                    if (i == tempObject)
+                    {
+                        _isHere = true;
+                        break;
+                    }
+
                 }
 
+                if (!_isHere) enemies.Add(tempObject);
             }
-            if (!_isHere) enemies.Add(tempObject);
+        }
+        
+        if (other.GetComponent<BossStats_>())
+        {
+            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && (other.GetComponent<BossStats_>().isAlive))
+            {
+                bool _isHere = false;
+                tempObject = other.gameObject;
+                foreach (GameObject i in enemies)
+                {
+                    if (i == tempObject)
+                    {
+                        _isHere = true;
+                        break;
+                    }
+
+                }
+
+                if (!_isHere) enemies.Add(tempObject);
+            }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && other.GetComponent<EnemyStats>().isAlive)
+        if (other.GetComponent<EnemyStats>())
         {
-            tempObject = other.gameObject;
-            foreach (GameObject i in enemies)
+            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && (other.GetComponent<EnemyStats>().isAlive))
             {
-                if (i == tempObject)
+                tempObject = other.gameObject;
+                foreach (GameObject i in enemies)
                 {
-                    enemies.Remove(i);
-                    break;
-                }
+                    if (i == tempObject)
+                    {
+                        enemies.Remove(i);
+                        break;
+                    }
 
+                }
+            }
+
+            if (enemies.Count == 0)
+            {
+                isTriggered = false;
             }
         }
-        if (enemies.Count == 0)
+        
+        if (other.GetComponent<BossStats_>())
         {
-            isTriggered = false;
+            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && (other.GetComponent<BossStats_>().isAlive))
+            {
+                tempObject = other.gameObject;
+                foreach (GameObject i in enemies)
+                {
+                    if (i == tempObject)
+                    {
+                        enemies.Remove(i);
+                        break;
+                    }
+
+                }
+            }
+
+            if (enemies.Count == 0)
+            {
+                isTriggered = false;
+            }
         }
     }
 

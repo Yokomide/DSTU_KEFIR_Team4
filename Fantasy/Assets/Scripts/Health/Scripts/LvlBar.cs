@@ -18,7 +18,7 @@ public class LvlBar : MonoBehaviour
 
     void Update()
     {
-        fill = _heroStats.ExpNum / (100 + _heroStats.Lvl * 10);
+        fill = Mathf.Lerp(fill, _heroStats.ExpNum / (100 + _heroStats.Lvl * 10), 2 * Time.deltaTime);
         bar.fillAmount = fill;
     }
 }

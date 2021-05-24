@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FreezeSkill : MonoBehaviour
 {
@@ -49,23 +50,62 @@ public class FreezeSkill : MonoBehaviour
     IEnumerator FreezeCount(GameObject enemy)
     {
         enemy.GetComponent<Rigidbody>().isKinematic = true;
-        if (enemy.GetComponent<EnemyAttack>())
+
+        if (enemy.CompareTag("Enemy"))
         {
             enemy.GetComponent<EnemyAttack>().enabled = false;
+            enemy.GetComponent<Animator>().enabled = false;
+            enemy.GetComponent<MobAI>().enabled = false;
+            enemy.GetComponent<MobMoving>().enabled = false;
         }
-        enemy.GetComponent<Animator>().enabled = false;
-        enemy.GetComponent<MobAI>().enabled = false;
-        enemy.GetComponent<MobMoving>().enabled = false;
+
+        if (enemy.CompareTag("Citizen"))
+        {
+              enemy.GetComponent<NavMeshAgent>().enabled = false;
+              enemy.GetComponent<Animator>().enabled = false;
+              enemy.GetComponent<MobAI>().enabled = false;
+              enemy.GetComponent<MobMoving>().enabled = false;
+          }
+
+       else if (enemy.CompareTag("Boss"))
+        {
+            enemy.GetComponentInChildren<BoxCollider>().enabled = false;
+            enemy.GetComponent<Animator>().enabled = false;
+            enemy.GetComponent<Boss_AI>().enabled = false;
+            enemy.GetComponent<Boss_Move>().enabled = false;
+        }
+        
         yield return new WaitForSeconds(2);
+
         Destroy(tempEffect);
+
         enemy.GetComponent<Rigidbody>().isKinematic = false;
-        if (enemy.GetComponent<EnemyAttack>())
+
+        if (enemy.CompareTag("Enemy"))
         {
             enemy.GetComponent<EnemyAttack>().enabled = true;
+            enemy.GetComponent<Animator>().enabled = true;
+            enemy.GetComponent<MobAI>().enabled = true;
+            enemy.GetComponent<MobMoving>().enabled = true;
         }
-        enemy.GetComponent<Animator>().enabled = true;
-        enemy.GetComponent<MobAI>().enabled = true;
-        enemy.GetComponent<MobMoving>().enabled = true;
+        
+
+        if (enemy.CompareTag("Citizen"))
+        {
+            enemy.GetComponent<NavMeshAgent>().enabled = true;
+            enemy.GetComponent<Animator>().enabled = true;
+            enemy.GetComponent<MobAI>().enabled = true;
+            enemy.GetComponent<MobMoving>().enabled = true;
+        }
+        else if (enemy.CompareTag("Boss"))
+        {   
+            enemy.GetComponentInChildren<BoxCollider>().enabled = true;
+
+            enemy.GetComponent<Animator>().enabled = true;
+            enemy.GetComponent<Boss_AI>().enabled = true;
+            enemy.GetComponent<Boss_Move>().enabled = true;
+        }
+      
     }
     IEnumerator EffectFade(GameObject effect)
     {
@@ -75,35 +115,80 @@ public class FreezeSkill : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && other.GetComponent<EnemyStats>().isAlive)
+        if (other.GetComponent<EnemyStats>())
         {
-            bool _isHere = false;
-            tempObject = other.gameObject;
-            foreach (GameObject i in enemies)
+            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && (other.GetComponent<EnemyStats>().isAlive))
             {
-                if (i == tempObject)
+                bool _isHere = false;
+                tempObject = other.gameObject;
+                foreach (GameObject i in enemies)
                 {
-                    _isHere = true;
-                    break;
+                    if (i == tempObject)
+                    {
+                        _isHere = true;
+                        break;
+                    }
+
                 }
 
+                if (!_isHere) enemies.Add(tempObject);
             }
-            if (!_isHere) enemies.Add(tempObject);
+        }
+        
+        
+        if (other.GetComponent<BossStats_>())
+        {
+            if ((other.CompareTag("Boss")) && (other.GetComponent<BossStats_>().isAlive))
+            {
+                bool _isHere = false;
+                tempObject = other.gameObject;
+                foreach (GameObject i in enemies)
+                {
+                    if (i == tempObject)
+                    {
+                        _isHere = true;
+                        break;
+                    }
+
+                }
+
+                if (!_isHere) enemies.Add(tempObject);
+            }
         }
     }
+
     void OnTriggerExit(Collider other)
     {
-        if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && other.GetComponent<EnemyStats>().isAlive)
+        if (other.GetComponent<BossStats_>())
         {
-            tempObject = other.gameObject;
-            foreach (GameObject i in enemies)
+            if ((other.CompareTag("Boss")) && (other.GetComponent<BossStats_>().isAlive))
             {
-                if (i == tempObject)
+                tempObject = other.gameObject;
+                foreach (GameObject i in enemies)
                 {
-                    enemies.Remove(i);
-                    break;
-                }
+                    if (i == tempObject)
+                    {
+                        enemies.Remove(i);
+                        break;
+                    }
 
+                }
+            }
+        }
+        if (other.GetComponent<EnemyStats>())
+        {
+            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) &&  (other.GetComponent<EnemyStats>().isAlive))
+            {
+                tempObject = other.gameObject;
+                foreach (GameObject i in enemies)
+                {
+                    if (i == tempObject)
+                    {
+                        enemies.Remove(i);
+                        break;
+                    }
+
+                }
             }
         }
     }

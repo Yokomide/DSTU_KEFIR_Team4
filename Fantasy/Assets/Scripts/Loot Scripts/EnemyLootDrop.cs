@@ -13,28 +13,38 @@ public class EnemyLootDrop : MonoBehaviour
     private void Start()
     {
         item = GameObject.Find("Items");
-        countItemsToDrop = Random.Range(0, EnemyItemsDropCount + 1);
-        for (int i = 0; i < countItemsToDrop; i++)
+        if (gameObject.CompareTag("Boss"))
         {
-            switch (Random.Range(1, 4))
+            countItemsToDrop = 2;
+        }
+        else
+        {
+
+            countItemsToDrop = Random.Range(0, EnemyItemsDropCount + 1);
+
+            for (int i = 0; i < countItemsToDrop; i++)
             {
-                case 1:
-                    itemsToDrop.Add(lootShell.CommonItems[Random.Range(1, lootShell.CommonItems.Count + 1) - 1].GetComponent<Items>());
-                    break;
-                case 2:
-                    itemsToDrop.Add(lootShell.RareItems[Random.Range(1, lootShell.RareItems.Count + 1) - 1].GetComponent<Items>());
-                    break;
-                case 3:
-                    itemsToDrop.Add(lootShell.EpicItems[Random.Range(1, lootShell.EpicItems.Count + 1) - 1].GetComponent<Items>());
-                    break;
+                switch (Random.Range(1, 4))
+                {
+                    case 1:
+                        itemsToDrop.Add(lootShell.CommonItems[Random.Range(1, lootShell.CommonItems.Count + 1) - 1].GetComponent<Items>());
+                        break;
+                    case 2:
+                        itemsToDrop.Add(lootShell.RareItems[Random.Range(1, lootShell.RareItems.Count + 1) - 1].GetComponent<Items>());
+                        break;
+                    case 3:
+                        itemsToDrop.Add(lootShell.EpicItems[Random.Range(1, lootShell.EpicItems.Count + 1) - 1].GetComponent<Items>());
+                        break;
+                }
             }
         }
     }
     public void DropItems()
     {
+        Vector3 y = new Vector3(0f, 2f, 0);
         for (int i = 0; i < countItemsToDrop; i++)
         {
-            tempItem = Instantiate(itemsToDrop[i].gameObject, gameObject.GetComponent<Transform>().position, Quaternion.identity);
+            tempItem = Instantiate(itemsToDrop[i].gameObject, gameObject.GetComponent<Transform>().position + y, Quaternion.identity);
             tempItem.GetComponent<Rigidbody>().AddForce(Vector3.up * 255);
         }
     }
