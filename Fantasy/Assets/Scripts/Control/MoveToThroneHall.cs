@@ -9,7 +9,6 @@ public class MoveToThroneHall : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<MainHeroHp>().SavePlayer();
-            inventory.GetComponent<Inventory>().SaveInventory();
             SceneManager.LoadScene(2);
         }
     }

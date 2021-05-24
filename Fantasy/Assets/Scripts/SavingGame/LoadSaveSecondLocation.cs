@@ -8,7 +8,6 @@ public class LoadSaveSecondLocation : MonoBehaviour
     private void Start()
     {
         gameObject.GetComponent<MainHeroHp>().LoadPlayer();
-        //inventory.GetComponent<Inventory>().LoadInventory();
     }
 
 }
