@@ -114,7 +114,7 @@ MonoBehaviour:
   cost: 25
   nameItem: SpellBook
   id: 11
-  countItem: 1
+  countItem: 0
   isStackable: 1
   maxStackSize: 6
   lootType: high

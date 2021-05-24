@@ -14,12 +14,10 @@ public class InventoryData
     public InventoryData(Inventory inventory)
     {
 
-        for (int i = 0; i < 21; i++)
+        for (int i = 0; i < inventory.cellContainer.transform.childCount; i++)
         {
             ids[i] = inventory.items[i].id;
             counters[i] = inventory.items[i].countItem;
         }
-
     }
-
 }

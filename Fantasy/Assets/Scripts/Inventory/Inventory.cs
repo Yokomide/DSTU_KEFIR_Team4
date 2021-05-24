@@ -13,20 +13,33 @@ public class Inventory : MonoBehaviour
     public GameObject menu;
     public bool full = false;
 
+    List<Items> itemsMain;
 
     void Start()
     {
+        InventoryMain inventoryMain = InventoryMain.Initialization();
+        if ( InventoryMain.ReturnList() == null)
+        {
+            itemsMain = InventoryMain.ListInit();
+        }
+        else
+        {
+            itemsMain = InventoryMain.ReturnList();
+        }
+
         cellContainer.SetActive(false);
         itemsOnTrigger = new List<Items>();
         items = new List<Items>();
         for (int i = 0; i < cellContainer.transform.childCount; i++)
         {
-            items.Add(new Items());
+            items.Add(itemsMain[i]);
         }
+
         for (int i = 0; i < cellContainer.transform.childCount; i++)
         {
             cellContainer.transform.GetChild(i).GetComponent<CurrentItem>().index = i;
         }
+        DisplayItem();
     }
 
     void Update()
@@ -37,9 +50,11 @@ public class Inventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (!shopContainer.activeSelf)
-                {                    
+                {
                     Destroy(itemsOnTrigger[0].gameObject);
+                    InventoryMain.AddItem(CloneItems(itemsOnTrigger[0]));
                     AddItem(itemsOnTrigger[0]);
+                    
                 }
             }
         }
@@ -165,24 +180,31 @@ public class Inventory : MonoBehaviour
     {
         InventoryData data = SaveSystem.LoadInventory();
 
+
         for (int i = 0; i < cellContainer.transform.childCount; i++)
         {
             items.Add(new Items());
         }
-        for (int i = 0; i < cellContainer.transform.childCount; i++)
-        {
-            cellContainer.transform.GetChild(i).GetComponent<CurrentItem>().index = i;
-        }
+
+
         for (int i = 0; i < cellContainer.transform.childCount; i++)
         {
             int id = Convert.ToInt32(data.ids[i]) - 1;
-            Debug.Log(allLoot.AllItems[id]);
-            Debug.Log(allLoot.AllItems[id].GetComponent<Items>());
+
             GameObject tempItem = Instantiate(allLoot.AllItems[id], new Vector3(-1000, -1999, -1000), Quaternion.identity);
+            itemsOnTrigger.Add(tempItem.GetComponent<Items>());
+            Debug.Log(data.ids[i] + " id before");
+            Debug.Log(data.counters[i] + " count before ");
             AddItem(tempItem.GetComponent<Items>());
+            Debug.Log(data.ids + "allids");
+            Debug.Log(data.counters + "allcounters");
+
+
+            Debug.Log("--------------------------------");
+            Debug.Log(allLoot.AllItems[id].GetComponent<Items>());
+
             Destroy(tempItem.gameObject);
             items[i].countItem = data.counters[i];
-
         }
     }
 }

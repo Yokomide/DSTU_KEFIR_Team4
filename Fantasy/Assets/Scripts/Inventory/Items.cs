@@ -5,7 +5,6 @@ public class Items : MonoBehaviour
     public int cost;
     public string nameItem;
     public float id;
-    [HideInInspector]
     public float countItem;
     public bool isStackable;
     public int maxStackSize;
