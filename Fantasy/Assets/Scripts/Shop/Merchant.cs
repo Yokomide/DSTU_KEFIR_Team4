@@ -84,6 +84,10 @@ public class Merchant : MonoBehaviour
                 if (_merchantsItems[i].countItem < item.maxStackSize)
                 {
                     _merchantsItems[i].countItem++;
+                    if(_merchantsItems.Count-1 == i)
+                    {
+                        _merchantsItems[_merchantsItems.Count-1]=new Items();
+                    }
                     DisplayItem();
                     return;
                 }
@@ -100,6 +104,10 @@ public class Merchant : MonoBehaviour
             {
                 _merchantsItems[i] = item;
                 _merchantsItems[i].countItem = 1;
+                if(_merchantsItems.Count-1 == i)
+                    {
+                        _merchantsItems[_merchantsItems.Count-1]=new Items();
+                    }
                 DisplayItem();
                 break;
             }

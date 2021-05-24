@@ -31,10 +31,12 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                     if (inventory.items[index].countItem > 1)
                     {
                         inventory.items[index].countItem--;
+                        InventoryMain.items[index].countItem--;
                     }
                     else
                     {
                         inventory.items[index] = new Items();
+                        InventoryMain.items[index] = new Items();
                     }
                 }
                 else
@@ -47,6 +49,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                             if (merchant._merchantsItems[i].id == 0)
                             {
                                 inventory.items[index].countItem--;
+                                InventoryMain.items[index].countItem--;
                                 playerObject.GetComponent<MainHeroHp>().money += inventory.items[index].cost;
                                 merchant.AddItem(inventory.CloneItems(inventory.items[index]));
                                 break;
@@ -54,6 +57,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                             else if (merchant._merchantsItems[i].id == inventory.items[index].id && merchant._merchantsItems[i].countItem != merchant._merchantsItems[i].maxStackSize)
                             {
                                 inventory.items[index].countItem--;
+                                InventoryMain.items[index].countItem--;
                                 playerObject.GetComponent<MainHeroHp>().money += inventory.items[index].cost;
                                 merchant.AddItem(inventory.CloneItems(inventory.items[index]));
                                 break;
@@ -73,6 +77,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                                     merchant.AddItem(inventory.CloneItems(inventory.items[index]));
                                     playerObject.GetComponent<MainHeroHp>().money += inventory.items[index].cost;
                                     inventory.items[index] = new Items();
+                                    InventoryMain.items[index] = new Items();
                                     break;
                                 }
                                 else if (merchant._merchantsItems[i].id == inventory.items[index].id && merchant._merchantsItems[i].countItem != merchant._merchantsItems[i].maxStackSize)
@@ -80,6 +85,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                                     merchant.AddItem(inventory.CloneItems(inventory.items[index]));
                                     playerObject.GetComponent<MainHeroHp>().money += inventory.items[index].cost;
                                     inventory.items[index] = new Items();
+                                    InventoryMain.items[index] = new Items();
                                     break;
                                 }
 
@@ -94,6 +100,7 @@ public class CurrentItem : MonoBehaviour, IPointerClickHandler
                                     merchant.AddItem(inventory.CloneItems(inventory.items[index]));
                                     playerObject.GetComponent<MainHeroHp>().money += inventory.items[index].cost;
                                     inventory.items[index] = new Items();
+                                    InventoryMain.items[index] = new Items();
                                     break;
                                 }
                             }
