@@ -61,7 +61,7 @@ public class HeroAttack : MonoBehaviour
                     tempEffect = Instantiate(effect, other.transform.position, Quaternion.Euler(-90, 0, 0));
                     other.GetComponent<EnemyStats>().AttackM(hero.GetComponent<MainHeroHp>().damage);
                     audio.PlayOneShot(sound);
-                    other.GetComponent<EnemyStats>().enemyHp -= Random.Range(20, 40);
+                    other.GetComponent<EnemyStats>().enemyHp -= Random.Range(10, 20);
                     if (other.GetComponent<EnemyStats>().enemyHp <= 0)
                     {
                         heroStats.ExpNum += Random.Range(50, 70);
@@ -73,7 +73,7 @@ public class HeroAttack : MonoBehaviour
                     tempEffect = Instantiate(effect, other.transform.position , Quaternion.Euler(-90, 0, 0));
                     other.GetComponent<BossStats_>().AttackM(hero.GetComponent<MainHeroHp>().damage);
                     audio.PlayOneShot(sound);
-                    other.GetComponent<BossStats_>().bossHp -= Random.Range(20, 40);
+                    other.GetComponent<BossStats_>().bossHp -= Random.Range(10, 20);
                     if (other.GetComponent<BossStats_>().bossHp <= 0)
                     {
                         heroStats.ExpNum += 250;

@@ -17,4 +17,4 @@ MonoBehaviour:
   damage: 15
   minDamage: 2
   maxDamage: 5
-  hp: 100
+  hp: 88
