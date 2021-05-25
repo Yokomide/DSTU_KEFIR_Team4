@@ -51,14 +51,11 @@ public class HeroAttack : MonoBehaviour
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
         {
-
-            if (hero.GetComponent<MainHeroHp>().HeroHp > 0)
+            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")))
             {
-
-                if (other.CompareTag("Enemy") || other.CompareTag("Citizen"))
+                if (!other.GetComponent<EnemyStats>().isBeenAttacked)
                 {
-
-                    tempEffect = Instantiate(effect, other.transform.position, Quaternion.Euler(-90, 0, 0));
+                    tempEffect = Instantiate(effect, other.transform.position, Quaternion.identity);
                     other.GetComponent<EnemyStats>().AttackM(hero.GetComponent<MainHeroHp>().damage);
                     audio.PlayOneShot(sound);
                     other.GetComponent<EnemyStats>().enemyHp -= Random.Range(10, 20);
@@ -66,11 +63,14 @@ public class HeroAttack : MonoBehaviour
                     {
                         heroStats.ExpNum += Random.Range(10, 20);
                     }
-
                 }
-                if (other.CompareTag("Boss"))
+
+            }
+            if (other.CompareTag("Boss"))
+            {
+                if (!other.GetComponent<BossStats_>().isBeenAttacked)
                 {
-                    tempEffect = Instantiate(effect, other.transform.position, Quaternion.Euler(-90, 0, 0));
+                    tempEffect = Instantiate(effect, other.transform.position, Quaternion.identity);
                     other.GetComponent<BossStats_>().AttackM(hero.GetComponent<MainHeroHp>().damage);
                     audio.PlayOneShot(sound);
                     other.GetComponent<BossStats_>().bossHp -= Random.Range(10, 20);
@@ -79,8 +79,8 @@ public class HeroAttack : MonoBehaviour
                         heroStats.ExpNum += 250;
                     }
                 }
-                StartCoroutine(EffectFade(tempEffect));
             }
+            StartCoroutine(EffectFade(tempEffect));
         }
 
     }

@@ -33,6 +33,9 @@ public class BossStats_ : MonoBehaviour
     public AudioClip sound;
     AudioSource audio;
 
+    [HideInInspector]
+    public bool isBeenAttacked=false;
+
     public void Awake()
     {
 
@@ -119,6 +122,13 @@ public class BossStats_ : MonoBehaviour
         gameObject.GetComponent<EnemyLootDrop>().DropItems();
         audio.PlayOneShot(sound);
         yield return new WaitForEndOfFrame();
+    }
+
+    IEnumerator IsBeenAttacked()
+    {
+        isBeenAttacked = true;
+        yield return new WaitForSeconds(1.3f);
+        isBeenAttacked = false;
     }
 }
 

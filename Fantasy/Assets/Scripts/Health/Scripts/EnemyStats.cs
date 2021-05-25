@@ -29,6 +29,9 @@ public class EnemyStats : MonoBehaviour
     private Animator DeathAnim;
     private NavMeshAgent agent;
 
+    [HideInInspector]
+    public bool isBeenAttacked = false;
+
 
     public AudioClip sound;
     AudioSource audio;
@@ -79,10 +82,14 @@ public class EnemyStats : MonoBehaviour
 
     public void AttackM(float heroDamage)
     {
-        _meshRedHpLine.enabled = true;
-        _meshHpLine.enabled = true;
-        StartCoroutine(AttackedDelay(heroDamage));
-        _transformHpLine.localScale = new Vector3(enemyHp / enemyStats.maxHp, 0.25f, 0.01f);
+        if (!isBeenAttacked)
+        {
+            _meshRedHpLine.enabled = true;
+            _meshHpLine.enabled = true;
+            StartCoroutine(AttackedDelay(heroDamage));
+            StartCoroutine(IsBeenAttacked());
+            _transformHpLine.localScale = new Vector3(enemyHp / enemyStats.maxHp, 0.25f, 0.01f);
+        }
     }
     public void Escape()
     {
@@ -127,5 +134,12 @@ public class EnemyStats : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         enemyStats.hp = enemyHp;
+    }
+
+    IEnumerator IsBeenAttacked()
+    {
+        isBeenAttacked = true;
+        yield return new WaitForSeconds(1.3f);
+        isBeenAttacked = false;
     }
 }

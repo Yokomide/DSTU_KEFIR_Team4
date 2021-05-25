@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public AttackRadiusTrigger AttackRadiusT;
     public float speed = 2f;
     public float shiftSpeedMultiplier = 1.6f;
     public float sensetivity = 5f;
