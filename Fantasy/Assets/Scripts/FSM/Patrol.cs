@@ -1,10 +1,10 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Patrol : NPCBase_FSM
 {
-
-
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -15,17 +15,27 @@ public class Patrol : NPCBase_FSM
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+
         if (Enemy.GetComponent<EnemyStats>().enemyHp > 0)
         {
-            if (NPC_Move.GetComponent<NavMeshAgent>() != null)
+            if (Enemy.GetComponent<EnemyStats>().enemyHp < Enemy.GetComponent<EnemyStats>().enemyStats.hp )
+
+            {
+               // standardHp = Enemy.GetComponent<EnemyStats>().enemyHp;
+                NPC_Move.speed = 10f;
+                Enemy.GetComponent<EnemyStats>().Escape();
+                
+                Debug.Log( Enemy.GetComponent<EnemyStats>().enemyHp + "Enemy");
+                Debug.Log(Enemy.GetComponent<EnemyStats>().enemyStats.hp + "Standard");
+            } 
+            
+            if (NPC_Move.GetComponent<NavMeshAgent>() != null && (Enemy.GetComponent<EnemyStats>().enemyHp == Enemy.GetComponent<EnemyStats>().enemyStats.hp))
             {
                 NPC_Move.speed = 1f;
                 NPC_Move.SetDestination(direction.position);
+                
             }
-        }
-        else
-        {
-            NPC_Move.speed = 0f;
+            
         }
 
     }

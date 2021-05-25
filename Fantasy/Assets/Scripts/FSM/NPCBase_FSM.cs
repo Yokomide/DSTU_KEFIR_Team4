@@ -7,7 +7,7 @@ public class NPCBase_FSM : StateMachineBehaviour
     public GameObject opponent;
     public Transform direction;
     public NavMeshAgent NPC_Move;
-    public float damageMin;
+    public float standardHp;
     public float damageMax;
     public EnemyStats Enemy;
     public Transform Direction()
@@ -22,7 +22,10 @@ public class NPCBase_FSM : StateMachineBehaviour
         NPC_Move = NPC.GetComponent<NavMeshAgent>();
         opponent = NPC.GetComponent<MobAI>().GetPlayer();
         direction = NPC.GetComponent<MobMoving>().GetGoal();
+        standardHp = NPC.GetComponent<EnemyStats>().enemyHp;
 
     }
+    
 
 }
+

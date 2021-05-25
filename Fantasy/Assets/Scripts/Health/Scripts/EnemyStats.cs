@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour
     [SerializeField]
     public float enemyHp;
 
+    private NPCBase_FSM _patrol;
     public GameObject hpBar;
     private GameObject Corp;
     Transform linePos;
@@ -83,6 +84,11 @@ public class EnemyStats : MonoBehaviour
         StartCoroutine(AttackedDelay(heroDamage));
         _transformHpLine.localScale = new Vector3(enemyHp / enemyStats.maxHp, 0.25f, 0.01f);
     }
+    public void Escape()
+    {
+        StartCoroutine(StandardHp());
+
+    }
 
 
     IEnumerator AttackedDelay(float heroDamage)
@@ -117,5 +123,12 @@ public class EnemyStats : MonoBehaviour
         gameObject.GetComponent<EnemyLootDrop>().DropItems();
         audio.PlayOneShot(sound);
         yield return new WaitForEndOfFrame();
+    }
+    IEnumerator StandardHp()
+    {
+        yield return new WaitForSeconds(5f);
+        Debug.Log("Дададад");
+        enemyStats.hp = enemyHp;
+Debug.Log(enemyStats.hp + "Из статс");
     }
 }
