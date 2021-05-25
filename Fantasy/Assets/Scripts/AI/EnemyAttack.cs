@@ -24,7 +24,7 @@ public class EnemyAttack : MonoBehaviour
         if (gameObject.GetComponent<EnemyStats>().isAlive)
         {
             _attackCoolDown += Time.deltaTime;
-            if (_attackCoolDown > 1f && Vector3.Distance(gameObject.GetComponent<EnemyStats>().GetComponent<Transform>().position, player.GetComponent<Transform>().position) < 4f
+            if (_attackCoolDown > 0.5f && Vector3.Distance(gameObject.GetComponent<EnemyStats>().GetComponent<Transform>().position, player.GetComponent<Transform>().position) < 4f
                 && animator.IsInTransition(0))
             {
                 _attackCoolDown = 0;
@@ -35,12 +35,13 @@ public class EnemyAttack : MonoBehaviour
 
     IEnumerator Attack()
     {
-        yield return new WaitForSeconds(0.3f);
+        audio.Stop();
         audio.PlayOneShot(sound);
         player.HeroHp -= Random.Range(10, 15);
         if (player.GetComponent<HealingSkill>().lerping)
         {
             player.GetComponent<HealingSkill>().endHealingAmount -= Random.Range(10, 15);
         }
+        yield return new WaitForEndOfFrame();
     }
 }
