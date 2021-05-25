@@ -38,7 +38,7 @@ public class HeroAttack : MonoBehaviour
     {
         _attackCoolDown += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Mouse0) && _attackCoolDown > coolDownTimer && hero.GetComponent<MainHeroHp>().HeroHp > 0)
-            {
+        {
             hero.GetComponent<AnimMoveset>().AttackAnimation();
             _attackCoolDown = 0f;
             hero.GetComponent<Player>().speed = 0.2f;
@@ -47,8 +47,8 @@ public class HeroAttack : MonoBehaviour
         }
     }
 
-        private void OnTriggerEnter(Collider other)
-        {
+    private void OnTriggerEnter(Collider other)
+    {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
         {
 
@@ -66,11 +66,11 @@ public class HeroAttack : MonoBehaviour
                     {
                         heroStats.ExpNum += Random.Range(50, 70);
                     }
- 
+
                 }
                 if (other.CompareTag("Boss"))
                 {
-                    tempEffect = Instantiate(effect, other.transform.position , Quaternion.Euler(-90, 0, 0));
+                    tempEffect = Instantiate(effect, other.transform.position, Quaternion.Euler(-90, 0, 0));
                     other.GetComponent<BossStats_>().AttackM(hero.GetComponent<MainHeroHp>().damage);
                     audio.PlayOneShot(sound);
                     other.GetComponent<BossStats_>().bossHp -= Random.Range(10, 20);

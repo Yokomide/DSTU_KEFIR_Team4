@@ -453,9 +453,10 @@ MonoBehaviour:
   lvlBar: {fileID: 0}
   level: {fileID: 0}
   moneyText: {fileID: 0}
-  HeroHp: 150
+  HeroHp: 125
   maxHeroHp: 150
   Lvl: 1
+  SkillPoint: 0
   money: 0
   damage: 10
   ExpNum: 0
@@ -498,7 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lerping: 0
   endHealingAmount: 0
-  healTimeCounter: 1
+  healTimeCounter: 10
   healAmount: 50
   effect: {fileID: 1800972780968652, guid: 205d983549fba2a47a7808abf228f4be, type: 3}
   sound: {fileID: 8300000, guid: 6a32e56fa53573e45b59b4d8d792021b, type: 3}
@@ -2113,7 +2114,8 @@ MonoBehaviour:
   coolDownTimer: 1.3
   enemies: []
   isAttacking: 0
-  sound: {fileID: 0}
+  soundAttack: {fileID: 0}
+  soundMiss: {fileID: 0}
 --- !u!82 &7645676116779817150
 AudioSource:
   m_ObjectHideFlags: 0

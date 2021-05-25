@@ -97,7 +97,7 @@ public class EnemyStats : MonoBehaviour
         {
             Destroy(gameObject.GetComponent<BoxCollider>());
             DeathAnim.SetTrigger("Active");
-     
+
             StartCoroutine(DeathOnCommand());
             yield break;
         }
@@ -113,7 +113,6 @@ public class EnemyStats : MonoBehaviour
         Vector3 y = new Vector3(0f, 2f, 0);
         Destroy(_hpLine);
         Destroy(_hpLineRed);
-        Debug.Log(gameObject.GetComponent<Transform>().position);
         var deadBody = Instantiate(gameObject.GetComponentInChildren<SkinnedMeshRenderer>(), gameObject.GetComponentInChildren<Transform>());
         deadBody.transform.parent = Corp.transform;
         Destroy(gameObject, 4);
@@ -127,8 +126,6 @@ public class EnemyStats : MonoBehaviour
     IEnumerator StandardHp()
     {
         yield return new WaitForSeconds(5f);
-        Debug.Log("Дададад");
         enemyStats.hp = enemyHp;
-Debug.Log(enemyStats.hp + "Из статс");
     }
 }
