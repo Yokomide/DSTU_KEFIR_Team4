@@ -53,22 +53,25 @@ public class HeroAttack : MonoBehaviour
         {
             if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")))
             {
-                if (!other.GetComponent<EnemyStats>().isBeenAttacked)
+                if (!other.GetComponent<EnemyStats>().isBeenAttacked && other.GetComponent<EnemyStats>().isAlive)
                 {
                     tempEffect = Instantiate(effect, other.transform.position, Quaternion.identity);
-                    other.GetComponent<EnemyStats>().AttackM(hero.GetComponent<MainHeroHp>().damage);
+                    other.GetComponent<EnemyStats>().AttackM();
                     audio.PlayOneShot(sound);
                     other.GetComponent<EnemyStats>().enemyHp -= Random.Range(10, 20);
                     if (other.GetComponent<EnemyStats>().enemyHp <= 0)
                     {
-                        heroStats.ExpNum += Random.Range(10, 20);
+                        
+                        other.GetComponent<EnemyStats>().AttackM();
+                        heroStats.ExpNum += Random.Range(25, 75);
+                        other.GetComponent<EnemyStats>().isAlive = false;
                     }
                 }
 
             }
             if (other.CompareTag("Boss"))
             {
-                if (!other.GetComponent<BossStats_>().isBeenAttacked)
+                if (!other.GetComponent<BossStats_>().isBeenAttacked && other.GetComponent<BossStats_>().isAlive)
                 {
                     tempEffect = Instantiate(effect, other.transform.position, Quaternion.identity);
                     other.GetComponent<BossStats_>().AttackM(hero.GetComponent<MainHeroHp>().damage);
@@ -76,6 +79,7 @@ public class HeroAttack : MonoBehaviour
                     other.GetComponent<BossStats_>().bossHp -= Random.Range(10, 20);
                     if (other.GetComponent<BossStats_>().bossHp <= 0)
                     {
+                        other.GetComponent<BossStats_>().isAlive = false;
                         heroStats.ExpNum += 250;
                     }
                 }

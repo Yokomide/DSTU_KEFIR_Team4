@@ -18130,6 +18130,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1170732337855516, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
   m_PrefabInstance: {fileID: 121041701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &534682076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534682075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6126bfca946f05641867c3e01c31c5e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1777684661}
 --- !u!114 &534682080 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5499851375895533292, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
@@ -27053,6 +27066,7 @@ MonoBehaviour:
   enemyHp: 0
   hpBar: {fileID: 4420206358175244647, guid: 9c642488987cb7846a1409fd545647db, type: 3}
   isAlive: 1
+  isBeenAttacked: 0
   sound: {fileID: 8300000, guid: 15555c5a8afa19d4b902795e7375707b, type: 3}
 --- !u!114 &817054520
 MonoBehaviour:

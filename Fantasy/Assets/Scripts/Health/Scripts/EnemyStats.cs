@@ -17,7 +17,7 @@ public class EnemyStats : MonoBehaviour
     private GameObject _hpLineRed;
     private bool _isRedHpLineDestroyed = false;
 
-    [HideInInspector]
+    /*[HideInInspector]*/
     public bool isAlive = true;
 
     private MeshRenderer _meshHpLine;
@@ -76,17 +76,21 @@ public class EnemyStats : MonoBehaviour
             _transformRedHpLine.position = new Vector3(_hpLine.transform.position.x, _hpLine.transform.position.y, _hpLine.transform.position.z + 0.01f);
             _transformRedHpLine.rotation = Quaternion.identity;
         }
+        else if (!_isRedHpLineDestroyed)
+        {
+            StartCoroutine(DeathOnCommand());
+        }
 
     }
 
 
-    public void AttackM(float heroDamage)
+    public void AttackM()
     {
         if (!isBeenAttacked)
         {
             _meshRedHpLine.enabled = true;
             _meshHpLine.enabled = true;
-            StartCoroutine(AttackedDelay(heroDamage));
+            StartCoroutine(AttackedDelay());
             StartCoroutine(IsBeenAttacked());
             _transformHpLine.localScale = new Vector3(enemyHp / enemyStats.maxHp, 0.25f, 0.01f);
         }
@@ -98,15 +102,13 @@ public class EnemyStats : MonoBehaviour
     }
 
 
-    IEnumerator AttackedDelay(float heroDamage)
+    IEnumerator AttackedDelay()
     {
-        if (enemyHp <= 0)
+        if (!isAlive)
         {
             Destroy(gameObject.GetComponent<BoxCollider>());
             DeathAnim.SetTrigger("Active");
-
             StartCoroutine(DeathOnCommand());
-            yield break;
         }
         yield return new WaitForSeconds(2f);
         if (!_isRedHpLineDestroyed)
@@ -125,9 +127,10 @@ public class EnemyStats : MonoBehaviour
         Destroy(gameObject, 4);
 
         _isRedHpLineDestroyed = true;
-        isAlive = false;
         gameObject.GetComponent<EnemyLootDrop>().DropItems();
         audio.PlayOneShot(sound);
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        gameObject.GetComponent<Animator>().Play("Death");
         yield return new WaitForEndOfFrame();
     }
     IEnumerator StandardHp()

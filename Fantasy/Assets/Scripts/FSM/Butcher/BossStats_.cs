@@ -97,6 +97,7 @@ public class BossStats_ : MonoBehaviour
         bossHp -= (Random.Range(10, 20) + heroDamage);
         if (bossHp <= 0)
         {
+            isAlive = false;
             DeathAnim.SetTrigger("Death");
             DeathAnim.Play("Death");
             Destroy(gameObject.GetComponent<BoxCollider>());
@@ -122,6 +123,7 @@ public class BossStats_ : MonoBehaviour
         gameObject.GetComponent<EnemyLootDrop>().DropItems();
         audio.PlayOneShot(sound);
         yield return new WaitForEndOfFrame();
+
     }
 
     IEnumerator IsBeenAttacked()
