@@ -64,7 +64,7 @@ public class HeroAttack : MonoBehaviour
                     other.GetComponent<EnemyStats>().enemyHp -= Random.Range(10, 20);
                     if (other.GetComponent<EnemyStats>().enemyHp <= 0)
                     {
-                        heroStats.ExpNum += Random.Range(50, 70);
+                        heroStats.ExpNum += Random.Range(10, 20);
                     }
  
                 }
