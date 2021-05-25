@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CastleDoorOpen : MonoBehaviour
 {
-    static float t = 0.0f;
+
     public Inventory inventory;
     public GameObject leftDoor;
     public GameObject rightDoor;
@@ -11,18 +11,14 @@ public class CastleDoorOpen : MonoBehaviour
 
     private bool isDoorOpen = false;
 
-    Quaternion right = new Quaternion(0, -105, 0, 0);
-    Quaternion left = new Quaternion(0, 105, 0, 0);
 
     private void Update()
     {
         if (isDoorOpen)
         {
-            right.y = Mathf.Lerp(rightDoor.transform.rotation.y, right.y, t);
-            left.y = Mathf.Lerp(leftDoor.transform.rotation.y, left.y, t);
-            t += 0.005f * Time.deltaTime;
-            leftDoor.transform.rotation = left;
-            rightDoor.transform.rotation = right;
+
+            leftDoor.transform.rotation = Quaternion.RotateTowards(leftDoor.transform.rotation, Quaternion.Euler(leftDoor.transform.rotation.x, 200, leftDoor.transform.rotation.z), 20 * Time.deltaTime);
+            rightDoor.transform.rotation = Quaternion.RotateTowards(rightDoor.transform.rotation, Quaternion.Euler(rightDoor.transform.rotation.x, -20, rightDoor.transform.rotation.z),  20 * Time.deltaTime);
         }
     }
     private void OnTriggerEnter(Collider other)
