@@ -228,9 +228,9 @@ MonoBehaviour:
   BGColor: {r: 0, g: 0, b: 0, a: 1}
   textColor: {r: 1, g: 1, b: 1, a: 1}
   tooltipMode: 0
-  fontSize: 20
-  maxWidth: 517
-  border: 10
+  fontSize: 15
+  maxWidth: 250
+  border: 0
   box: {fileID: 1466063073304437266}
   arrow: {fileID: 1466063072676660914}
   boxText: {fileID: 1466063071792778405}
