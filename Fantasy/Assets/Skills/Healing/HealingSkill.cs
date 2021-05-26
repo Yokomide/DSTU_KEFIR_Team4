@@ -21,9 +21,12 @@ public class HealingSkill : MonoBehaviour
     public AudioClip sound;
     AudioSource audio;
 
+    private HealCoolDown coolDown;
+
 
     private void Start()
     {
+        coolDown = gameObject.GetComponent<HealCoolDown>();
         audio = gameObject.GetComponent<AudioSource>();
         _heroStats = gameObject.GetComponent<MainHeroHp>();
         endHealingAmount = 0;
@@ -52,6 +55,7 @@ public class HealingSkill : MonoBehaviour
                 lerping = false;
                 StartCoroutine(healPortion());
                 Destroy(tempEffect);
+                coolDown.timeElapsed = 0;
             }
         }
     }
