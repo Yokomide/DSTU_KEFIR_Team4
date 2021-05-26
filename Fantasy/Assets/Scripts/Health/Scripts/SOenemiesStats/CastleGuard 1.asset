@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ac45b04c99349944a45996409d45ae9, type: 3}
-  m_Name: CastleGuard
+  m_Name: CastleGuard 1
   m_EditorClassIdentifier: 
   enemyName: "\u0421\u0442\u0440\u0430\u0436 \u0437\u0430\u043C\u043A\u0430"
   maxHp: 150
