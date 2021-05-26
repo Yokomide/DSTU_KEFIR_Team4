@@ -34,7 +34,7 @@ public class BossStats_ : MonoBehaviour
     AudioSource audio;
 
     [HideInInspector]
-    public bool isBeenAttacked=false;
+    public bool isBeenAttacked = false;
 
     public void Awake()
     {
@@ -95,7 +95,7 @@ public class BossStats_ : MonoBehaviour
     IEnumerator AttackedDelay(float heroDamage)
     {
         bossHp -= (heroDamage);
-        if (!isAlive)
+        if (!isAlive ||bossHp<=0)
         {
             DeathAnim.SetTrigger("Death");
             DeathAnim.Play("Death");
