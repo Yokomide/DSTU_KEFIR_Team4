@@ -26,7 +26,7 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
             {
                 if (merchant._merchantsItems[index].id != 0)
                 {
-                    if (merchant._merchantsItems[index].cost <= playerObject.GetComponent<MainHeroHp>().money)
+                    if (merchant._merchantsItems[index].cost <= playerObject.GetComponent<MainHeroHp>().money && merchant._merchantsItems[index].id != 12)
                     {
                         if (merchant._merchantsItems[index].countItem > 1)
                         {
@@ -84,12 +84,17 @@ public class CurrentItemMerchant : MonoBehaviour, IPointerClickHandler
                                 }
                             }
                         }
+                        
                     }
-                    else
+                    else if(merchant._merchantsItems[index].cost <= playerObject.GetComponent<MainHeroHp>().money && merchant._merchantsItems[index].id == 12)
                     {
-                        Debug.Log("Мало денях!");
+                        playerObject.GetComponent<MainHeroHp>().money -= merchant._merchantsItems[index].cost;
+                        playerObject.GetComponent<MainHeroHp>().damage += 100;
+                        merchant._merchantsItems[index] = new Items();
                     }
+                    
                 }
+                
             }
             merchant.DisplayItem();
             inventory.DisplayItem();
