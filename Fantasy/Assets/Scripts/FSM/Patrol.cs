@@ -21,7 +21,7 @@ public class Patrol : NPCBase_FSM
 
             {
                 // standardHp = Enemy.GetComponent<EnemyStats>().enemyHp;
-                NPC_Move.speed = 10f;
+                NPC_Move.speed = 5f;
                 Enemy.GetComponent<EnemyStats>().Escape();
 
             }

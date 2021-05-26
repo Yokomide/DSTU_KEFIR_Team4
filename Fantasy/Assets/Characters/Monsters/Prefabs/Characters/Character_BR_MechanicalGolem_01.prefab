@@ -2000,7 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed8c0047170e2343885bb7ddbf55573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 6487146382364507892, guid: 045db33801d3c12409370e90d2ec69db, type: 3}
+  effect: {fileID: 6487146382364507892, guid: f79e633a04ce85d419c6ece42720f449, type: 3}
   freezeTimeCounter: 5
   enemies: []
   sound: {fileID: 0}
