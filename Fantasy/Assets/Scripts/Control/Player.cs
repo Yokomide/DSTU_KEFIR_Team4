@@ -1,11 +1,15 @@
 using UnityEngine;
-
+using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public float speed = 2f;
     public float shiftSpeedMultiplier = 1.6f;
     public float sensetivity = 5f;
+
+    public GameObject death;
 
     [HideInInspector]
     public bool revived = false;
@@ -42,15 +46,19 @@ public class Player : MonoBehaviour
             _rb.constraints = RigidbodyConstraints.FreezePosition;
             _rb.freezeRotation = true;
             gameObject.GetComponent<AnimMoveset>().DeathAnimation();
-            revived = false;
-        }
-        else if (revived)
-        {
-            _rb.constraints = RigidbodyConstraints.None;
-            _rb.freezeRotation = false;
-
+            StartCoroutine(Die());
+            
         }
 
+
+    }
+
+    IEnumerator Die()
+    {
+        death.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        InventoryMain.ListInit();
+        SceneManager.LoadScene(1);
     }
 
 }

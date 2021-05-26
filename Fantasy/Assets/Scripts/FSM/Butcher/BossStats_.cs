@@ -94,10 +94,9 @@ public class BossStats_ : MonoBehaviour
     }
     IEnumerator AttackedDelay(float heroDamage)
     {
-        bossHp -= (Random.Range(20, 40) + heroDamage);
-        if (bossHp <= 0)
+        bossHp -= (heroDamage);
+        if (!isAlive)
         {
-            isAlive = false;
             DeathAnim.SetTrigger("Death");
             DeathAnim.Play("Death");
             Destroy(gameObject.GetComponent<BoxCollider>());
