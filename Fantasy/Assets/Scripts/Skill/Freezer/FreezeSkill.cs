@@ -13,6 +13,7 @@ public class FreezeSkill : MonoBehaviour
     public float freezeTimeCounter;
 
     private GameObject tempEffect;
+    private SkillCoolDown freezeReset;
     public List<GameObject> enemies = new List<GameObject>();
 
     public AudioClip sound;
@@ -20,6 +21,7 @@ public class FreezeSkill : MonoBehaviour
 
     private void Start()
     {
+        freezeReset = gameObject.GetComponent<SkillCoolDown>();
         gameObject.AddComponent<AudioSource>();
         audio = gameObject.GetComponent<AudioSource>();
         gameObject.GetComponent<AudioSource>().clip = sound;
@@ -109,6 +111,7 @@ public class FreezeSkill : MonoBehaviour
     }
     IEnumerator EffectFade(GameObject effect)
     {
+        freezeReset.timeElapsed = 0;
         yield return new WaitForSeconds(2);
         Destroy(effect);
     }
