@@ -18,14 +18,13 @@ public class InventoryMain
     }
     public static List<Items> ListInit()
     {
-        if (items==null)
-        {
+        
             items = new List<Items>();
             for ( int i = 0 ; i < 21 ; i++ )//вместо 21 нужно ставить количество ячеек инвентаря
             {
                 items.Add(new Items());
             }
-        }
+        
         return items;
     }
     public static List<Items> ReturnList()
