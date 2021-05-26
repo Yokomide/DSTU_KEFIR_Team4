@@ -6,19 +6,24 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
-    public float level;
-    public float expNum;
-    public float gold;
-
+    public float HeroHp;
+    public float maxHeroHp;
+    public float Lvl;
+    public float SkillPoint;
+    public float money;
+    public float damage;
+    public float ExpNum;
 
 
     public PlayerData(MainHeroHp player)
     {
-        level = player.Lvl;
-        expNum = player.ExpNum;
-        gold = player.money;
-
-
+        HeroHp = player.HeroHp;
+        maxHeroHp = player.maxHeroHp;
+        SkillPoint = player.SkillPoint;
+        Lvl = player.Lvl;
+        money = player.money;
+        damage = player.damage;
+        ExpNum = player.ExpNum;
     }
     
 }

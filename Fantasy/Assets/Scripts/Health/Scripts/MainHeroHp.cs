@@ -46,9 +46,13 @@ public class MainHeroHp : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
 
-        Lvl = data.level;
-        ExpNum = data.expNum;
-        money = data.gold;
+        HeroHp = data.HeroHp;
+        maxHeroHp = data.maxHeroHp;
+        SkillPoint = data.SkillPoint;
+        Lvl = data.Lvl;
+        money = data.money;
+        damage = data.damage;
+        ExpNum = data.ExpNum;
 
     }
 }
