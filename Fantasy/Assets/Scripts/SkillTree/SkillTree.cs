@@ -7,22 +7,19 @@ public class SkillTree : MonoBehaviour
 {
     public MainHeroHp player;
 
-    int hpBoostCount;
-    int adBoostCount;
-    int apBoostCount;
-
     public GameObject passiveSkillTree;
-    public GameObject activeSkillTree;
+
 
     public Text hpText;
     public Text adText;
-    public Text apText;
     public Text SkillPoints;
-    public Text SkillPassivePoints;
 
     private void Start()
     {
+        hpText.text = player.HeroHp.ToString();
+        adText.text = player.damage.ToString();
         passiveSkillTree.SetActive(false);
+
     }
 
     public void hpBoost()
@@ -32,8 +29,8 @@ public class SkillTree : MonoBehaviour
             player.SkillPoint--;
             player.money-=50;
             player.maxHeroHp += 50;
-            hpBoostCount++;
-            hpText.text = "Улучшено: " + hpBoostCount + " раз";
+            hpText.text = player.HeroHp.ToString();
+            SkillPoints.text = player.SkillPoint.ToString();
         }
     }
 
@@ -44,8 +41,8 @@ public class SkillTree : MonoBehaviour
             player.damage += 20;
             player.SkillPoint--;
             player.money -= 100;
-            adBoostCount++;
-            adText.text = "Улучшено: " + adBoostCount + " раз";
+            adText.text = player.damage.ToString();
+            SkillPoints.text = player.SkillPoint.ToString();
         }
     }
 
@@ -55,8 +52,6 @@ public class SkillTree : MonoBehaviour
         {
             player.SkillPoint--;
             player.money -= 100;
-            apBoostCount++;
-            apText.text = "Улучшено: " + apBoostCount+" раз";
         }
     }
     private void Update()
@@ -67,33 +62,15 @@ public class SkillTree : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            SkillPoints.text = "Души: " + player.SkillPoint;
-            SkillPassivePoints.text = "Души: " + player.SkillPoint;
-            if (passiveSkillTree.activeSelf || activeSkillTree.activeSelf)
+            SkillPoints.text =player.SkillPoint.ToString();
+            if (passiveSkillTree.activeSelf)
             {
                 passiveSkillTree.SetActive(false);
-                activeSkillTree.SetActive(false);
             }
             else
             {
                 passiveSkillTree.SetActive(true);
             }
-        }
-    }
-
-    public void nextTree()
-    {
-        SkillPoints.text = "Души: " + player.SkillPoint;
-        SkillPassivePoints.text = "Души: " + player.SkillPoint;
-        if (passiveSkillTree.activeSelf)
-        {
-            passiveSkillTree.SetActive(false);
-            activeSkillTree.SetActive(true);
-        }
-        else
-        {
-            passiveSkillTree.SetActive(true);
-            activeSkillTree.SetActive(false);
         }
     }
 }
