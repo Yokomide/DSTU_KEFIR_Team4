@@ -25,9 +25,7 @@ public class MobAI : MonoBehaviour
         }
         if (Vector3.Distance(gameObject.GetComponent<EnemyStats>().GetComponent<Transform>().position, player.GetComponent<Transform>().position) < 4f)
         {
-            EventManager.OnGetAttack(); // dealing damage through the EventManager
-            // in case of problems in future line bellow is saved here
-            //hero.heroStats.HeroHp -= Random.Range(10, 15);
+            EventManager.OnGetAttack();
         }
     }
 
@@ -46,7 +44,6 @@ public class MobAI : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 

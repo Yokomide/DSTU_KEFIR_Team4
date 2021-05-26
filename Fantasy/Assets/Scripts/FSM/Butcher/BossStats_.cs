@@ -94,7 +94,7 @@ public class BossStats_ : MonoBehaviour
     }
     IEnumerator AttackedDelay(float heroDamage)
     {
-        bossHp -= (Random.Range(10, 20) + heroDamage);
+        bossHp -= (Random.Range(20, 40) + heroDamage);
         if (bossHp <= 0)
         {
             isAlive = false;

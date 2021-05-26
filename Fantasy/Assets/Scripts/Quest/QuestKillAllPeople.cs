@@ -7,8 +7,9 @@ public class QuestKillAllPeople : MonoBehaviour
 {
     public new List<EnemyStats> enemies;
     int deathCount = 0;
-    [SerializeField]
-    private bool questIsEnded = false;
+    public BossStats_ boss;
+    [HideInInspector]
+    public bool firstQuestIsEnded = false;
 
     public GameObject canvasStats;
 
@@ -21,12 +22,11 @@ public class QuestKillAllPeople : MonoBehaviour
         for (int i = 0; i < enemies.Count; i++)
         {
             enemiesKilled[i].text = enemies[i].GetComponent<EnemyStats>().enemyStats.enemyName;
-
         }
     }
     private void Update()
     {
-        if (!questIsEnded)
+        if (!firstQuestIsEnded)
         {
             for (int i = 0; i < enemies.Count; i++)
             {
@@ -41,15 +41,27 @@ public class QuestKillAllPeople : MonoBehaviour
             if (deathCount == enemies.Count)
             {
                 questName.color = Color.green;
-                questIsEnded = true;
-                StartCoroutine(FadeAway());
+                firstQuestIsEnded = true;
+                StartCoroutine(ToBossQuest());
             }
         }
+        if (!boss.isAlive)
+        {
+            questName.color = Color.green;
+            StartCoroutine(ToCastle());
+        }
+ 
     }
 
-    IEnumerator FadeAway()
+    IEnumerator ToBossQuest()
     {
         gameObject.GetComponent<QuestDisplay>().questOnSceneUI.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        questName.color = Color.white;
+        questName.text = "Убей босса";
+    }
+    IEnumerator ToCastle()
+    {
         yield return new WaitForSeconds(2f);
         Destroy(questName);
     }

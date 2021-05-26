@@ -16,7 +16,7 @@ public class SkillTree : MonoBehaviour
 
     private void Start()
     {
-        hpText.text = player.HeroHp.ToString();
+        hpText.text = player.maxHeroHp.ToString();
         adText.text = player.damage.ToString();
         passiveSkillTree.SetActive(false);
 
@@ -29,7 +29,7 @@ public class SkillTree : MonoBehaviour
             player.SkillPoint--;
             player.money-=50;
             player.maxHeroHp += 50;
-            hpText.text = player.HeroHp.ToString();
+            hpText.text = player.maxHeroHp.ToString();
             SkillPoints.text = player.SkillPoint.ToString();
         }
     }
