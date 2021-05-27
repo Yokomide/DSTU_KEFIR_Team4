@@ -12,6 +12,7 @@ TagManager:
   - Freeze
   - Boss
   - Weapon
+  - Boss2
   layers:
   - Default
   - TransparentFX
