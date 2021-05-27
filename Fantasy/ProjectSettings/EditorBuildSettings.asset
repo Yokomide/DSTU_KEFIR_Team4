@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test_Room.unity
     guid: cd050c1d9098bf047ba25b97f86c0b8b
+  - enabled: 1
+    path: Assets/Scenes/Eternals.unity
+    guid: c9f36c638adb10e42a78e577a12cc00d
   m_configObjects: {}
