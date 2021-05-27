@@ -93,7 +93,7 @@ public class HeroAttack : MonoBehaviour
                     }
                 }
             }
-            if (other.CompareTag("Boss"))
+            if (other.CompareTag("Boss2"))
             {
                 if (!other.GetComponent<KnightStats_>().isBeenAttacked && other.GetComponent<KnightStats_>().isAlive)
                 {

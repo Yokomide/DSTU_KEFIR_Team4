@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Knight
   m_EditorClassIdentifier: 
   enemyName: "\u041F\u0430\u0434\u0448\u0438\u0439 \u0420\u044B\u0446\u0430\u0440\u044C"
-  maxHp: 600
-  damage: 1
-  minDamage: 1
-  maxDamage: 1
-  hp: 600
+  maxHp: 800
+  damage: 40
+  minDamage: 10
+  maxDamage: 25
+  hp: 800
