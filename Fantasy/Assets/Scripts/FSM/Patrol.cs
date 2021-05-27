@@ -15,7 +15,7 @@ public class Patrol : NPCBase_FSM
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-        if (Enemy.GetComponent<EnemyStats>().enemyHp > 0)
+        if ((Enemy.GetComponent<EnemyStats>().enemyHp > 0) && NPC.CompareTag("Enemy"))
         {
             if (Enemy.GetComponent<EnemyStats>().enemyHp < Enemy.GetComponent<EnemyStats>().enemyStats.hp)
 

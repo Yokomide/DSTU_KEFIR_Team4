@@ -63,6 +63,6 @@ public class QuestKillAllPeople : MonoBehaviour
     IEnumerator ToCastle()
     {
         yield return new WaitForSeconds(2f);
-        Destroy(questName);
+        questName.text = "Иди к воротам замка";
     }
 }

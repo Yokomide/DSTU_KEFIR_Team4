@@ -114,7 +114,6 @@ public class FreezeSkill : MonoBehaviour
         freezeReset.timeElapsed = 0;
         yield return new WaitForSeconds(2);
         Destroy(effect);
-        enemies.Clear();
     }
 
     void OnTriggerEnter(Collider other)

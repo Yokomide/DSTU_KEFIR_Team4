@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Slayer
   m_EditorClassIdentifier: 
   enemyName: "\u0417\u0430\u0449\u0438\u0442\u043D\u0438\u043A"
-  maxHp: 200
-  damage: 20
+  maxHp: 350
+  damage: 40
   minDamage: 2
   maxDamage: 5
-  hp: 200
+  hp: 39

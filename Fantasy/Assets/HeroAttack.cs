@@ -100,10 +100,9 @@ public class HeroAttack : MonoBehaviour
                     tempEffect = Instantiate(effect, other.transform.position, Quaternion.identity);
                     other.GetComponent<KnightStats_>().AttackM(hero.GetComponent<MainHeroHp>().damage);
                     audio.PlayOneShot(sound);
-                    other.GetComponent<KnightStats_>().knightHp -= (Random.Range(20, 40) + heroStats.damage);
                     if (other.GetComponent<KnightStats_>().knightHp <= 0)
                     {
-                        other.GetComponent<EnemyStats>().AttackM();
+                        other.GetComponent<KnightStats_>().AttackM(Random.Range(20, 40) + heroStats.damage);
                         other.GetComponent<KnightStats_>().isAlive = false;
                         heroStats.ExpNum += 500;
                     }
