@@ -522,13 +522,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65678c1785ee5d349be14219946ec2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 50
+  cost: 0
   nameItem: "\u041A\u043B\u044E\u0447\u0438"
   id: 20
   countItem: 0
   isStackable: 0
   maxStackSize: 0
-  lootType: 
   descriptionItem: "(\u041F\u0440\u0435\u0434\u043C\u0435\u0442 \u0434\u043B\u044F
     \u043A\u0432\u0435\u0441\u0442\u0430)\n\u041E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442
     \u0434\u0432\u0435\u0440\u044C \u0432 \u0437\u0430\u043C\u043E\u043A"
