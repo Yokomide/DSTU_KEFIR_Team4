@@ -161,7 +161,6 @@ public class Inventory : MonoBehaviour
         cloneitem.id = item.id;
         cloneitem.countItem = 1;
         cloneitem.maxStackSize = item.maxStackSize;
-        cloneitem.lootType = item.lootType;
         cloneitem.descriptionItem = item.descriptionItem;
         cloneitem.pathIcon = item.pathIcon;
         cloneitem.pathPrefab = item.pathPrefab;
