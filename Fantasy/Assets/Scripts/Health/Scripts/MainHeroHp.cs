@@ -14,6 +14,7 @@ public class MainHeroHp : MonoBehaviour
     public float money = 0;
     public float damage = 10;
     public float ExpNum = 0;
+    public float magicDamage = 10;
 
 
 
@@ -53,6 +54,7 @@ public class MainHeroHp : MonoBehaviour
         money = data.money;
         damage = data.damage;
         ExpNum = data.ExpNum;
+        magicDamage = data.magicDamage;
 
     }
 }

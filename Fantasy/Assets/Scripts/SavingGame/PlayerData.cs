@@ -13,6 +13,7 @@ public class PlayerData
     public float money;
     public float damage;
     public float ExpNum;
+    public float magicDamage;
 
 
     public PlayerData(MainHeroHp player)
@@ -24,6 +25,7 @@ public class PlayerData
         money = player.money;
         damage = player.damage;
         ExpNum = player.ExpNum;
+        magicDamage = player.magicDamage;
     }
     
 }

@@ -63,20 +63,20 @@ public class FreezeSkill : MonoBehaviour
 
         if (enemy.CompareTag("Citizen"))
         {
-              enemy.GetComponent<NavMeshAgent>().enabled = false;
-              enemy.GetComponent<Animator>().enabled = false;
-              enemy.GetComponent<MobAI>().enabled = false;
-              enemy.GetComponent<MobMoving>().enabled = false;
-          }
+            enemy.GetComponent<NavMeshAgent>().enabled = false;
+            enemy.GetComponent<Animator>().enabled = false;
+            enemy.GetComponent<MobAI>().enabled = false;
+            enemy.GetComponent<MobMoving>().enabled = false;
+        }
 
-       else if (enemy.CompareTag("Boss"))
+        else if (enemy.CompareTag("Boss"))
         {
             enemy.GetComponentInChildren<BoxCollider>().enabled = false;
             enemy.GetComponent<Animator>().enabled = false;
             enemy.GetComponent<Boss_AI>().enabled = false;
             enemy.GetComponent<Boss_Move>().enabled = false;
         }
-        
+
         yield return new WaitForSeconds(2);
 
         Destroy(tempEffect);
@@ -90,7 +90,7 @@ public class FreezeSkill : MonoBehaviour
             enemy.GetComponent<MobAI>().enabled = true;
             enemy.GetComponent<MobMoving>().enabled = true;
         }
-        
+
 
         if (enemy.CompareTag("Citizen"))
         {
@@ -100,20 +100,21 @@ public class FreezeSkill : MonoBehaviour
             enemy.GetComponent<MobMoving>().enabled = true;
         }
         else if (enemy.CompareTag("Boss"))
-        {   
+        {
             enemy.GetComponentInChildren<BoxCollider>().enabled = true;
 
             enemy.GetComponent<Animator>().enabled = true;
             enemy.GetComponent<Boss_AI>().enabled = true;
             enemy.GetComponent<Boss_Move>().enabled = true;
         }
-      
+
     }
     IEnumerator EffectFade(GameObject effect)
     {
         freezeReset.timeElapsed = 0;
         yield return new WaitForSeconds(2);
         Destroy(effect);
+        enemies.Clear();
     }
 
     void OnTriggerEnter(Collider other)
@@ -137,8 +138,8 @@ public class FreezeSkill : MonoBehaviour
                 if (!_isHere) enemies.Add(tempObject);
             }
         }
-        
-        
+
+
         if (other.GetComponent<BossStats_>())
         {
             if ((other.CompareTag("Boss")) && (other.GetComponent<BossStats_>().isAlive))
@@ -180,7 +181,7 @@ public class FreezeSkill : MonoBehaviour
         }
         if (other.GetComponent<EnemyStats>())
         {
-            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) &&  (other.GetComponent<EnemyStats>().isAlive))
+            if ((other.CompareTag("Enemy") || other.CompareTag("Citizen")) && (other.GetComponent<EnemyStats>().isAlive))
             {
                 tempObject = other.gameObject;
                 foreach (GameObject i in enemies)
