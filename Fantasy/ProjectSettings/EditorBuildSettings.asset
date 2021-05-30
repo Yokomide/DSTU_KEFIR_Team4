@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Eternals.unity
     guid: c9f36c638adb10e42a78e577a12cc00d
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 6bbaa8faa0f352f4f81044eb41d3e98d, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 210287e061740984c915410bb61f73a3, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: c89d8a2dc66d0ca42bfce61fced830d2, type: 2}
