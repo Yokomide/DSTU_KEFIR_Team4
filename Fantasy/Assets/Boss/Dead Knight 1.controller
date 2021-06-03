@@ -535,7 +535,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: distance
-    m_EventTreshold: 10
+    m_EventTreshold: 13
   - m_ConditionMode: 2
     m_ConditionEvent: dead
     m_EventTreshold: 0
@@ -962,7 +962,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: distance
-    m_EventTreshold: 10
+    m_EventTreshold: 13
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3429667772112602515}
   m_Solo: 0

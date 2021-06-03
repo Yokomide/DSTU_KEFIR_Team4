@@ -15,6 +15,6 @@ MonoBehaviour:
   enemyName: "\u041F\u0430\u0434\u0448\u0438\u0439 \u0420\u044B\u0446\u0430\u0440\u044C"
   maxHp: 1500
   damage: 40
-  minDamage: 30
-  maxDamage: 70
+  minDamage: 20
+  maxDamage: 30
   hp: 1500

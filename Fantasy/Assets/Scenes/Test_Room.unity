@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 30.7
+    agentSlope: 46
     agentClimb: 0.56
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -8557,11 +8557,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4526463827110206, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 92.14
+      value: 5.83
       objectReference: {fileID: 0}
     - target: {fileID: 4526463827110206, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 4.34
       objectReference: {fileID: 0}
     - target: {fileID: 4526463827110206, guid: 5aed7f791a03c2a4ba0040d2fa161639, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41915,11 +41915,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4019230386164288, guid: a8c3c2fa6519fae4690d44a8ec308088, type: 3}
   m_PrefabInstance: {fileID: 974641679}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &975149850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 110446, guid: e859383d9fb42a7419df30c9afd4cf64, type: 3}
-  m_PrefabInstance: {fileID: 182465134}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &976728064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53729,7 +53724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knight: {fileID: 906775685}
   sound: {fileID: 0}
-  effect: {fileID: 975149850}
+  effect: {fileID: 1713218709785206, guid: 6bc2a6e4bc7f76942a0073eaa0f4da4f, type: 3}
   _attackCoolDown: -2
   player: {fileID: 1947346924}
 --- !u!65 &1298455260

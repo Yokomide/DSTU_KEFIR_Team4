@@ -16,5 +16,5 @@ MonoBehaviour:
   maxHp: 1500
   damage: 40
   minDamage: 20
-  maxDamage: 50
+  maxDamage: 30
   hp: 1500
