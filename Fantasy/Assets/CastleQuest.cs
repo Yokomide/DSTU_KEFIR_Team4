@@ -65,6 +65,6 @@ public class CastleQuest : MonoBehaviour
     IEnumerator ToTitles()
     {
         yield return new WaitForSeconds(2f);
-        questName.text = "Спустить на нижний этаж";
+        questName.text = "Спустись на нижний этаж";
     }
 }

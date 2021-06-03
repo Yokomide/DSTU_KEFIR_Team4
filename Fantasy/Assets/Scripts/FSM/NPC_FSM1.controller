@@ -119,8 +119,9 @@ MonoBehaviour:
   opponent: {fileID: 0}
   direction: {fileID: 0}
   NPC_Move: {fileID: 0}
-  damageMin: 0
+  standardHp: 0
   damageMax: 0
+  Enemy: {fileID: 0}
 --- !u!1101 &-8566222373033595190
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -231,8 +232,9 @@ MonoBehaviour:
   opponent: {fileID: 0}
   direction: {fileID: 0}
   NPC_Move: {fileID: 0}
-  damageMin: 0
+  standardHp: 0
   damageMax: 0
+  Enemy: {fileID: 0}
 --- !u!1101 &-7531345153173717031
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -326,8 +328,9 @@ MonoBehaviour:
   opponent: {fileID: 0}
   direction: {fileID: 0}
   NPC_Move: {fileID: 0}
-  damageMin: 0
+  standardHp: 0
   damageMax: 0
+  Enemy: {fileID: 0}
 --- !u!1101 &-7041477472368449186
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -367,7 +370,6 @@ AnimatorState:
   - {fileID: -4826895510312778302}
   - {fileID: -8603003585211118475}
   - {fileID: -2809798635587274537}
-  - {fileID: 6414540682452233259}
   m_StateMachineBehaviours:
   - {fileID: -7655197974867987147}
   m_Position: {x: 50, y: 50, z: 0}
@@ -541,24 +543,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!114 &-5028509978005568781
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9466c97980f445a43b012db9925af68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPC: {fileID: 0}
-  opponent: {fileID: 0}
-  direction: {fileID: 0}
-  NPC_Move: {fileID: 0}
-  damageMin: 0
-  damageMax: 0
 --- !u!1101 &-4826895510312778302
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -685,35 +669,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: af5871ba53a7c294aa4b5fa1995768b7, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-2932919647285223827
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Escape
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 8423668815154972677}
-  - {fileID: -617149378455762662}
-  m_StateMachineBehaviours:
-  - {fileID: -5028509978005568781}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -874,31 +829,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1101 &-617149378455762662
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: escape
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -6839633832233103312}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &-476311806128713090
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1225,8 +1155,9 @@ MonoBehaviour:
   opponent: {fileID: 0}
   direction: {fileID: 0}
   NPC_Move: {fileID: 0}
-  damageMin: 0
+  standardHp: 0
   damageMax: 0
+  Enemy: {fileID: 0}
 --- !u!1101 &2040390227241058261
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1293,8 +1224,9 @@ MonoBehaviour:
   opponent: {fileID: 0}
   direction: {fileID: 0}
   NPC_Move: {fileID: 0}
-  damageMin: 0
+  standardHp: 0
   damageMax: 0
+  Enemy: {fileID: 0}
 --- !u!1102 &3765646439545415504
 AnimatorState:
   serializedVersion: 6
@@ -1349,7 +1281,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400002, guid: 02d57a77ed1a98f4597d9eb7cf47057a, type: 3}
+  m_Motion: {fileID: 7400000, guid: 89f7465b9c6e93b45a3566efabf8a688, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1477,8 +1409,9 @@ MonoBehaviour:
   opponent: {fileID: 0}
   direction: {fileID: 0}
   NPC_Move: {fileID: 0}
-  damageMin: 0
+  standardHp: 0
   damageMax: 0
+  Enemy: {fileID: 0}
 --- !u!114 &6353087751840315217
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1495,8 +1428,9 @@ MonoBehaviour:
   opponent: {fileID: 0}
   direction: {fileID: 0}
   NPC_Move: {fileID: 0}
-  damageMin: 0
+  standardHp: 0
   damageMax: 0
+  Enemy: {fileID: 0}
 --- !u!1101 &6353378744229599647
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1513,34 +1447,6 @@ AnimatorStateTransition:
     m_EventTreshold: 4
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7484362776895418472}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.625
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!1101 &6414540682452233259
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: escape
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Dead
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -2932919647285223827}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -1577,7 +1483,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4cc7a6346b1003244b110b3324155da7, type: 3}
+  m_Motion: {fileID: 7400000, guid: f7d404696aab6a44f814961d95b1230f, type: 3}
   m_Tag: 
   m_SpeedParameter: distance
   m_MirrorParameter: idle
@@ -1654,9 +1560,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -3247290698101263797}
     m_Position: {x: 680, y: 10, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -2932919647285223827}
-    m_Position: {x: 0, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6788384301599021499}
     m_Position: {x: 300, y: 450, z: 0}
@@ -1742,33 +1645,9 @@ MonoBehaviour:
   opponent: {fileID: 0}
   direction: {fileID: 0}
   NPC_Move: {fileID: 0}
-  damageMin: 0
+  standardHp: 0
   damageMax: 0
---- !u!1101 &8423668815154972677
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Active
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -674087533717468631}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  Enemy: {fileID: 0}
 --- !u!114 &8969854888912333243
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1785,8 +1664,9 @@ MonoBehaviour:
   opponent: {fileID: 0}
   direction: {fileID: 0}
   NPC_Move: {fileID: 0}
-  damageMin: 0
+  standardHp: 0
   damageMax: 0
+  Enemy: {fileID: 0}
 --- !u!1102 &9048460794628217259
 AnimatorState:
   serializedVersion: 6

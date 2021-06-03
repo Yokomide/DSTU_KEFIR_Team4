@@ -76,7 +76,13 @@ public class FreezeSkill : MonoBehaviour
             enemy.GetComponent<Boss_AI>().enabled = false;
             enemy.GetComponent<Boss_Move>().enabled = false;
         }
-
+        else if (enemy.CompareTag("Boss2"))
+        {
+            enemy.GetComponentInChildren<BoxCollider>().enabled = false;
+            enemy.GetComponent<Animator>().enabled = false;
+            enemy.GetComponent<Knight_AI>().enabled = false;
+            enemy.GetComponent<Knight_Move>().enabled = false;
+        }
         yield return new WaitForSeconds(2);
 
         Destroy(tempEffect);
@@ -106,6 +112,13 @@ public class FreezeSkill : MonoBehaviour
             enemy.GetComponent<Animator>().enabled = true;
             enemy.GetComponent<Boss_AI>().enabled = true;
             enemy.GetComponent<Boss_Move>().enabled = true;
+        }
+        else if (enemy.CompareTag("Boss2"))
+        {
+            enemy.GetComponentInChildren<BoxCollider>().enabled = true;
+            enemy.GetComponent<Animator>().enabled = true;
+            enemy.GetComponent<Knight_AI>().enabled = true;
+            enemy.GetComponent<Knight_Move>().enabled = true;
         }
 
     }
@@ -158,6 +171,25 @@ public class FreezeSkill : MonoBehaviour
                 if (!_isHere) enemies.Add(tempObject);
             }
         }
+        if (other.GetComponent<KnightStats_>())
+        {
+            if ((other.CompareTag("Boss2")) && (other.GetComponent<KnightStats_>().isAlive))
+            {
+                bool _isHere = false;
+                tempObject = other.gameObject;
+                foreach (GameObject i in enemies)
+                {
+                    if (i == tempObject)
+                    {
+                        _isHere = true;
+                        break;
+                    }
+
+                }
+
+                if (!_isHere) enemies.Add(tempObject);
+            }
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -165,6 +197,22 @@ public class FreezeSkill : MonoBehaviour
         if (other.GetComponent<BossStats_>())
         {
             if ((other.CompareTag("Boss")) && (other.GetComponent<BossStats_>().isAlive))
+            {
+                tempObject = other.gameObject;
+                foreach (GameObject i in enemies)
+                {
+                    if (i == tempObject)
+                    {
+                        enemies.Remove(i);
+                        break;
+                    }
+
+                }
+            }
+        }
+        if (other.GetComponent<KnightStats_>())
+        {
+            if ((other.CompareTag("Boss2")) && (other.GetComponent<KnightStats_>().isAlive))
             {
                 tempObject = other.gameObject;
                 foreach (GameObject i in enemies)

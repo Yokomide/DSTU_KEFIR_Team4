@@ -15,14 +15,12 @@ public class Patrol : NPCBase_FSM
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-        if ((Enemy.GetComponent<EnemyStats>().enemyHp > 0) && NPC.CompareTag("Citizen"))
+        if ((Enemy.GetComponent<EnemyStats>().enemyHp > 0))
         {
-            if (Enemy.GetComponent<EnemyStats>().enemyHp < Enemy.GetComponent<EnemyStats>().enemyStats.hp)
+            if (Enemy.GetComponent<EnemyStats>().enemyHp < Enemy.GetComponent<EnemyStats>().enemyStats.hp && NPC.CompareTag("Citizen"))
 
             {
-                // standardHp = Enemy.GetComponent<EnemyStats>().enemyHp;
-                NPC_Move.speed = 5f;
-                Enemy.GetComponent<EnemyStats>().Escape();
+                Enemy.GetComponent<Animator>().SetBool("escape", true);
 
             }
 
@@ -37,7 +35,6 @@ public class Patrol : NPCBase_FSM
 
     }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 

@@ -71,25 +71,18 @@ public class HeroAttack : MonoBehaviour
             }
             if (other.CompareTag("Boss"))
             {
-                if ((!other.GetComponent<BossStats_>().isBeenAttacked && other.GetComponent<BossStats_>().isAlive) || (!other.GetComponent<KnightStats_>().isBeenAttacked && other.GetComponent<KnightStats_>().isAlive))
+                if ((!other.GetComponent<BossStats_>().isBeenAttacked && other.GetComponent<BossStats_>().isAlive))
                 {
                     tempEffect = Instantiate(effect, other.transform.position, Quaternion.identity);
                     other.GetComponent<BossStats_>().AttackM(hero.GetComponent<MainHeroHp>().damage);
-                    other.GetComponent<KnightStats_>().AttackM(hero.GetComponent<MainHeroHp>().damage);
+              
                     audio.PlayOneShot(sound);
                     other.GetComponent<BossStats_>().bossHp -= (Random.Range(20, 40) + heroStats.damage);
-                    other.GetComponent<KnightStats_>().knightHp -= (Random.Range(20, 40) + heroStats.damage);
                     if (other.GetComponent<BossStats_>().bossHp <= 0)
                     {
                         other.GetComponent<EnemyStats>().AttackM();
                         other.GetComponent<BossStats_>().isAlive = false;
                         heroStats.ExpNum += 250;
-                    }
-                    if (other.GetComponent<KnightStats_>().knightHp <= 0)
-                    {
-                        other.GetComponent<EnemyStats>().AttackM();
-                        other.GetComponent<KnightStats_>().isAlive = false;
-                        heroStats.ExpNum += 500;
                     }
                 }
             }

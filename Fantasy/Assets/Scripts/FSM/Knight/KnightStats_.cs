@@ -101,6 +101,7 @@ public class KnightStats_ : MonoBehaviour
             DeathAnim.Play("Death");
             Destroy(gameObject.GetComponent<BoxCollider>());
             Destroy(gameObject.GetComponent<Rigidbody>());
+            Destroy(gameObject.GetComponent<NavMeshAgent>());
             StartCoroutine(DeathOnCommand());
 
             yield break;

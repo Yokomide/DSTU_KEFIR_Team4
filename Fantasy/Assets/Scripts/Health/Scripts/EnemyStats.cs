@@ -122,6 +122,7 @@ public class EnemyStats : MonoBehaviour
         Vector3 y = new Vector3(0f, 2f, 0);
         Destroy(_hpLine);
         Destroy(_hpLineRed);
+        Destroy(gameObject.GetComponent<NavMeshAgent>());
         var deadBody = Instantiate(gameObject.GetComponentInChildren<SkinnedMeshRenderer>(), gameObject.GetComponentInChildren<Transform>());
         deadBody.transform.parent = Corp.transform;
         Destroy(gameObject, 4);
