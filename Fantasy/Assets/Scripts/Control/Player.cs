@@ -39,8 +39,6 @@ public class Player : MonoBehaviour
             _rb.MovePosition(_rb.position + direction * speed * Time.fixedDeltaTime);
         }
 
-
-
         if (GetComponent<MainHeroHp>().HeroHp <= 0)
         {
             _rb.constraints = RigidbodyConstraints.FreezePosition;
@@ -49,7 +47,6 @@ public class Player : MonoBehaviour
             StartCoroutine(Die());
             
         }
-
 
     }
 

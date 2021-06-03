@@ -7,17 +7,17 @@ public class HeroAttack : MonoBehaviour
     public AudioClip sound;
     public AudioClip miss;
     public Animator animator;
-    private MainHeroHp heroStats;
-    private Player _playerMove;
-    private float _tempSpeed;
     public GameObject effect;
-    private GameObject tempEffect;
-    private GameObject Corp;
     AudioSource audio;
+
     public float _attackCoolDown = -2f;
     public float coolDownTimer = 1.5f;
 
+    private MainHeroHp heroStats;
+    private float _tempSpeed;
+    private GameObject tempEffect;
     private bool _missattack;
+
     private void Start()
     {
         _missattack = true;
@@ -32,7 +32,6 @@ public class HeroAttack : MonoBehaviour
         audio = hero.GetComponent<AudioSource>();
         hero.GetComponent<AudioSource>().clip = sound;
         heroStats = hero.GetComponent<MainHeroHp>();
-        Corp = GameObject.Find("Corpses");
     }
     private void Update()
     {
@@ -110,6 +109,7 @@ public class HeroAttack : MonoBehaviour
         yield return new WaitForSeconds(1f);
         hero.GetComponent<Player>().speed = tempSpeed;
     }
+
     IEnumerator EffectFade(GameObject effect)
     {
         yield return new WaitForSeconds(2);

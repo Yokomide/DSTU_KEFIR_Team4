@@ -6,19 +6,25 @@ using UnityEngine.AI;
 public class BossStats_ : MonoBehaviour
 {
     public ScrObjEnemyStats bossStats;
-    private AttackRadiusTrigger _beingAttacked;
+    public GameObject hpBar;
+
     [SerializeField]
     public float bossHp;
 
-    public GameObject hpBar;
-    private GameObject Corp;
-    Transform linePos;
-    private GameObject _hpLine;
-    private GameObject _hpLineRed;
-    private bool _isRedHpLineDestroyed = false;
+    [HideInInspector]
+    public bool isBeenAttacked = false;
 
     [HideInInspector]
     public bool isAlive = true;
+
+
+    private GameObject Corp;
+    private GameObject _hpLine;
+    private GameObject _hpLineRed;
+
+    private AttackRadiusTrigger _beingAttacked;
+
+    private bool _isRedHpLineDestroyed = false;
 
     private MeshRenderer _meshHpLine;
     private Transform _transformHpLine;
@@ -31,10 +37,10 @@ public class BossStats_ : MonoBehaviour
 
 
     public AudioClip sound;
+
+    Transform linePos;
     AudioSource audio;
 
-    [HideInInspector]
-    public bool isBeenAttacked = false;
 
     public void Awake()
     {

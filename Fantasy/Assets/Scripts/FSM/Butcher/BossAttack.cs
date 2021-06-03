@@ -5,14 +5,14 @@ public class BossAttack : MonoBehaviour
 {
     public GameObject boss;
     public AudioClip sound;
-    private Animator animator;
-    AudioSource audio;
     public GameObject effect;
-    private GameObject tempEffect;
-
     public float _attackCoolDown = -2f;
     public MainHeroHp player;
 
+    AudioSource audio;
+
+    private Animator animator;
+    private GameObject tempEffect;
 
 
     private void Awake()
